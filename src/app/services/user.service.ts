@@ -17,4 +17,8 @@ export class UserService {
   getCurrentUser(): any {
     return JSON.parse(localStorage.getItem('currentUser') || '{}');
   }
+  getCurrentUserType():string{
+    const user = this.getCurrentUser();
+    return user?.type || '';
+  }
 }
