@@ -1,0 +1,84 @@
+{
+    "users":[
+        {
+            "type":"admin",
+            "name":"Mohammed Aqqad",
+            "email":"Mohammed.Aqqad@gmail.com",
+            "password":"Ma**1234"
+        },
+        {
+            "type":"doctor",
+            "name":"Omar Turkmani",
+            "email":"omar.turkmani@gmail.com",
+            "password":"Ot**1234"
+        },
+        {
+            "type":"patient",
+            "name":"Salma Alfaqeeh",
+            "email":"salma1980@gmail.com",
+            "password":"Sa**1234"
+        }
+    ],
+    "patient": [
+        {
+            "id": "1",
+            "type":"patient",
+            "name": "Salma Alfaqeeh",
+            "email": "salma1980@gmail.com",
+            "password": "Sa**1234",
+            "phone": "962 776532545",
+            "gender": "female",
+            "DOB": "09-09-1980"
+        }
+    ],
+    "doctor": [
+        {
+            "id": "1",
+            "type":"doctor",
+            "name": "Omar Turkmani",
+            "email": "omar.turkmani@gmail.com",
+            "password": "Ot**1234",
+            "phone": "962 795569821",
+            "specification": "",
+            "clinic_id": ""
+        }
+    ],
+    "admin": [
+        {
+            "id": "1",
+            "type":"admin",
+            "name": "Mohammed Aqqad",
+            "email": "Mohammed.Aqqad@gmail.com",
+            "password": "Ma**1234",
+            "phone": "962 784256326"
+         }
+    ],
+    "appointment":[
+        {
+            "id": "",
+            "date":"",
+            "patient_id": "",
+            "doctor_id": "",
+            "approval_status": "",
+            "appointment_details": {"drugs":"","diagnosis":"","payment":""}
+         }
+    ],
+    "drug":[
+        {
+            "id":"",
+            "name":""
+        }
+    ],
+    "diagnosis":[
+        {
+            "id":"",
+            "name":""
+        }
+    ],
+    "clinic":[
+        {
+            "id":"",
+            "name":""
+        }
+    ]
+}
