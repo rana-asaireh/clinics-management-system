@@ -3,9 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { UserService } from './user.service';
-import { User } from '../models/user.model';
-import { UserType } from '../enum/users.enum';
+import { UserService } from '../modules/shared/services/user.service';
+import { User } from '../modules/shared/models/user.model';
+import { UserType } from '../modules/shared/enum/users.enum';
 
 @Injectable({
   providedIn: 'root'
