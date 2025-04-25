@@ -8,19 +8,29 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
+import { SignupComponent } from './signup/signup.component';
+import { PatientModule } from './modules/patient/patient.module';
+ 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent
+
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
+    FormsModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    PatientModule
+ 
+
   ],
   providers: [],
   bootstrap: [AppComponent]
