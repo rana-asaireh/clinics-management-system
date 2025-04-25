@@ -1,0 +1,44 @@
+footer {
+  background-color: #2e625d;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.footer-center a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin: 5px 0;
+  font-family: "Cairo", sans-serif;
+}
+.footer-left h4 {
+  font-size: 32px;
+  font-family: "Cairo", sans-serif;
+}
+
+.footer-center {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  margin-top: 36px;
+}
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  margin-top: 36px;
+}
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  margin-top: 36px;
+}
+.footer-right p {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Cairo", sans-serif;
+}
