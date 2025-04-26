@@ -30,3 +30,4 @@ import { HomePageComponent } from './page/home-page/home-page.component';
   bootstrap: [AppComponent]
 })
 export class AppModule {}
+
