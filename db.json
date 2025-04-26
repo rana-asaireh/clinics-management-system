@@ -1,24 +1,90 @@
 {
-    "users":[
-        {
-            "type":"admin",
-            "name":"Mohammed Aqqad",
-            "email":"Mohammed.Aqqad@gmail.com",
-            "password":"Ma**1234"
-        },
-        {
-            "type":"doctor",
-            "name":"Omar Turkmani",
-            "email":"omar.turkmani@gmail.com",
-            "password":"Ot**1234"
-        },
-        {
-            "type":"patient",
-            "name":"Salma Alfaqeeh",
-            "email":"salma1980@gmail.com",
-            "password":"Sa**1234"
-        }
-    ],
+  "users": [
+    {
+      "type": "admin",
+      "name": "Mohammed Aqqad",
+      "email": "Mohammed.Aqqad@gmail.com",
+      "password": "Ma**1234"
+    },
+    {
+      "type": "doctor",
+      "name": "Omar Turkmani",
+      "email": "omar.turkmani@gmail.com",
+      "password": "Ot**1234"
+    },
+    {
+      "type": "doctor",
+      "name": "Tariq Najjar",
+      "email": "tariqnajjar@gmail.com",
+      "password": "tn**1234"
+    },
+    {
+      "type": "doctor",
+      "name": "Amina Saeed",
+      "email": "aminasaeed@gmail.com",
+      "password": "sa**1234"
+    },
+    {
+      "type": "doctor",
+      "name": "Mariam Al-Hariri",
+      "email": "mariam@gmail.com",
+      "password": "mar**1244"
+    },
+    {
+      "type": "doctor",
+      "name": "Rami Al-Najdi",
+      "email": "ralnajdi20@gmail.com",
+      "password": "rr**na14"
+    },
+    {
+      "type": "doctor",
+      "name": "Nour Abdeen",
+      "email": "nour440@gmail.com",
+      "password": "rr**na14"
+    },
+    {
+      "type": "patient",
+      "name": "Salma Alfaqeeh",
+      "email": "salma1980@gmail.com",
+      "password": "Sa**1234"
+    },
+    {
+      "type": "patient",
+      "name": "Lara Amer",
+      "email": "aya860@gmail.com",
+      "password": "ay**1234"
+    },
+    {
+      "type": "patient",
+      "name": " Laila Mohammad",
+      "email": "laila879@gmail.com",
+      "password": "la**1234"
+    },
+    {
+      "type": "patient",
+      "name": "Ahmad Yousef",
+      "email": "ahmad456@gmail.com",
+      "password": "Sa**1234"
+    },
+    {
+      "type": "patient",
+      "name": "Hamza Al-Ahmad",
+      "email": "hamza30@gmail.com",
+      "password": "ha**1234"
+    },
+    {
+      "type": "patient",
+      "name": "Sara Amer",
+      "email": "sara090@gmail.com",
+      "password": "sa**1234"
+    },
+    {
+      "type": "patient",
+      "name": "cireen Omar",
+      "email": "cireen090@gmail.com",
+      "password": "ci**1234"
+    }
+  ],
     "patient": [
         {
             "id": 1,
@@ -65,7 +131,7 @@
     "phone": "962 776536804",
     "gender": "male",
     "DOB": "13-08-2005"
-},{"id": 5,
+},{"id": 6,
     "type":"patient",
     "name": "Sara Amer",
     "email": "sara090@gmail.com",
@@ -74,17 +140,8 @@
     "gender": "female",
     "DOB": "04-06-1990"
 
-},
-{"id": 6,
-    "type":"patient",
-    "name": "cireen Omar",
-    "email": "cireen090@gmail.com",
-    "password": "ci**1234",
-    "phone": "962 778702146",
-    "gender": "female",
-    "DOB": "01-04-1995"
-
-}    ],
+}
+  ],
     "doctor": [
         {
             "id": 1,
