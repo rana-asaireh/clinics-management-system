@@ -21,4 +21,7 @@ export class UserService {
     const user = this.getCurrentUser();
     return user?.type || '';
   }
+  addUserDoctor(doctor: User): Observable<User> {
+      return this.http.post<User>(`${this.baseUrl}/users`, doctor);
+  }
 }

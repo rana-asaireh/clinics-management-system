@@ -1,0 +1,17 @@
+<div class="form-container">
+    <form [formGroup]="formGroup">
+        <h1>Add a Diagnosis</h1>
+        <span *ngIf="success" class="success">{{success}}</span>
+        <div class="form-group">
+            <label for="diagnosis_name">Diagnosis Name</label>
+            <input type="text" id="diagnosis_name" placeholder="Add a Diagnosis" formControlName="name"
+                [class.invalid]="formGroup.controls['name']?.touched && !formGroup.controls['name']?.valid">
+            <span class="error"
+                *ngIf="formGroup.controls['name']?.touched && formGroup.controls['name']?.errors?.['required']"> Clinic
+                Name is required</span>
+        </div>
+        <div class="button-wrapper">
+            <button (click)="addDiagnosis()">Add</button>
+        </div>
+    </form>
+</div>

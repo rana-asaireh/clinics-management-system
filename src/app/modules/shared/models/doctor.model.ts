@@ -8,5 +8,5 @@ export interface Doctor {
     password?: string,
     phone: string,
     specification: string,
-    clinic_id: string
+    clinic_id: number
 }
