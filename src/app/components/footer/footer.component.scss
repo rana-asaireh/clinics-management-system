@@ -6,12 +6,11 @@ footer {
   justify-content: space-evenly;
 }
 
-.footer-center a {
-  color: white;
-  text-decoration: none;
-  display: block;
-  margin: 5px 0;
-  font-family: "Cairo", sans-serif;
+.footer-center {
+  .Contact-us {
+    font-family: "Cairo", sans-serif;
+    font-weight: bold;
+  }
 }
 .footer-left h4 {
   font-size: 32px;
@@ -41,4 +40,5 @@ footer {
   font-weight: bold;
   text-align: center;
   font-family: "Cairo", sans-serif;
+  font-weight: bold;
 }

@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthLayoutComponent } from '../shared/components/auth-layout/auth-layout.component';
 
-const routes: Routes = [];
+const routes: Routes = [{ path: '', component: AuthLayoutComponent }];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class DoctorRoutingModule { }
+export class DoctorRoutingModule {}

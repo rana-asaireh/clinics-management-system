@@ -3,12 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { UserTypeGuard } from './guards/user-type.guard';
 import { HomePageComponent } from './page/home-page/home-page.component';
+import { AuthLayoutComponent } from './modules/shared/components/auth-layout/auth-layout.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   {
     path: 'login',
-    component: LoginComponent,
+    component: AuthLayoutComponent,
   },
   {
     path: 'admin',
