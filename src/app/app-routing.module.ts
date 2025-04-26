@@ -6,7 +6,7 @@ import { HomePageComponent } from './page/home-page/home-page.component';
 
 const routes: Routes = [
   { path: '',
-   component: HomePageComponent
+   component:HomePageComponent
   },
   {
     path: 'login',
@@ -16,19 +16,19 @@ const routes: Routes = [
     path: 'admin',
     loadChildren: ()=>import('./modules/admin/admin.module').then((m) => m.AdminModule),
     canMatch: [UserTypeGuard],
-    data: { expectedType:'admin'},
+    data: {expectedType:'admin'},
   },
   {
     path: 'doctor',
     loadChildren: ()=>import('./modules/doctor/doctor.module').then((m) => m.DoctorModule),
     canMatch: [UserTypeGuard],
-    data: { expectedType:'doctor'},
+    data: {expectedType:'doctor'},
   },
   {
     path: 'patient',
     loadChildren: ()=>import('./modules/patient/patient.module').then((m) => m.PatientModule),
     canMatch: [UserTypeGuard] ,
-    data: { expectedType:'patient'},
+    data: {expectedType:'patient'},
   },
 ];
 
