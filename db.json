@@ -1,186 +1,261 @@
 {
-    "users":[
-        {
-            "type":"admin",
-            "name":"Mohammed Aqqad",
-            "email":"Mohammed.Aqqad@gmail.com",
-            "password":"Ma**1234"
-        },
-        {
-            "type":"doctor",
-            "name":"Omar Turkmani",
-            "email":"omar.turkmani@gmail.com",
-            "password":"Ot**1234"
-        },
-        {
-            "type":"patient",
-            "name":"Salma Alfaqeeh",
-            "email":"salma1980@gmail.com",
-            "password":"Sa**1234"
-        }
-    ],
-    "patient": [
-        {
-            "id": 1,
-            "type":"patient",
-            "name": "Salma Alfaqeeh",
-            "email": "salma1980@gmail.com",
-            "password": "Sa**1234",
-            "phone": "962 776532545",
-            "gender": "female",
-            "DOB": "09-09-1980"
-        }, {
-          "id": 2,
-          "type":"patient",
-          "name": "Lara Amer",
-          "email": "aya860@gmail.com",
-          "password": "ay**1234",
-          "phone": "962 77980805",
-          "gender": "female",
-          "DOB": "24-04-1999"
-      }, {
-        "id": 3,
-        "type":"patient",
-        "name": " Laila Mohammad",
-        "email": "laila879@gmail.com",
-        "password": "la**1234",
-        "phone": "962 78975603",
-        "gender": "female",
-        "DOB": "04-02-2001"
-    }, {
+  "users": [
+    {
+      "type": "admin",
+      "name": "Mohammed Aqqad",
+      "email": "Mohammed.Aqqad@gmail.com",
+      "password": "Ma**1234"
+    },
+    {
+      "type": "doctor",
+      "name": "Omar Turkmani",
+      "email": "omar.turkmani@gmail.com",
+      "password": "Ot**1234"
+    },
+    {
+      "type": "doctor",
+      "name": "Tariq Najjar",
+      "email": "tariqnajjar@gmail.com",
+      "password": "tn**1234"
+    },
+    {
+      "type": "doctor",
+      "name": "Amina Saeed",
+      "email": "aminasaeed@gmail.com",
+      "password": "sa**1234"
+    },
+    {
+      "type": "doctor",
+      "name": "Mariam Al-Hariri",
+      "email": "mariam@gmail.com",
+      "password": "mar**1244"
+    },
+    {
+      "type": "doctor",
+      "name": "Rami Al-Najdi",
+      "email": "ralnajdi20@gmail.com",
+      "password": "rr**na14"
+    },
+    {
+      "type": "doctor",
+      "name": "Nour Abdeen",
+      "email": "nour440@gmail.com",
+      "password": "rr**na14"
+    },
+    {
+      "type": "patient",
+      "name": "Salma Alfaqeeh",
+      "email": "salma1980@gmail.com",
+      "password": "Sa**1234"
+    },
+    {
+      "type": "patient",
+      "name": "Lara Amer",
+      "email": "aya860@gmail.com",
+      "password": "ay**1234"
+    },
+    {
+      "id": 3,
+      "type": "patient",
+      "name": " Laila Mohammad",
+      "email": "laila879@gmail.com",
+      "password": "la**1234"
+    },
+    {
+      "type": "patient",
+      "name": "Ahmad Yousef",
+      "email": "ahmad456@gmail.com",
+      "password": "Sa**1234"
+    },
+    {
+      "type": "patient",
+      "name": "Hamza Al-Ahmad",
+      "email": "hamza30@gmail.com",
+      "password": "ha**1234"
+    },
+    {
+      "type": "patient",
+      "name": "Sara Amer",
+      "email": "sara090@gmail.com",
+      "password": "sa**1234"
+    },
+    {
+      "type": "patient",
+      "name": "cireen Omar",
+      "email": "cireen090@gmail.com",
+      "password": "ci**1234"
+    }
+  ],
+  "patient": [
+    {
+      "id": 1,
+      "type": "patient",
+      "name": "Salma Alfaqeeh",
+      "email": "salma1980@gmail.com",
+      "password": "Sa**1234",
+      "phone": "962 776532545",
+      "gender": "female",
+      "DOB": "09-09-1980"
+    },
+    {
+      "id": 2,
+      "type": "patient",
+      "name": "Lara Amer",
+      "email": "aya860@gmail.com",
+      "password": "ay**1234",
+      "phone": "962 77980805",
+      "gender": "female",
+      "DOB": "24-04-1999"
+    },
+    {
+      "id": 3,
+      "type": "patient",
+      "name": " Laila Mohammad",
+      "email": "laila879@gmail.com",
+      "password": "la**1234",
+      "phone": "962 78975603",
+      "gender": "female",
+      "DOB": "04-02-2001"
+    },
+    {
       "id": 4,
-      "type":"patient",
+      "type": "patient",
       "name": "Ahmad Yousef",
       "email": "ahmad456@gmail.com",
       "password": "Sa**1234",
       "phone": "962 785943202",
       "gender": "male",
       "DOB": "10-03-1985"
-  }, {
-    "id": 5,
-    "type":"patient",
-    "name": "Hamza Al-Ahmad",
-    "email": "hamza30@gmail.com",
-    "password": "ha**1234",
-    "phone": "962 776536804",
-    "gender": "male",
-    "DOB": "13-08-2005"
-},{"id": 5,
-    "type":"patient",
-    "name": "Sara Amer",
-    "email": "sara090@gmail.com",
-    "password": "sa**1234",
-    "phone": "962 778702146",
-    "gender": "female",
-    "DOB": "04-06-1990"
-
-},
-{"id": 6,
-    "type":"patient",
-    "name": "cireen Omar",
-    "email": "cireen090@gmail.com",
-    "password": "ci**1234",
-    "phone": "962 778702146",
-    "gender": "female",
-    "DOB": "01-04-1995"
-
-}    ],
-    "doctor": [
-        {
-            "id": 1,
-            "type":"doctor",
-            "name": "Omar Turkmani",
-            "email": "omar.turkmani@gmail.com",
-            "password": "Ot**1234",
-            "phone": "962 795569821",
-            "specification": "",
-            "clinic_id": ""
-        },   {
-          "id": 2,
-          "type":"doctor",
-          "name": "Tariq Najjar",
-          "email": "tariqnajjar@gmail.com",
-          "password": "tn**1234",
-          "phone": "962 795039201",
-          "specification": "",
-          "clinic_id": ""
-      },
-      {
-        "id": 3,
-        "type":"doctor",
-        "name": "Amina Saeed",
-        "email": "aminasaeed@gmail.com",
-        "password": "sa**1234",
-        "phone": "962 795039201",
-        "specification": "",
-        "clinic_id": ""
-    },  {
+    },
+    {
+      "id": 5,
+      "type": "patient",
+      "name": "Hamza Al-Ahmad",
+      "email": "hamza30@gmail.com",
+      "password": "ha**1234",
+      "phone": "962 776536804",
+      "gender": "male",
+      "DOB": "13-08-2005"
+    },
+    {
+      "id": 5,
+      "type": "patient",
+      "name": "Sara Amer",
+      "email": "sara090@gmail.com",
+      "password": "sa**1234",
+      "phone": "962 778702146",
+      "gender": "female",
+      "DOB": "04-06-1990"
+    },
+    {
+      "id": 6,
+      "type": "patient",
+      "name": "cireen Omar",
+      "email": "cireen090@gmail.com",
+      "password": "ci**1234",
+      "phone": "962 778702146",
+      "gender": "female",
+      "DOB": "01-04-1995"
+    }
+  ],
+  "doctor": [
+    {
+      "id": 1,
+      "type": "doctor",
+      "name": "Omar Turkmani",
+      "email": "omar.turkmani@gmail.com",
+      "password": "Ot**1234",
+      "phone": "962 795569821",
+      "specification": "",
+      "clinic_id": ""
+    },
+    {
+      "id": 2,
+      "type": "doctor",
+      "name": "Tariq Najjar",
+      "email": "tariqnajjar@gmail.com",
+      "password": "tn**1234",
+      "phone": "962 795039201",
+      "specification": "",
+      "clinic_id": ""
+    },
+    {
+      "id": 3,
+      "type": "doctor",
+      "name": "Amina Saeed",
+      "email": "aminasaeed@gmail.com",
+      "password": "sa**1234",
+      "phone": "962 795039201",
+      "specification": "",
+      "clinic_id": ""
+    },
+    {
       "id": 4,
-      "type":"doctor",
+      "type": "doctor",
       "name": "Mariam Al-Hariri",
       "email": "mariam@gmail.com",
       "password": "mar**1244",
       "phone": "962 799979034",
       "specification": "",
       "clinic_id": ""
-  },
+    },
     {
       "id": 5,
-      "type":"doctor",
+      "type": "doctor",
       "name": "Rami Al-Najdi",
       "email": "ralnajdi20@gmail.com",
       "password": "rr**na14",
       "phone": "962 799998976",
       "specification": "",
       "clinic_id": ""
-  }, {
-    "id": 6,
-    "type":"doctor",
-    "name": "Nour Abdeen",
-    "email": "nour440@gmail.com",
-    "password": "rr**na14",
-    "phone": "962 7994560276",
-    "specification": "",
-    "clinic_id": ""
-}
-
-    ],
-    "admin": [
-        {
-            "id": 1,
-            "type":"admin",
-            "name": "Mohammed Aqqad",
-            "email": "Mohammed.Aqqad@gmail.com",
-            "password": "Ma**1234",
-            "phone": "962 784256326"
-         }
-    ],
-    "appointment":[
-        {
-            "id": 1,
-            "date":"",
-            "patient_id": "",
-            "doctor_id": "",
-            "approval_status": "",
-            "appointment_details": {"drugs":"","diagnosis":"","payment":""}
-         }
-    ],
-    "drug":[
-        {
-            "id":1,
-            "name":""
-        }
-    ],
-    "diagnosis":[
-        {
-            "id":1,
-            "name":""
-        }
-    ],
-    "clinic":[
-        {
-            "id":1,
-            "name":""
-        }
-    ]
+    },
+    {
+      "id": 6,
+      "type": "doctor",
+      "name": "Nour Abdeen",
+      "email": "nour440@gmail.com",
+      "password": "rr**na14",
+      "phone": "962 7994560276",
+      "specification": "",
+      "clinic_id": ""
+    }
+  ],
+  "admin": [
+    {
+      "id": 1,
+      "type": "admin",
+      "name": "Mohammed Aqqad",
+      "email": "Mohammed.Aqqad@gmail.com",
+      "password": "Ma**1234",
+      "phone": "962 784256326"
+    }
+  ],
+  "appointment": [
+    {
+      "id": 1,
+      "date": "",
+      "patient_id": "",
+      "doctor_id": "",
+      "approval_status": "",
+      "appointment_details": { "drugs": "", "diagnosis": "", "payment": "" }
+    }
+  ],
+  "drug": [
+    {
+      "id": 1,
+      "name": ""
+    }
+  ],
+  "diagnosis": [
+    {
+      "id": 1,
+      "name": ""
+    }
+  ],
+  "clinic": [
+    {
+      "id": 1,
+      "name": ""
+    }
+  ]
 }
