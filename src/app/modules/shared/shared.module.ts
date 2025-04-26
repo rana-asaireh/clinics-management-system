@@ -7,6 +7,7 @@ import { AuthLayoutComponent } from './components/auth-layout/auth-layout.compon
 import { AuthSideBarComponent } from './components/auth-side-bar/auth-side-bar.component';
 
 
+
 @NgModule({
   declarations: [
     AuthHeaderComponent,
@@ -18,6 +19,6 @@ import { AuthSideBarComponent } from './components/auth-side-bar/auth-side-bar.c
     CommonModule,
     RouterModule
   ],
-  exports: [AuthLayoutComponent],
+  exports: [AuthLayoutComponent]
 })
 export class SharedModule {}
