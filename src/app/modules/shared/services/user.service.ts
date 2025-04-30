@@ -14,7 +14,7 @@ export class UserService {
   getUser(email: string, password: string): Observable<User[]> {
     return this.http.get<User[]>(`${this.baseUrl}?email=${email}&password=${password}`)
   }
-  getCurrentUser(): any {
+  getCurrentUser(): User {
     return JSON.parse(localStorage.getItem('currentUser') || '{}');
   }
   getCurrentUserType(): string {
@@ -33,4 +33,7 @@ export class UserService {
     );
   }
 
+  addUserDoctor(doctor: User): Observable<User> {
+      return this.http.post<User>(`${this.baseUrl}/users`, doctor);
+  }
 }
