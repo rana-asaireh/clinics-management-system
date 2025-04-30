@@ -63,7 +63,7 @@
               <div>
                 <label><input type="radio" value="male" formControlName="gender" /> Male</label>
                 <label><input type="radio" value="female" formControlName="gender" /> Female</label>
-                <label><input type="radio" value="other" formControlName="gender" /> Other</label>
+
               </div>
 
               <span
@@ -95,7 +95,6 @@
                 alt="Toggle visibility" (click)="toggleVisibility('password')" />
               <input [type]="inputType.password " id="password" placeholder="Enter password" formControlName="password"
                 (focus)="showPasswordRules = true" (blur)="showPasswordRules = false"
-                (input)="checkPasswordStrength(registrationForm.controls['password'].value)"
                 [class.invalid]="registrationForm.controls['password'].touched && registrationForm.controls['password'].errors?.['required']" />
               <span
                 *ngIf="registrationForm.controls['password'].touched && registrationForm.controls['password'].errors?.['required']">
@@ -104,14 +103,17 @@
             </div>
 
             <!-- Password Rules Box -->
-            <div *ngIf="showPasswordRules && !registrationForm.controls['password'].errors?.['required']" id="message">
+            <div id="message" *ngIf="registrationForm.controls['password'].errors?.['passwordRules'] as rules">
               <h5>Password must contain the following:</h5>
-              <p [ngClass]="passwordRules.lowerCase ? 'valid' : 'invalid'">A <b>lowercase</b> letter</p>
-              <p [ngClass]="passwordRules.upperCase ? 'valid' : 'invalid'">A <b>capital letter</b></p>
-              <p [ngClass]="passwordRules.digit ? 'valid' : 'invalid'">A <b>number</b></p>
-              <p [ngClass]="passwordRules.specialChar ? 'valid' : 'invalid'">A <b>special character</b></p>
-              <p [ngClass]="passwordRules.minLength ? 'valid' : 'invalid'">Minimum <b>8 characters</b></p>
+
+              <p [ngClass]="rules.lowerCase ? 'valid' : 'invalid'">A <b>lowercase</b> letter</p>
+              <p [ngClass]="rules.upperCase ? 'valid' : 'invalid'">A <b>capital letter</b></p>
+              <p [ngClass]="rules.digit ? 'valid' : 'invalid'">A <b>number</b></p>
+              <p [ngClass]="rules.specialChar ? 'valid' : 'invalid'">A <b>special character</b></p>
+              <p [ngClass]="rules.minLength ? 'valid' : 'invalid'">Minimum <b>8 characters</b></p>
             </div>
+
+
 
             <!-- Confirm Password -->
             <div class="input-wrapper">

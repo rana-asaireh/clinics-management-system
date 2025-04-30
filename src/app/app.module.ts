@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -10,18 +11,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { SignupComponent } from './signup/signup.component';
 import { PatientModule } from './modules/patient/patient.module';
  
-import { FooterComponent } from './components/footer/footer.component';
-import { HeaderComponent } from './components/header/header.component';
-import { HomePageComponent } from './page/home-page/home-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignupComponent,
-    FooterComponent,
-    HeaderComponent,
-    HomePageComponent,
+    SignupComponent
+
+
   ],
   imports: [
     BrowserModule,
@@ -38,5 +35,4 @@ import { HomePageComponent } from './page/home-page/home-page.component';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
-
+export class AppModule { }

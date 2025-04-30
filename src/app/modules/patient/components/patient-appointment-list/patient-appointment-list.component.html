@@ -1,0 +1,23 @@
+<div *ngIf="appointmentsList.length > 0 ">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Clinic Name</th>
+                <th>Doctor Name</th>
+                <th>Reservation Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr *ngFor="let appointment of appointmentsList; let i = index">
+                <td>{{ i + 1 }}</td> <!-- Display index (starting from 1) -->
+                <td>{{ getClinicNameByDoctorId(appointment.doctor_id)}}</td> <!-- Clinic Name -->
+                <td>{{ getDoctorName(appointment.doctor_id)}}</td> <!-- Doctor Name -->
+                <td>{{ appointment.date }}</td> <!-- Reservation Date -->
+                <td><button [routerLink]="['/patient/appointment-details', appointment.id]">View Details</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

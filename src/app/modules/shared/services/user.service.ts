@@ -14,7 +14,7 @@ export class UserService {
   getUser(email: string, password: string): Observable<User[]> {
     return this.http.get<User[]>(`${this.baseUrl}?email=${email}&password=${password}`)
   }
-  getCurrentUser(): User {
+  getCurrentUser(): any {
     return JSON.parse(localStorage.getItem('currentUser') || '{}');
   }
   getCurrentUserType(): string {
@@ -26,14 +26,13 @@ export class UserService {
 
     return this.http.post<User>(this.baseUrl, user).pipe(
       map((userWithId) => {
+
         // Remove the 'id' field from the response before returning it
+        this.http.delete<void>(`${this.baseUrl}/${user.id}`);
         const { id, ...userWithoutId } = userWithId; // destructure and exclude 'id'
-        return userWithoutId; // return the user without 'id'
+        return userWithId; // return the user without 'id'
       })
     );
   }
 
-  addUserDoctor(doctor: User): Observable<User> {
-      return this.http.post<User>(`${this.baseUrl}/users`, doctor);
-  }
 }

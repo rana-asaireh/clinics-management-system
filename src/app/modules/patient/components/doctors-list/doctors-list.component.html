@@ -1,0 +1,28 @@
+<div class="filter">
+
+    <div>
+        <label for="">Clinic Name</label>
+        <select name="" id="" [(ngModel)]="selectedClinicId" (change)="onFilterChange()">
+            <option value="">All Clinics</option>
+            <option *ngFor="let clinic of clinics" [value]="clinic.id">{{clinic.name}}</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="">Doctor Name</label>
+        <div>
+            <input type="text" placeholder="search Doctor name" [(ngModel)]="searchQuery" />
+            <img src="images/search.png" alt="" width="25px" class="search-icon" (click)="onFilterChange()">
+        </div>
+
+    </div>
+</div>
+<div class="doctors-list">
+    <div *ngFor="let doctor of doctors">
+        <img src="images/doctorImage.png" alt="">
+        <h2>Dr. {{doctor.name}} </h2>
+        <p>{{doctor.specification}}</p>
+        <p>{{getClinicNameByDoctorId(doctor.clinic_id)}}</p>
+        <button> Book Appointment</button>
+    </div>
+</div>

@@ -3,12 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { UserTypeGuard } from './guards/user-type.guard';
 import { SignupComponent } from './signup/signup.component';
-import { HomePageComponent } from './page/home-page/home-page.component';
+import { PatientAppointmentListComponent } from './modules/patient/components/patient-appointment-list/patient-appointment-list.component';
 
 const routes: Routes = [
-  { path: '',
-   component:HomePageComponent
-  },
   {
     path: 'login',
     component: LoginComponent
@@ -36,11 +33,16 @@ const routes: Routes = [
     component: SignupComponent
   },
 
+
+  //للمسح
+  {
+    path:'patient/:id',
+    loadChildren: () => import('../app/modules/patient/patient.module').then(m => m.PatientModule)
+  }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
-
+export class AppRoutingModule { }

@@ -4,214 +4,226 @@
       "type": "admin",
       "name": "Mohammed Aqqad",
       "email": "Mohammed.Aqqad@gmail.com",
-      "password": "Ma**1234"
+      "password": "Ma**1234",
+      "id": "29f4"
     },
     {
       "type": "doctor",
       "name": "Omar Turkmani",
       "email": "omar.turkmani@gmail.com",
-      "password": "Ot**1234"
-    },
-    {
-      "type": "doctor",
-      "name": "Tariq Najjar",
-      "email": "tariqnajjar@gmail.com",
-      "password": "tn**1234"
-    },
-    {
-      "type": "doctor",
-      "name": "Amina Saeed",
-      "email": "aminasaeed@gmail.com",
-      "password": "sa**1234"
-    },
-    {
-      "type": "doctor",
-      "name": "Mariam Al-Hariri",
-      "email": "mariam@gmail.com",
-      "password": "mar**1244"
-    },
-    {
-      "type": "doctor",
-      "name": "Rami Al-Najdi",
-      "email": "ralnajdi20@gmail.com",
-      "password": "rr**na14"
-    },
-    {
-      "type": "doctor",
-      "name": "Nour Abdeen",
-      "email": "nour440@gmail.com",
-      "password": "rr**na14"
+      "password": "Ot**1234",
+      "id": "c0fa"
     },
     {
       "type": "patient",
       "name": "Salma Alfaqeeh",
       "email": "salma1980@gmail.com",
-      "password": "Sa**1234"
+      "password": "Sa**1234",
+      "id": "bdb2"
     },
     {
+      "id": "e785",
       "type": "patient",
-      "name": "Lara Amer",
-      "email": "aya860@gmail.com",
-      "password": "ay**1234"
+      "name": "ALaaKhaled",
+      "email": "ALaa@gmail.com",
+      "password": "aaw%H2ggf"
     },
     {
+      "id": "747b",
       "type": "patient",
-      "name": " Laila Mohammad",
-      "email": "laila879@gmail.com",
-      "password": "la**1234"
+      "name": "jamal",
+      "email": "j@gmail.com",
+      "password": "43$4Wljj"
     },
     {
+      "id": "3a25",
       "type": "patient",
-      "name": "Ahmad Yousef",
-      "email": "ahmad456@gmail.com",
-      "password": "Sa**1234"
+      "name": "ahmad",
+      "email": "ah@gmail.com",
+      "password": "3e34%5ilH"
     },
     {
+      "id": "327d",
       "type": "patient",
-      "name": "Hamza Al-Ahmad",
-      "email": "hamza30@gmail.com",
-      "password": "ha**1234"
+      "name": "ali",
+      "email": "ali@gmail.com",
+      "password": "R@hs^^57"
     },
     {
+      "id": "8398",
       "type": "patient",
-      "name": "Sara Amer",
-      "email": "sara090@gmail.com",
-      "password": "sa**1234"
+      "name": "dana",
+      "email": "d@gmail.com",
+      "password": "T%5ILllG"
     },
     {
+      "id": "69e1",
       "type": "patient",
-      "name": "cireen Omar",
-      "email": "cireen090@gmail.com",
-      "password": "ci**1234"
+      "name": "farah",
+      "email": "f@gmail.com",
+      "password": "T$6iMkjds"
+    },
+    {
+      "id": "2e65",
+      "type": "patient",
+      "name": "rawan",
+      "email": "rawan@gmaill.com",
+      "password": "LJJi8&232"
+    },
+    {
+      "id": "3u97",
+      "type": "patient",
+      "name": "RahafJazar122_",
+      "email": "rahaf@gmail.com",
+      "password": "PJJi8&232"
+    },
+    {
+      "id": "cd20",
+      "type": "patient",
+      "name": "Ghalia Hamdan",
+      "email": "HG@gmail.com",
+      "password": "P9&iynnnn"
+    },
+    {
+      "id": "6a4a",
+      "type": "patient",
+      "name": "YaraAHmad",
+      "email": "y@gmail.com",
+      "password": "U$r2ytth"
+    },
+    {
+      "id": "c13b",
+      "type": "patient",
+      "name": "tamara",
+      "email": "tam@gmail.com",
+      "password": "I#34930l"
+    },
+    {
+      "id": "5f08",
+      "type": "patient",
+      "name": "tamara",
+      "email": "tamara1212@gmail.com",
+      "password": "OEREWREWru3%"
+    },
+    {
+      "id": "9114",
+      "type": "patient",
+      "name": "tamara",
+      "email": "tamara441212@gmail.com",
+      "password": "PI56l%^6565"
     }
   ],
   "patient": [
     {
-      "id": 1,
-      "type": "patient",
-      "name": "Salma Alfaqeeh",
-      "email": "salma1980@gmail.com",
-      "password": "Sa**1234",
-      "phone": "962 776532545",
+      "id": "1",
+      "username": "RahafBassam",
+      "email": "rahafjazar73@gmail.com",
+      "phone": "0832302372",
       "gender": "female",
-      "DOB": "09-09-1980"
+      "dob": "2016-07-06"
     },
     {
-      "id": 2,
-      "type": "patient",
-      "name": "Lara Amer",
-      "email": "aya860@gmail.com",
-      "password": "ay**1234",
-      "phone": "962 77980805",
+      "id": "2",
+      "username": "rahaf",
+      "email": "farah@gmail.com",
+      "phone": "ola@gmail.com",
       "gender": "female",
-      "DOB": "24-04-1999"
+      "dob": "2025-04-01"
     },
     {
-      "id": 3,
-      "type": "patient",
-      "name": " Laila Mohammad",
-      "email": "laila879@gmail.com",
-      "password": "la**1234",
-      "phone": "962 78975603",
+      "id": "3",
+      "username": "RahafJazar122_",
+      "email": "rahaf@gmail.com",
+      "phone": "0928387273",
       "gender": "female",
-      "DOB": "04-02-2001"
+      "dob": "2025-04-09"
     },
     {
-      "id": 4,
-      "type": "patient",
-      "name": "Ahmad Yousef",
-      "email": "ahmad456@gmail.com",
-      "password": "Sa**1234",
-      "phone": "962 785943202",
-      "gender": "male",
-      "DOB": "10-03-1985"
-    },
-    {
-      "id": 5,
-      "type": "patient",
-      "name": "Hamza Al-Ahmad",
-      "email": "hamza30@gmail.com",
-      "password": "ha**1234",
-      "phone": "962 776536804",
-      "gender": "male",
-      "DOB": "13-08-2005"
-    },
-    {
-      "id": 6,
-      "type": "patient",
-      "name": "Sara Amer",
-      "email": "sara090@gmail.com",
-      "password": "sa**1234",
-      "phone": "962 778702146",
+      "id": "6e9c",
+      "username": "Ghalia Hamdan",
+      "email": "HG@gmail.com",
+      "phone": "0988665436",
       "gender": "female",
-      "DOB": "04-06-1990"
+      "dob": "2015-07-08"
+    },
+    {
+      "id": "be23",
+      "username": "YaraAHmad",
+      "email": "y@gmail.com",
+      "phone": "0897432343",
+      "gender": "female",
+      "dob": "2016-06-08"
+    },
+    {
+      "id": "e6f9",
+      "username": "tamara",
+      "email": "tam@gmail.com",
+      "phone": "0873434432",
+      "gender": "female",
+      "dob": "2013-06-05"
+    },
+    {
+      "id": "6f4e",
+      "username": "tamara",
+      "email": "tamara1212@gmail.com",
+      "phone": "0873434432",
+      "gender": "female",
+      "dob": "2025-04-09"
+    },
+    {
+      "id": "6af5",
+      "username": "tamara",
+      "email": "tamara441212@gmail.com",
+      "phone": "0873434432",
+      "gender": "female",
+      "dob": "2025-04-08"
     }
   ],
-  "doctor": [
+  "doctors": [
     {
-      "id": 1,
+      "id": "1",
+      "type": "doctor",
+      "name": "Ahmad Turkmani",
+      "email": "Ahmad.turkmani@gmail.com",
+      "password": "Ot**1234",
+      "phone": "962 795569821",
+      "specification": "child",
+      "clinic_id": "1"
+    },
+    {
+      "id": "2",
       "type": "doctor",
       "name": "Omar Turkmani",
       "email": "omar.turkmani@gmail.com",
       "password": "Ot**1234",
       "phone": "962 795569821",
-      "specification": "",
-      "clinic_id": ""
+      "specification": "dentist",
+      "clinic_id": "2"
     },
     {
-      "id": 2,
+      "id": "3",
       "type": "doctor",
-      "name": "Tariq Najjar",
-      "email": "tariqnajjar@gmail.com",
-      "password": "tn**1234",
-      "phone": "962 795039201",
-      "specification": "",
-      "clinic_id": ""
+      "name": "Kahled Qudah",
+      "email": "khaled.qudah@gmail.com",
+      "password": "Ot**1234",
+      "phone": "962 795569821",
+      "specification": "dentist",
+      "clinic_id": "2"
     },
     {
-      "id": 3,
+      "id": "4",
       "type": "doctor",
-      "name": "Amina Saeed",
-      "email": "aminasaeed@gmail.com",
-      "password": "sa**1234",
-      "phone": "962 795039201",
-      "specification": "",
-      "clinic_id": ""
-    },
-    {
-      "id": 4,
-      "type": "doctor",
-      "name": "Mariam Al-Hariri",
-      "email": "mariam@gmail.com",
-      "password": "mar**1244",
-      "phone": "962 799979034",
-      "specification": "",
-      "clinic_id": ""
-    },
-    {
-      "id": 5,
-      "type": "doctor",
-      "name": "Rami Al-Najdi",
-      "email": "ralnajdi20@gmail.com",
-      "password": "rr**na14",
-      "phone": "962 799998976",
-      "specification": "",
-      "clinic_id": ""
-    },
-    {
-      "id": 6,
-      "type": "doctor",
-      "name": "Nour Abdeen",
-      "email": "nour440@gmail.com",
-      "password": "rr**na14",
-      "phone": "962 7994560276",
-      "specification": "",
-      "clinic_id": ""
+      "name": "Farah Qadi",
+      "email": "farah.qadi@gmail.com",
+      "password": "Ot**1234",
+      "phone": "962 795569821",
+      "specification": "dentist",
+      "clinic_id": "2"
     }
   ],
   "admin": [
     {
-      "id": 1,
+      "id": "1",
       "type": "admin",
       "name": "Mohammed Aqqad",
       "email": "Mohammed.Aqqad@gmail.com",
@@ -221,34 +233,203 @@
   ],
   "appointment": [
     {
-      "id": 1,
-      "date": "",
-      "patient_id": "",
-      "doctor_id": "",
-      "approval_status": "",
+      "id": "1",
+      "date": "22/02/2025",
+      "patient_id": "3",
+      "doctor_id": "2",
+      "approval_status": "pending",
       "appointment_details": {
-        "drugs": "",
-        "diagnosis": "",
-        "payment": ""
+        "drugs": [
+          {
+            "id": 1,
+            "name": "Paracetamol"
+          },
+          {
+            "id": 2,
+            "name": "Amoxicillin"
+          },
+          {
+            "id": 3,
+            "name": "Ibuprofen"
+          },
+          {
+            "id": 4,
+            "name": "Cetirizine"
+          },
+          {
+            "id": 5,
+            "name": "Omeprazole"
+          },
+          {
+            "id": 6,
+            "name": "Azithromycin"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": 1,
+            "name": "Common Cold"
+          },
+          {
+            "id": 2,
+            "name": "Fever"
+          },
+          {
+            "id": 3,
+            "name": "Sore Throat"
+          },
+          {
+            "id": 4,
+            "name": "Gastritis"
+          },
+          {
+            "id": 5,
+            "name": "Bacterial Infection"
+          }
+        ],
+        "payment": "50"
+      }
+    },
+    {
+      "id": "2",
+      "date": "22/02/2025",
+      "patient_id": "2",
+      "doctor_id": "1",
+      "approval_status": "pending",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": 1,
+            "name": "panadol",
+            "dosage": "500mg"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": 1,
+            "name": "Common Cold"
+          }
+        ],
+        "payment": "25"
+      }
+    },
+    {
+      "id": "3",
+      "date": "22/02/2025",
+      "patient_id": "1",
+      "doctor_id": "1",
+      "approval_status": "pending",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": 1,
+            "name": "amoclan"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": 1,
+            "name": "Common  "
+          }
+        ],
+        "payment": "25"
+      }
+    },
+    {
+      "id": "4",
+      "date": "22/02/2025",
+      "patient_id": "3",
+      "doctor_id": "1",
+      "approval_status": "pending",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": 1,
+            "name": "vitmain"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": 1,
+            "name": "drug  "
+          }
+        ],
+        "payment": "25"
+      }
+    },
+    {
+      "id": "5",
+      "date": "22/02/2025",
+      "patient_id": "6e9c",
+      "doctor_id": "1",
+      "approval_status": "pending",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": 1,
+            "name": "vitmain"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": 1,
+            "name": "drug  "
+          }
+        ],
+        "payment": "25"
+      }
+    },
+    {
+      "id": "6",
+      "date": "22/02/2025",
+      "patient_id": "6e9c",
+      "doctor_id": "1",
+      "approval_status": "pending",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": 1,
+            "name": "vitmain"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": 1,
+            "name": "drug  "
+          }
+        ],
+        "payment": "25"
       }
     }
   ],
   "drug": [
     {
-      "id": 1,
+      "id": "1",
       "name": ""
     }
   ],
   "diagnosis": [
     {
-      "id": 1,
+      "id": "1",
       "name": ""
     }
   ],
   "clinic": [
     {
-      "id": 1,
-      "name": ""
+      "id": "1",
+      "name": "teeth"
+    },
+    {
+      "id": "2",
+      "name": "child"
+    },
+    {
+      "id": "3",
+      "name": "blood"
+    },
+    {
+      "id": "4",
+      "name": "physical"
     }
   ]
 }

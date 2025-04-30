@@ -11,18 +11,23 @@ import { UserType } from '../modules/shared/enum/users.enum';
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private http: HttpClient, private router: Router,private userService:UserService) {}
-  private baseUrl = 'http://localhost:3000/users'; 
+  constructor(private http: HttpClient, private router: Router, private userService: UserService) { }
+  private baseUrl = 'http://localhost:3000/users';
 
   login(email: string, password: string): Observable<User> {
-    return this.userService.getUser(email, password).pipe(
+    console.log(`Trying to login with: ${email} - ${password}`)
+    //HTTP encoding ensures that special characters like &&, =, and ? are properly encoded.
+    const encodedPassword = encodeURIComponent(password)
+    return this.userService.getUser(email, encodedPassword).pipe(
+
       map(users => {
+        console.log('Received users:', users);
         if (users.length > 0) {
           const user = users[0];
-          const currentUser:User={
-            type:user.type,
-            name:user.name,
-            email:user.email
+          const currentUser: User = {
+            type: user.type,
+            name: user.name,
+            email: user.email
           }
           localStorage.setItem('currentUser', JSON.stringify(currentUser));
           console.log(currentUser)
@@ -33,7 +38,7 @@ export class AuthService {
       })
     );
   }
-    
+
   logout() {
     localStorage.removeItem('currentUser');
     this.router.navigate(['/login']);

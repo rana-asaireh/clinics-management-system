@@ -1,4 +1,5 @@
-export interface Drug {
+export interface Drug{
     id?:number,
-    name: string;
+    name:string,
+
 }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators, AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 import { PatientAuthService } from '../modules/patient/services/patient-auth.service';
 import Swal from 'sweetalert2';
 import { UserService } from '../modules/shared/services/user.service';
@@ -7,6 +7,7 @@ import { UserService } from '../modules/shared/services/user.service';
 import { UserType } from '../modules/shared/enum/users.enum';
 import { User } from '../modules/shared/models/user.model';
 import { Patient } from '../modules/shared/models/patient.model';
+import { Router } from '@angular/router';
 
 
 
@@ -49,22 +50,42 @@ export class SignupComponent {
 
 
   constructor(private patientService: PatientAuthService,
-    private userService: UserService
+    private userService: UserService,
+    private route: Router
   ) {
 
   }
 
 
+  //custom valdatord
 
+  passwordStrengthValidator(): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const password = control.value || '';
 
-  checkPasswordStrength(password: string): void {
-    this.passwordRules.lowerCase = /[a-z]/.test(password);
-    this.passwordRules.upperCase = /[A-Z]/.test(password);
-    this.passwordRules.digit = /[0-9]/.test(password);
-    this.passwordRules.specialChar = /[^A-Za-z0-9]/.test(password);
-    this.passwordRules.minLength = password.length >= 8;
+      if (password) {
+        const validationResults: any = {
+          lowerCase: /[a-z]/.test(password),
+          upperCase: /[A-Z]/.test(password),
+          digit: /[0-9]/.test(password),
+          specialChar: /[^A-Za-z0-9]/.test(password),
+          minLength: password.length >= 8,
+        };
+
+        const failedRules = Object.keys(validationResults).filter(key => !validationResults[key]);
+
+        if (failedRules.length > 0) {
+          return { passwordRules: validationResults };
+        } else {
+          return null;
+
+        }
+      }
+      else {
+        return null
+      }
+    }
   }
-
 
 
   //#region  Reactive Form  
@@ -87,7 +108,7 @@ export class SignupComponent {
       phone: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10}$')]),
       gender: new FormControl('', Validators.required),
       dob: new FormControl('', [Validators.required, this.noFutureDateValidator]),
-      password: new FormControl('', [Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/)]),
+      password: new FormControl('', [Validators.required, this.passwordStrengthValidator()]),
       confirmPassword: new FormControl('', Validators.required),
       terms: new FormControl('', Validators.required)
     })
@@ -119,8 +140,8 @@ export class SignupComponent {
         this.errors.push("Password and Confirm Password do not match.");
 
     }
-  
-    if(this.registrationForm.valid) {
+
+    if (this.registrationForm.valid) {
 
       //the fields all  are true 
 
@@ -147,6 +168,7 @@ export class SignupComponent {
                 });
                 this.registrationForm.reset();
                 console.log('patients List', patients)
+                this.route.navigate(['/patient'])
               }
             )
 
