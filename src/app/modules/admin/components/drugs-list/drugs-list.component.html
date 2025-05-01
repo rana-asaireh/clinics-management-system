@@ -1,0 +1,24 @@
+<div>
+    <h1>List of Drugs</h1>
+    <button routerLink="/admin/add-drug">Add Clinic</button>
+    <span class="error" *ngIf="error">{{error}}</span>
+    <span class="success" *ngIf="success">{{success}}</span>
+    <table *ngIf="!error">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let drug of drugs, let index=index">
+                <td>{{drug.id}}</td>
+                <td>{{drug.name}}</td>
+                <td>
+                    <div class="red" (click)="deleteDrug(drug.id)"><img src="trash.png" alt=""></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

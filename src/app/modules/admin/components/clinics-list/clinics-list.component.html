@@ -1,0 +1,24 @@
+<div class="clinic-list">
+    <h1>List of Clinics</h1>
+    <button class="add-clinic-btn" routerLink="/admin/add-clinic">Add Clinic</button>
+    <span class="error" *ngIf="error">{{error}}</span>
+    <span class="success" *ngIf="success">{{success}}</span>
+    <table *ngIf="!error">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Delete Clinic</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let clinic of clinics, let index=index">
+                <td>{{clinic.id}}</td>
+                <td>{{clinic.name}}</td>
+                <td class="action-buttons">
+                    <div class="delete-btn" (click)="deleteClinic(clinic.id)"><img src="trash.png" alt="Delete"></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

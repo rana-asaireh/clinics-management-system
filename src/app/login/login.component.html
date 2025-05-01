@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="overlap-wrapper">
+    <div class="overlap">
+      <div class="div"></div>
+      <div class="rectangle">
+        <div class="text-wrapper">
+          <img src="Clinic-Logo.png" width="130" height="80" alt="Logo">
+        </div>
+        <div class="text-wrapper-2">Login Page</div>
+        <form [formGroup]="formGroup">
+          <div class="group">
+            <div class="input-wrapper">
+              <label for="email">Email Address</label>
+              <img src="Letter.png" class="input-icon" alt="email" />
+              <input type="email" id="email" placeholder="Enter your email" formControlName="email"
+                [class.invalid]="formGroup.controls['email']?.touched && !formGroup.controls['email']?.valid" />
+              <span
+                *ngIf="formGroup.controls['email']?.touched && formGroup.controls['email']?.errors?.['required']">Email
+                Address is required</span>
+              <span *ngIf="formGroup.controls['email']?.touched && formGroup.controls['email']?.errors?.['email']">Email
+                Address is invalid</span>
+            </div>
+            <div class="input-wrapper">
+              <label for="password">Password</label>
+              <img [src]="showPassword ? 'eye.png' : 'Invisible.png'" class="input-icon-2"
+                alt="toggle password visibility" (click)="togglePasswordVisibility()" />
+              <input [type]="showPassword ? 'text' : 'password'" id="password" placeholder="Enter your password"
+                formControlName="password"
+                [class.invalid]="formGroup.controls['password']?.touched && !formGroup.controls['password']?.valid" />
+              <span
+                *ngIf="formGroup.controls['password']?.touched && formGroup.controls['password']?.errors?.['required']">
+                Password is required
+              </span>
+            </div>
+            <span *ngIf="error" class="error">{{error}}</span>
+            <button class="login-button" (click)="onSubmit()">Log in</button>
+          </div>
+        </form>
+        <div class="signup-row">
+          <span class="text-wrapper-4">Register</span>
+          <span class="text-wrapper-3">?Don't have an account</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
