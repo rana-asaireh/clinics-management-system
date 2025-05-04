@@ -43,8 +43,10 @@ export class LoginComponent {
     this.formGroup.markAllAsTouched();
     this.password=this.formGroup.controls['password']?.value;
     this.email=this.formGroup.controls['email']?.value;
-    
-    this.authService.login(this.email, this.password).subscribe(
+
+    const encodedPassword = encodeURIComponent(this.password);
+
+    this.authService.login(this.email, encodedPassword ).subscribe(
       (user: any) => {
         if (user.type === 'admin') {
           this.router.navigate(['admin']);

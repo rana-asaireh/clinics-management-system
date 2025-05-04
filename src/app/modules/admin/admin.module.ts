@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { AdminRoutingModule } from './admin-routing.module';
 import { AddClinicComponent } from './components/add-clinic/add-clinic.component';
 import { AddDoctorComponent } from './components/add-doctor/add-doctor.component';

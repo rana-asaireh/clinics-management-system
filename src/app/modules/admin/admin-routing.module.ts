@@ -1,4 +1,4 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClinicsListComponent } from './components/clinics-list/clinics-list.component';
 import { DiagnosesListComponent } from './components/diagnosis-list/diagnoses-list.component';
@@ -12,49 +12,65 @@ import { AdminLayoutComponent } from './components/admin-layout/admin-layout.com
 
 const routes: Routes = [
   {
-    path:'',
-    component:AdminLayoutComponent,
-    children:[
+    path: '',
+    component: AdminLayoutComponent,
+    children: [
       {
-        path:'',
+        path: '',
         component: ClinicsListComponent
       },
       {
-        path:'clinics',
+        path: 'clinics',
         component: ClinicsListComponent
       },
       {
-        path:'diagnoses',
+        path: 'diagnoses',
         component: DiagnosesListComponent
       },
       {
-        path:'doctors',
-        component:DoctorsListComponent
+        path: 'doctors',
+        component: DoctorsListComponent
       },
       {
-        path:'drugs',
-        component:DrugsListComponent
+        path: 'drugs',
+        component: DrugsListComponent
       },
       {
-        path:'add-doctor',
-        component:AddDoctorComponent
+        path: 'add-doctor',
+        component: AddDoctorComponent
       },
       {
-        path:'add-diagnosis',
-        component:AddDiagnosisComponent
+        path: 'add-diagnosis',
+        component: AddDiagnosisComponent
       },
       {
-        path:'add-drug',
-        component:AddDrugComponent
+        path: 'add-drug',
+        component: AddDrugComponent
       },
       {
-        path:'add-clinic',
-        component:AddClinicComponent
+        path: 'add-clinic',
+        component: AddClinicComponent
+      },
+      {
+        path: 'edit-drug/:id',
+        component: AddDrugComponent
+      },
+      {
+        path: 'edit-diagnosis/:id',
+        component: AddDiagnosisComponent
+      },
+      {
+        path: 'edit-clinic/:id',
+        component: AddClinicComponent
+      },
+      {
+        path: 'edit-doctor/:id',
+        component: AddDoctorComponent
       }
     ]
   }
-];
-
+]
+  ;
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
