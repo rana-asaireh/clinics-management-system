@@ -1,12 +1,13 @@
 import { UserType } from "../enum/users.enum";
 
 export interface Doctor {
-    id?: number,
+    id?: string,
     type?:UserType,
     name: string,
     email: string,
     password?: string,
     phone: string,
     specification: string,
-    clinic_id: number
+    gender: string,
+    clinic_id: string
 }

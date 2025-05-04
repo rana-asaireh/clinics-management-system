@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AuthHeaderComponent } from './components/auth-header/auth-header.component';
 import { AuthFooterComponent } from './components/auth-footer/auth-footer.component';
-import { AuthLayoutComponent } from './components/auth-layout/auth-layout.component';
 import { AuthSideBarComponent } from './components/auth-side-bar/auth-side-bar.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 
 
@@ -12,13 +12,18 @@ import { AuthSideBarComponent } from './components/auth-side-bar/auth-side-bar.c
   declarations: [
     AuthHeaderComponent,
     AuthFooterComponent,
-    AuthLayoutComponent,
     AuthSideBarComponent,
+    PaginationComponent
   ],
   imports: [
     CommonModule,
     RouterModule
   ],
-  exports: [AuthLayoutComponent]
+  exports: [
+    AuthHeaderComponent,
+    AuthFooterComponent,
+    AuthSideBarComponent,
+    PaginationComponent
+  ]
 })
 export class SharedModule {}
