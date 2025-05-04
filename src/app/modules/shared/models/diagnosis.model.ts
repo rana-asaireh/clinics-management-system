@@ -1,4 +1,4 @@
 export interface Diagnosis {
-    id?:number,
-    name: string;
+    id?:string,
+    name: string
 }

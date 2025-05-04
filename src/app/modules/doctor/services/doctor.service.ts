@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Doctor } from '../../shared/models/doctor.model';
 
@@ -8,12 +8,18 @@ import { Doctor } from '../../shared/models/doctor.model';
 })
 export class DoctorService {
 
-  constructor(private http: HttpClient) {}
+  private baseUrl = 'http://localhost:3000/doctor';
 
-  private baseUrl = 'http://localhost:3000';
+  constructor(private http: HttpClient) { }
 
   getDoctors(): Observable<Doctor[]> {
-    return this.http.get<Doctor[]>(`${this.baseUrl}/doctor`);
+    return this.http.get<Doctor[]>(this.baseUrl);
   }
-  
+  getDoctorById(id?: string): Observable<Doctor> {
+    return this.http.get<Doctor>(`${this.baseUrl}/${id}`);
+  }
+
+  updateDoctorById(id?: string, updatedDoctor?: Doctor): Observable<Doctor> {
+    return this.http.put<Doctor>(`${this.baseUrl}/${id}`, updatedDoctor);
+  }
 }
