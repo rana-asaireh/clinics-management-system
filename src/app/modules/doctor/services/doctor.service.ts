@@ -23,3 +23,4 @@ export class DoctorService {
     return this.http.put<Doctor>(`${this.baseUrl}/${id}`, updatedDoctor);
   }
 }
+
