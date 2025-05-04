@@ -10,4 +10,4 @@ import { SharedModule } from '../shared/shared.module';
     DoctorRoutingModule,
     SharedModule]
 })
-export class DoctorModule {}
+export class DoctorModule { }

@@ -5,6 +5,9 @@ import { UserTypeGuard } from './guards/user-type.guard';
 import { HomePageComponent } from './page/home-page/home-page.component';
 
 const routes: Routes = [
+  { path: 'home',
+    component:HomePageComponent
+   },
   { path: '',
    component:HomePageComponent
   },

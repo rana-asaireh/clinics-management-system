@@ -7,11 +7,16 @@ import { Diagnosis } from '../models/diagnosis.model';
   providedIn: 'root'
 })
 export class DiagnosisService {
+  constructor(private http: HttpClient) { }
 
-  constructor(private http: HttpClient) {}
- 
-  private baseUrl = 'http://localhost:3000';
+  private baseUrl = 'http://localhost:3000/diagnosis';
   getDiagnosis(): Observable<Diagnosis[]> {
-    return this.http.get<Diagnosis[]>(`${this.baseUrl}/diagnosis`);
-    }
+    return this.http.get<Diagnosis[]>(`${this.baseUrl}`);
+  }
+  getDiagnosisById(id?: string): Observable<Diagnosis> {
+    return this.http.get<Diagnosis>(`${this.baseUrl}/${id}`);
+  }
+  updateDiagnosisById(id?: string, updatedDiagnosis?: Diagnosis): Observable<Diagnosis> {
+    return this.http.put<Diagnosis>(`${this.baseUrl}/${id}`, updatedDiagnosis);
+  }
 }
