@@ -17,7 +17,6 @@ export class UserTypeGuard implements CanMatch{
       this.router.navigate(['login']);
       return false
     }
-    // return isLoggedIn && userType === expectedType;
     return true
   };
 }
