@@ -16,9 +16,9 @@
                 [class.invalid]="formGroup.controls['email']?.touched && !formGroup.controls['email']?.valid" />
               <span
                 *ngIf="formGroup.controls['email']?.touched && formGroup.controls['email']?.errors?.['required']">Email
-                address is required</span>
+                Address is required</span>
               <span *ngIf="formGroup.controls['email']?.touched && formGroup.controls['email']?.errors?.['email']">Email
-                address is invalid</span>
+                Address is invalid</span>
             </div>
             <div class="input-wrapper">
               <label for="password">Password</label>
