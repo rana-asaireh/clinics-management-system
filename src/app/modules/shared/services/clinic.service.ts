@@ -20,5 +20,10 @@ export class ClinicService {
   }
   updateClinicById(id?: string, updatedClinic?: Clinic): Observable<Clinic> {
     return this.http.put<Clinic>(`${this.baseUrl}/${id}`, updatedClinic);
+    
+    }
+
+    getClinic(id: number): Observable<Clinic> {
+      return this.http.get<Clinic>(`${this.baseUrl}/${id}`)
   }
 }

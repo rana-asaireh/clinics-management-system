@@ -57,39 +57,39 @@
       "id": "5d38"
     },
     {
+      "id": "a341",
       "type": "patient",
       "name": "Lara Amer",
       "email": "aya860@gmail.com",
-      "password": "ay**1234",
-      "id": "a341"
+      "password": "ay**1234"
     },
     {
+      "id": "8e92",
       "type": "patient",
       "name": " Laila Mohammad",
       "email": "laila879@gmail.com",
-      "password": "la**1234",
-      "id": "8e92"
+      "password": "la**1234"
     },
     {
+      "id": "eefa",
       "type": "patient",
       "name": "Ahmad Yousef",
       "email": "ahmad456@gmail.com",
-      "password": "Sa**1234",
-      "id": "eefa"
+      "password": "Sa**1234"
     },
     {
+      "id": "aec4",
       "type": "patient",
       "name": "Hamza Al-Ahmad",
       "email": "hamza30@gmail.com",
-      "password": "ha**1234",
-      "id": "aec4"
+      "password": "ha**1234"
     },
     {
+      "id": "f1e8",
       "type": "patient",
       "name": "Sara Amer",
       "email": "sara090@gmail.com",
-      "password": "sa**1234",
-      "id": "f1e8"
+      "password": "sa**1234"
     },
     {
       "id": "f332",
@@ -271,15 +271,415 @@
   "appointment": [
     {
       "id": "1",
-      "date": "",
-      "patient_id": "",
-      "doctor_id": "",
-      "approval_status": "",
+      "date": "2025-04-02",
+      "patient_id": "1",
+      "doctor_id": "1",
+      "approval_status": "approved",
       "appointment_details": {
-        "drugs": "",
-        "diagnosis": "",
-        "payment": ""
-      }
+        "drugs": [
+          {
+            "id": "1",
+            "name": "Paracetamol"
+          },
+          {
+            "id": "2",
+            "name": "Amoxicillin"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "1",
+            "name": "Tooth Decay"
+          }
+        ]
+      },
+      "payment": "paid"
+    },
+    {
+      "id": "2",
+      "date": "2025-04-10",
+      "patient_id": "1",
+      "doctor_id": "2",
+      "approval_status": "approved",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "3",
+            "name": "Ibuprofen"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "2",
+            "name": "Cavity"
+          }
+        ]
+      },
+      "payment": "unpaid"
+    },
+    {
+      "id": "5",
+      "date": "2025-04-05",
+      "patient_id": "2",
+      "doctor_id": "2",
+      "approval_status": "approved",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "2",
+            "name": "Amoxicillin"
+          },
+          {
+            "id": "3",
+            "name": "Ibuprofen"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "1",
+            "name": "Gingivitis"
+          }
+        ]
+      },
+      "payment": "paid"
+    },
+    {
+      "id": "6",
+      "date": "2025-04-12",
+      "patient_id": "2",
+      "doctor_id": "3",
+      "approval_status": "pending",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "181b",
+            "name": "Ferrous Sulfate"
+          },
+          {
+            "id": "2da0",
+            "name": "Folic Acid"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "4",
+            "name": "Gestational Diabetes"
+          }
+        ]
+      },
+      "payment": "unpaid"
+    },
+    {
+      "id": "7",
+      "date": "2025-04-07",
+      "patient_id": "3",
+      "doctor_id": "1",
+      "approval_status": "approved",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "a0f6",
+            "name": "Chlorhexidine Mouthwash"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "8fa4",
+            "name": "Dental Abscess"
+          }
+        ]
+      },
+      "payment": "paid"
+    },
+    {
+      "id": "8",
+      "date": "2025-04-14",
+      "patient_id": "3",
+      "doctor_id": "5",
+      "approval_status": "approved",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "1",
+            "name": "Clindamycin"
+          },
+          {
+            "id": "a508",
+            "name": "Paracetamol"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "0a11",
+            "name": "Otitis Media"
+          }
+        ]
+      },
+      "payment": "paid"
+    },
+    {
+      "id": "9",
+      "date": "2025-04-10",
+      "patient_id": "5",
+      "doctor_id": "7",
+      "approval_status": "approved",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "74f2",
+            "name": "Salbutamol"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "2",
+            "name": "Asthma"
+          }
+        ]
+      },
+      "payment": "paid"
+    },
+    {
+      "id": "10",
+      "date": "2025-04-20",
+      "patient_id": "5",
+      "doctor_id": "3",
+      "approval_status": "pending",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "3",
+            "name": "Ibuprofen"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "3",
+            "name": "Low Back Pain"
+          }
+        ]
+      },
+      "payment": "unpaid"
+    },
+    {
+      "id": "11",
+      "date": "2025-04-09",
+      "patient_id": "4",
+      "doctor_id": "4",
+      "approval_status": "cancelled",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "20",
+            "name": "Metronidazole"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "5",
+            "name": "Dental Infection"
+          }
+        ]
+      },
+      "payment": "paid"
+    },
+    {
+      "id": "12",
+      "date": "2025-04-16",
+      "patient_id": "4",
+      "doctor_id": "6",
+      "approval_status": "rejected",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "21",
+            "name": "Hydrocodone"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "6",
+            "name": "Tooth Extraction Recovery"
+          }
+        ]
+      },
+      "payment": "unpaid"
+    },
+    {
+      "id": "13",
+      "date": "2025-04-16",
+      "patient_id": "4",
+      "doctor_id": "3",
+      "approval_status": "approved",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "21",
+            "name": "Hydrocodone"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "6",
+            "name": "Tooth Extraction Recovery"
+          }
+        ]
+      },
+      "payment": "unpaid"
+    },
+    {
+      "id": "14",
+      "date": "2025-04-16",
+      "patient_id": "4",
+      "doctor_id": "1",
+      "approval_status": "rejected",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "21",
+            "name": "Hydrocodone"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "6",
+            "name": "Tooth Extraction Recovery"
+          }
+        ]
+      },
+      "payment": "unpaid"
+    },
+    {
+      "id": "15",
+      "date": "2025-04-16",
+      "patient_id": "4",
+      "doctor_id": "3",
+      "approval_status": "approved",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "21",
+            "name": "Hydrocodone"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "6",
+            "name": "Tooth Extraction Recovery"
+          }
+        ]
+      },
+      "payment": "unpaid"
+    },
+    {
+      "id": "16",
+      "date": "2025-04-05",
+      "patient_id": "4",
+      "doctor_id": "3",
+      "approval_status": "approved",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "21",
+            "name": "Hydrocodone"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "6",
+            "name": "Tooth Extraction Recovery"
+          }
+        ]
+      },
+      "payment": "unpaid"
+    },
+    {
+      "id": "17",
+      "date": "2025-04-16",
+      "patient_id": "4",
+      "doctor_id": "4",
+      "approval_status": "cancelled",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "21",
+            "name": "Hydrocodone"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "6",
+            "name": "Tooth Extraction Recovery"
+          }
+        ]
+      },
+      "payment": "unpaid"
+    },
+    {
+      "id": "18",
+      "date": "2025-04-16",
+      "patient_id": "4",
+      "doctor_id": "1",
+      "approval_status": "cancelled",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "21",
+            "name": "Hydrocodone"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "6",
+            "name": "Tooth Extraction Recovery"
+          }
+        ]
+      },
+      "payment": "unpaid"
+    },
+    {
+      "id": "19",
+      "date": "2025-04-03",
+      "patient_id": "6",
+      "doctor_id": "6",
+      "approval_status": "pending",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "22",
+            "name": "Calcium Carbonate"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "7",
+            "name": "Pregnancy Supplements"
+          }
+        ]
+      },
+      "payment": "paid"
+    },
+    {
+      "id": "20",
+      "date": "2025-04-17",
+      "patient_id": "6",
+      "doctor_id": "2",
+      "approval_status": "approved",
+      "appointment_details": {
+        "drugs": [
+          {
+            "id": "23",
+            "name": "Iron Tablets"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "4",
+            "name": "Gestational Diabetes"
+          }
+        ]
+      },
+      "payment": "unpaid"
     }
   ],
   "drug": [

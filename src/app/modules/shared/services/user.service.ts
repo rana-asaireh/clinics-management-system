@@ -35,5 +35,20 @@ export class UserService {
   }
   deleteUserDoctorByid(id?: string): Observable<User> {
     return this.http.delete<User>(`${this.baseUrl}/${id}`);
+     
+  }
+
+
+  addUser(user: User): Observable<User> {
+
+    return this.http.post<User>(this.baseUrl, user).pipe(
+      map((userWithId) => {
+
+        // Remove the 'id' field from the response before returning it
+        this.http.delete<void>(`${this.baseUrl}/${user.id}`);
+        const { id, ...userWithoutId } = userWithId; // destructure and exclude 'id'
+        return userWithId; // return the user without 'id'
+      })
+    );
   }
 }
