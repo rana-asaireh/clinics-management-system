@@ -1,4 +1,4 @@
 export interface Clinic {
-    id?: string,
+    id?:string,
     name: string
 }
