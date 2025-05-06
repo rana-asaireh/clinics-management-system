@@ -1,0 +1,156 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-grow: 1;
+  padding: 20px;
+  min-height: auto;
+  background-color: white;
+  flex-direction: column; /* لجعل العناصر تتراكم عموديًا */
+}
+
+h2 {
+  color: #008080;
+  margin-bottom: 20px;
+  text-align: left;
+  font-size: 28px;
+  width: 100%; /* لجعل العنوان يأخذ كامل عرض الشاشة */
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.underline {
+  border: none;
+  border-top: 2px solid #2aa198;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  width: 100%; /* لجعل الخط يأخذ كامل عرض الشاشة */
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.container {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  width: 100%; /* الحفاظ على هذا العرض لبقية العناصر */
+  box-sizing: border-box;
+  margin: 20px auto;
+}
+
+.breadcrumb {
+  color: #777;
+  font-size: 0.9em;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.breadcrumb a {
+  color: #777;
+  text-decoration: none;
+}
+
+.breadcrumb > span {
+  color: #008080;
+  margin: 0 5px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="time"],
+textarea {
+  width: calc(100% - 16px);
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+input[type="date"],
+input[type="time"] {
+  width: calc(100% - 16px);
+}
+
+textarea {
+  height: 80px;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+.form-row > div {
+  flex: 1;
+}
+
+.button-container {
+  text-align: left;
+  margin-top: 10px;
+}
+
+button {
+  background-color: #4B9C8E;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+button:hover {
+  background-color: #006666;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.8em;
+  display: block;
+  margin-top: 5px;
+}
+
+input.invalid,
+textarea.invalid,
+select.invalid {
+  border: 1px solid red;
+}
+
+select {
+  width: calc(100% - 16px);
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" viewBox="0 0 14 10"><path fill="%234b9c8e" d="M7 10L0 0h14z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-top: 5px;
+  font-size: 1em;
+}
+
+select:hover,
+select:focus {
+  border-color: #4b9c8e;
+}

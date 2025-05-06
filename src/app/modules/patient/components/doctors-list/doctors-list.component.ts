@@ -14,7 +14,6 @@ import { PaginationService } from '../../../shared/services/pagination.service';
 export class DoctorsListComponent implements OnInit {
 
   selectedClinicId: string = ''
-
   doctors: Doctor[] = [];
   filteredDoctors: Doctor[] = [];
   clinics: Clinic[] = [];
@@ -112,4 +111,5 @@ export class DoctorsListComponent implements OnInit {
       this.pageSize
     );
   }
+  //#endregion
 }

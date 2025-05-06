@@ -122,7 +122,7 @@
       "password": "Sa**1234",
       "phone": "962776532545",
       "gender": "female",
-      "DOB": "1980-09-09"
+      "dob": "1980-09-09"
     },
     {
       "id": "2",
@@ -132,7 +132,7 @@
       "password": "ay**1234",
       "phone": "96277980805",
       "gender": "female",
-      "DOB": "1999-04-24"
+      "dob": "1999-04-24"
     },
     {
       "id": "3",
@@ -142,7 +142,7 @@
       "password": "la**1234",
       "phone": "96278975603",
       "gender": "female",
-      "DOB": "2001-04-02"
+      "dob": "2001-04-02"
     },
     {
       "id": "4",
@@ -150,9 +150,9 @@
       "name": "Ahmad Yousef",
       "email": "ahmad456@gmail.com",
       "password": "Sa**1234",
-      "phone": "962785943202",
+      "phone": "962785949202",
       "gender": "male",
-      "DOB": "1985-10-03"
+      "dob": "1985-10-03"
     },
     {
       "id": "5",
@@ -162,7 +162,7 @@
       "password": "ha**1234",
       "phone": "962776536804",
       "gender": "male",
-      "DOB": "2005-08-13"
+      "dob": "2000-05-10"
     },
     {
       "id": "6",
@@ -172,7 +172,7 @@
       "password": "sa**1234",
       "phone": "962778702146",
       "gender": "female",
-      "DOB": "1990-04-06"
+      "dob": "1990-04-06"
     }
   ],
   "doctor": [
@@ -698,6 +698,74 @@
         ]
       },
       "payment": "unpaid"
+    },
+    {
+      "id": "eb6a",
+      "date": "2025-06-04",
+      "patient_id": "5",
+      "doctor_id": " ",
+      "approval_status": " ",
+      "appointment_details": {
+        "drugs": "",
+        "diagnosis": "",
+        "payment": ""
+      }
+    },
+    {
+      "id": "4ad8",
+      "date": "2025-05-24",
+      "patient_id": "6",
+      "doctor_id": " ",
+      "approval_status": "",
+      "appointment_details": {
+        "reason": "tired",
+        "drugs": "",
+        "diagnosis": "",
+        "payment": ""
+      },
+      "time": "10:30"
+    },
+    {
+      "id": "9017",
+      "date": "2025-09-25",
+      "patient_id": "5",
+      "doctor_id": " ",
+      "approval_status": "",
+      "appointment_details": {
+        "reason": "sick",
+        "drugs": "",
+        "diagnosis": "",
+        "payment": ""
+      },
+      "time": "11:31"
+    },
+    {
+      "id": "18bc",
+      "date": "2025-05-30",
+      "patient_id": "4",
+      "doctor_id": " ",
+      "approval_status": "",
+      "appointment_details": {
+        "reason": "sick and tired\n",
+        "drugs": "",
+        "diagnosis": "",
+        "payment": ""
+      },
+      "time": "10:30"
+    },
+    {
+      "id": "4bea",
+      "date": "2025-10-30",
+      "patient_id": "4",
+      "doctor_id": " ",
+      "approval_status": "",
+      "appointment_details": {
+        "reason": "tired",
+        "drugs": "",
+        "diagnosis": "",
+        "payment": ""
+      },
+      "time": "17:59"
     }
   ],
   "drug": [

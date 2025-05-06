@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Clinic } from '../models/clinic.model';
 
 
@@ -25,5 +25,10 @@ export class ClinicService {
 
     getClinic(id: number): Observable<Clinic> {
       return this.http.get<Clinic>(`${this.baseUrl}/${id}`)
+  }
+  getClinicNameById(id: string): Observable<string> {
+    return this.http.get<Clinic>(`${this.baseUrl}/${id}`).pipe(
+      map((clinic: Clinic)  => clinic.name)
+    );
   }
 }

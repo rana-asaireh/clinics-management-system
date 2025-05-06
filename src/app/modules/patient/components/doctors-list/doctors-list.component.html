@@ -26,7 +26,7 @@
         <h2>Dr. {{doctor.name}} </h2>
         <p>{{doctor.specification}}</p>
         <p>{{getClinicNameByDoctorId(doctor.clinic_id)}}</p>
-        <button> Book Appointment</button>
+        <button routerlink="/patient/book-appointment"> Book Appointment</button>
     </div>
 </div>
 <app-pagination [totalItems]="totalDoctors" [currentPage]="currentPage" [itemsPerPage]="pageSize"
