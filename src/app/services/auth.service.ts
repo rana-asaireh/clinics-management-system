@@ -17,7 +17,6 @@ export class AuthService {
     return this.userService.getUser(email, password).pipe(
       map(users => {
         if (users.length > 0) {
-          console.log("users table is ", users)
           const user = users[0];
           const currentUser: User = {
             type: user.type,
