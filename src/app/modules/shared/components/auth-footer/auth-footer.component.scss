@@ -35,7 +35,8 @@
 .contact-us {
   font-weight: bold;
   font-family: "Cairo", sans-serif;
-  margin-left: 6px;
+  margin-left: 0px;
+
 }
 .copy-right {
   font-family: "Quicksand", sans-serif;
@@ -45,13 +46,16 @@
   height: 52px;
 }
 .contact-data {
-  margin-top: 12px;
+  margin-top: 10px;
+ p{
+  margin-bottom: 5px;
+ }
 }
 
 .our-social {
   font-weight: bold;
   font-family: "Cairo", sans-serif;
-  margin-left: 11px;
+  margin-left: 0px;
 }
 .newsletter p {
   font-weight: bold;
