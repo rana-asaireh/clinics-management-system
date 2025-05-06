@@ -104,20 +104,6 @@
       "name": "Lana Momani",
       "email": "lana-momani@amal-clinic.com",
       "password": "Jh542*j85"
-    },
-    {
-      "type": "patient",
-      "name": "msweiss",
-      "email": "abdullah@gmail.com",
-      "password": "676*ipyoO",
-      "id": "ieRTpMO"
-    },
-    {
-      "type": "patient",
-      "name": "salam",
-      "email": "s@gmail.com",
-      "password": "O7uUkk^hj",
-      "id": "E2gnwFf"
     }
   ],
   "patient": [
@@ -180,22 +166,6 @@
       "phone": "962778702146",
       "gender": "female",
       "DOB": "1990-04-06"
-    },
-    {
-      "name": "msweiss",
-      "email": "abdullah@gmail.com",
-      "phone": "0756756766",
-      "gender": "male",
-      "dob": "2016-03-06",
-      "id": "cuq0dQS"
-    },
-    {
-      "username": "salam",
-      "email": "s@gmail.com",
-      "phone": "0956576784",
-      "gender": "female",
-      "dob": "2007-03-07",
-      "id": "_sp6bb5"
     }
   ],
   "doctor": [
@@ -213,7 +183,7 @@
     {
       "id": "2",
       "type": "doctor",
-      "name": "Tariq Najjar uhamne innd ",
+      "name": "Tariq Najjar",
       "gender": "male",
       "email": "tariqnajjar@amal-clinic.com",
       "password": "tn**1234",
@@ -224,7 +194,7 @@
     {
       "id": "3",
       "type": "doctor",
-      "name": "Amina Saeed ali qudah kamel  tahad ",
+      "name": "Amina Saeed",
       "gender": "female",
       "email": "aminasaeed@amal-clinic.com",
       "password": "sa**1234",
@@ -286,17 +256,6 @@
       "specification": "Physical Therapist",
       "clinic_id": "3",
       "gender": "female"
-    },
-    {
-      "id": "0342",
-      "type": "doctor",
-      "name": "Ali Alatrash",
-      "email": "ali@amal-clinic.com",
-      "password": "Fdgh*125",
-      "phone": "962781123695",
-      "specification": "Physical Therapist",
-      "clinic_id": "3",
-      "gender": "male"
     }
   ],
   "admin": [
@@ -305,7 +264,7 @@
       "type": "admin",
       "name": "Mohammed Aqqad",
       "email": "Mohammed.Aqqad@amal-clinic.com",
-      "password": "Ma**1234",
+      "password": "Ma&&1234",
       "phone": "962784256326"
     }
   ],
