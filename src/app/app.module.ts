@@ -6,17 +6,18 @@ import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { FooterComponent } from './components/footer/footer.component';
+import { SharedModule } from './modules/shared/shared.module';
 import { HeaderComponent } from './components/header/header.component';
-import { HomePageComponent } from './page/home-page/home-page.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HomePageLayoutComponent } from './homePage/components/home-page-layout/home-page-layout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    FooterComponent,
     HeaderComponent,
-    HomePageComponent,
+    FooterComponent,
+    HomePageLayoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,10 +25,11 @@ import { HomePageComponent } from './page/home-page/home-page.component';
     ReactiveFormsModule,
     FormsModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule,
   ],
+
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
-

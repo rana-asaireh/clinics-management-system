@@ -1,5 +1,5 @@
-export enum AppointmentStatus {
-    pending= 'pending',
-    approved= 'approved',
-    rejected= 'rejected'
+export enum ApprovalStatus {
+  pending = 'pending',
+  approved = 'approved',
+  rejected = 'rejected',
 }

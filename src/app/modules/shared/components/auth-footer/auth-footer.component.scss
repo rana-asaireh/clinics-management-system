@@ -39,7 +39,6 @@
 .contact-us {
   font-weight: bold;
   font-family: "Cairo", sans-serif;
-  margin-left: 6px;
 }
 .copy-right {
   font-family: "Quicksand", sans-serif;
@@ -50,12 +49,14 @@
 }
 .contact-data {
   margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .our-social {
   font-weight: bold;
   font-family: "Cairo", sans-serif;
-  margin-left: 11px;
 }
 .newsletter p {
   font-weight: bold;

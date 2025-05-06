@@ -4,24 +4,31 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
-
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
-  private baseUrl = 'http://localhost:3000/users'; 
-  constructor(private http: HttpClient, private router: Router) { }
-  getUser(email:string, password:string):Observable<User[]>{
-       return this.http.get<User[]>(`${this.baseUrl}?email=${email}&password=${password}`)    
+  private baseUrl = 'http://localhost:3000/users';
+  constructor(private http: HttpClient, private router: Router) {}
+  getUser(email: string, password: string): Observable<User[]> {
+    return this.http.get<User[]>(
+      `${this.baseUrl}?email=${email}&password=${password}`
+    );
   }
   getCurrentUser(): User {
     return JSON.parse(localStorage.getItem('currentUser') || '{}');
   }
-  getCurrentUserType():string{
+  getTypeUser() {
+    return JSON.parse(localStorage.getItem('typeUser') || '');
+  }
+  getCurrentUserType(): string {
     const user = this.getCurrentUser();
     return user?.type || '';
   }
   addUserDoctor(doctor: User): Observable<User> {
-      return this.http.post<User>(`${this.baseUrl}/users`, doctor);
+    return this.http.post<User>(`${this.baseUrl}/users`, doctor);
   }
+  // getUserPatient():Observable<Appointment>{
+  //   return this.http.get(this.baseUrl)
+  // }
 }

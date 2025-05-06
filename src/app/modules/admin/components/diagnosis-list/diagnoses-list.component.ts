@@ -7,10 +7,13 @@ import { DiagnosisService } from '../../../shared/services/diagnosis.service';
   selector: 'app-diagnosis-list',
   standalone: false,
   templateUrl: './diagnoses-list.component.html',
-  styleUrl: './diagnoses-list.component.scss'
+  styleUrl: './diagnoses-list.component.scss',
 })
 export class DiagnosesListComponent {
-  constructor(private adminService: AdminService, private diagnosisService:DiagnosisService) { }
+  constructor(
+    private adminService: AdminService,
+    private diagnosisService: DiagnosisService
+  ) {}
   diagnoses!: Diagnosis[];
   error!: string;
   success!: string;
@@ -24,9 +27,9 @@ export class DiagnosesListComponent {
       (error: any) => {
         this.error = error.message;
       }
-    )
+    );
   }
-  deleteDiagnosis(id?: number): void {
+  deleteDiagnosis(id?: string): void {
     if (id === undefined) {
       this.error = 'Invalid Diagnosis Id';
       setTimeout(() => {
@@ -36,7 +39,9 @@ export class DiagnosesListComponent {
     }
     this.adminService.deleteDiagnosis(id).subscribe(
       (data: any) => {
-        this.diagnoses = this.diagnoses.filter(diagnosis => diagnosis.id !== id);
+        this.diagnoses = this.diagnoses.filter(
+          (diagnosis) => diagnosis.id !== id
+        );
         this.error = '';
         this.success = 'Diagnosis deleted successfully';
         setTimeout(() => {

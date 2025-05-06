@@ -7,10 +7,13 @@ import { DrugService } from '../../../shared/services/drug.service';
   selector: 'app-drugs-list',
   standalone: false,
   templateUrl: './drugs-list.component.html',
-  styleUrl: './drugs-list.component.scss'
+  styleUrl: './drugs-list.component.scss',
 })
 export class DrugsListComponent {
-  constructor(private adminService: AdminService, private drugService:DrugService) { }
+  constructor(
+    private adminService: AdminService,
+    private drugService: DrugService
+  ) {}
   drugs!: Drug[];
   error!: string;
   success!: string;
@@ -24,9 +27,9 @@ export class DrugsListComponent {
       (error: any) => {
         this.error = error.message;
       }
-    )
+    );
   }
-  deleteDrug(id?: number): void {
+  deleteDrug(id?: string): void {
     if (id === undefined) {
       this.error = 'Invalid Drug Id';
       setTimeout(() => {
@@ -36,7 +39,7 @@ export class DrugsListComponent {
     }
     this.adminService.deleteDrug(id).subscribe(
       (data: any) => {
-        this.drugs = this.drugs.filter(drug => drug.id !== id);
+        this.drugs = this.drugs.filter((drug) => drug.id !== id);
         this.error = '';
         this.success = 'Drug deleted successfully';
         setTimeout(() => {
@@ -49,4 +52,3 @@ export class DrugsListComponent {
     );
   }
 }
-

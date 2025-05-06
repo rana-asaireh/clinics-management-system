@@ -15,7 +15,6 @@ import { DiagnosesListComponent } from './components/diagnosis-list/diagnoses-li
 import { SharedModule } from '../shared/shared.module';
 import { AdminLayoutComponent } from './components/admin-layout/admin-layout.component';
 
-
 @NgModule({
   declarations: [
     AddClinicComponent,
@@ -26,7 +25,7 @@ import { AdminLayoutComponent } from './components/admin-layout/admin-layout.com
     DoctorsListComponent,
     DrugsListComponent,
     DiagnosesListComponent,
-    AdminLayoutComponent
+    AdminLayoutComponent,
   ],
   imports: [
     CommonModule,
@@ -34,7 +33,7 @@ import { AdminLayoutComponent } from './components/admin-layout/admin-layout.com
     ReactiveFormsModule,
     FormsModule,
     HttpClientModule,
-    SharedModule
-  ]
+    SharedModule,
+  ],
 })
-export class AdminModule { }
+export class AdminModule {}

@@ -5,8 +5,7 @@ import { AuthHeaderComponent } from './components/auth-header/auth-header.compon
 import { AuthFooterComponent } from './components/auth-footer/auth-footer.component';
 import { AuthLayoutComponent } from './components/auth-layout/auth-layout.component';
 import { AuthSideBarComponent } from './components/auth-side-bar/auth-side-bar.component';
-
-
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,10 +14,12 @@ import { AuthSideBarComponent } from './components/auth-side-bar/auth-side-bar.c
     AuthLayoutComponent,
     AuthSideBarComponent,
   ],
-  imports: [
-    CommonModule,
-    RouterModule
+  imports: [CommonModule, RouterModule, HttpClientModule],
+  exports: [
+    AuthLayoutComponent,
+    AuthFooterComponent,
+    AuthHeaderComponent,
+    AuthSideBarComponent,
   ],
-  exports: [AuthLayoutComponent]
 })
 export class SharedModule {}

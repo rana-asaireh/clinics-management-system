@@ -1,0 +1,194 @@
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DoctorService } from '../../services/doctor.service';
+import { Appointment } from '../../../shared/models/appointment';
+import { FormGroup, FormControl } from '@angular/forms';
+
+import { Patient } from '../../../shared/models/patient';
+import { Doctor } from '../../../shared/models/doctor.model';
+import { ApprovalStatus } from '../../../shared/enum/appointment-status.enum';
+import { DrugService } from '../../../shared/services/drug.service';
+import { Drug } from '../../../shared/models/drug.model';
+import { DiagnosisService } from '../../../shared/services/diagnosis.service';
+import { Diagnosis } from '../../../shared/models/diagnosis.model';
+
+@Component({
+  selector: 'app-appointment-details',
+  standalone: false,
+  templateUrl: './appointment-details.component.html',
+  styleUrls: ['./appointment-details.component.scss'], // note: style**Urls**
+})
+export class AppointmentDetailsComponent implements OnInit {
+  appointmentId!: string;
+  appointment!: Appointment;
+  isAccepted = false;
+  patient!: Patient;
+  doctor!: Doctor;
+  drugs: Drug[] = [];
+  diagnoses: Diagnosis[] = [];
+  formErrorMessage: string = '';
+  rejectionMessage: string = '';
+
+  updatesAppointment!: Appointment;
+  appointmentForm = new FormGroup({
+    doctorName: new FormControl(''),
+    clinicName: new FormControl(''),
+    patientName: new FormControl(''),
+    reservationDate: new FormControl(''),
+    reservationTime: new FormControl(''),
+    phoneNumber: new FormControl(''),
+    email: new FormControl(''),
+    appointmentStatus: new FormControl(''),
+    drugsName: new FormControl(''),
+    diagnosesNames: new FormControl(''),
+    payment: new FormControl(''),
+  });
+
+  constructor(
+    private route: ActivatedRoute,
+    private doctorService: DoctorService,
+    private router: Router,
+    private drugService: DrugService,
+    private diagnosisService: DiagnosisService
+  ) {}
+
+  ngOnInit(): void {
+    this.appointmentId = this.route.snapshot.paramMap.get('id') || '';
+    this.loadAppointmentDetails();
+    this.loadDrugs();
+    this.loadDiagnoses();
+  }
+
+  loadAppointmentDetails(): void {
+    this.doctorService
+      .getAppointmentById(this.appointmentId)
+      .subscribe((appointment) => {
+        this.appointment = appointment;
+        console.log(' this.appointment', this.appointment);
+        const patientId = this.appointment.patient_id;
+        const doctorId = this.appointment.doctor_id;
+        console.log(' doctorId', doctorId);
+
+        console.log('patientId', patientId);
+        this.doctorService.getPatientById(patientId).subscribe((patient) => {
+          this.patient = patient;
+          console.log('patient:', patient);
+          this.appointmentForm.patchValue({
+            patientName: patient.name,
+            phoneNumber: patient.phone,
+            email: patient.email,
+          });
+        });
+
+        this.doctorService.getDoctorById(doctorId).subscribe((doctor) => {
+          this.doctor = doctor;
+          console.log('doctor:', doctor);
+          this.appointmentForm.patchValue({
+            doctorName: doctor?.name,
+            clinicName: doctor.specification,
+          });
+        });
+        this.appointmentForm.patchValue({
+          appointmentStatus: appointment.approval_status,
+
+          payment: appointment.appointment_details?.payment,
+        });
+      });
+  }
+
+  onSubmit(): void {
+    const drugsValue = this.appointmentForm.get('drugsName')?.value;
+    const diagnosisValue = this.appointmentForm.get('diagnosesNames')?.value;
+
+    if (!drugsValue || !diagnosisValue) {
+      this.formErrorMessage =
+        'Please fill in both the Drugs and Diagnosis fields before submitting.';
+      return;
+    }
+
+    const selectedDrug = this.drugs.find((d) => d.name === drugsValue);
+    const selectedDiagnosis = this.diagnoses.find(
+      (d) => d.name === diagnosisValue
+    );
+
+    if (!selectedDrug || !selectedDiagnosis) {
+      this.formErrorMessage = 'Selected drug or diagnosis is invalid.';
+      return;
+    }
+
+    const updatedAppointment: Appointment = {
+      ...this.appointment,
+      approval_status: ApprovalStatus.approved,
+      appointment_details: {
+        drugs: selectedDrug,
+        diagnosis: selectedDiagnosis,
+      },
+    };
+
+    this.doctorService
+      .updateAppointmentStatus(this.appointmentId, updatedAppointment)
+      .subscribe(
+        (response) => {
+          console.log('Appointment updated with details:', response);
+          this.router.navigate(['doctor/patients']);
+        },
+        (error) => {
+          console.error('Error updating appointment:', error);
+        }
+      );
+  }
+
+  onAccept() {
+    this.isAccepted = true;
+    this.formErrorMessage = '';
+    this.rejectionMessage = '';
+    this.appointment.approval_status = ApprovalStatus.approved;
+    this.appointmentForm.patchValue({
+      appointmentStatus: ApprovalStatus.approved,
+    });
+    console.log('Appointment accepted');
+  }
+
+  onReject() {
+    const updatedAppointment = {
+      ...this.appointment,
+      approval_status: ApprovalStatus.rejected,
+    };
+
+    this.doctorService
+      .updateAppointmentStatus(this.appointmentId, updatedAppointment)
+      .subscribe(
+        (response) => {
+          console.log('Appointment rejected:', response);
+          this.router.navigate(['doctor/patients']);
+        },
+        (error) => {
+          console.error('Error rejecting appointment:', error);
+        }
+      );
+  }
+
+  loadDrugs(): void {
+    this.drugService.getDrugs().subscribe((data) => {
+      this.drugs = data;
+    });
+  }
+
+  loadDiagnoses(): void {
+    this.diagnosisService.getDiagnosis().subscribe((data) => {
+      this.diagnoses = data;
+    });
+  }
+  getStatusClass(status: string | null | undefined): string {
+    switch (status) {
+      case 'approved':
+        return 'status-approved';
+      case 'rejected':
+        return 'status-rejected';
+      case 'pending':
+        return 'status-pending';
+      default:
+        return '';
+    }
+  }
+}

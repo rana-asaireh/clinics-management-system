@@ -20,6 +20,7 @@
   border-radius: 4px;
   font-weight: bold;
   cursor: pointer;
+  width: 101px;
 }
 
 .login {
@@ -30,6 +31,7 @@
   border-radius: 4px;
   font-weight: bold;
   cursor: pointer;
+  width: 101px;
 }
 
 .nav-links {
@@ -43,6 +45,9 @@
   font-size: 14px;
   font-family: "Cairo", sans-serif;
   font-weight: bold;
+}
+.nav-links a:hover {
+  color: #245953;
 }
 
 .settings {

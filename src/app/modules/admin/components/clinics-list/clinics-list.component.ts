@@ -7,14 +7,16 @@ import { ClinicService } from '../../../shared/services/clinic.service';
   selector: 'app-clinics-list',
   standalone: false,
   templateUrl: './clinics-list.component.html',
-  styleUrl: './clinics-list.component.scss'
+  styleUrl: './clinics-list.component.scss',
 })
-export class ClinicsListComponent implements OnInit{
-  constructor(private adminService: AdminService, private clinicService:ClinicService) { }
+export class ClinicsListComponent implements OnInit {
+  constructor(
+    private adminService: AdminService,
+    private clinicService: ClinicService
+  ) {}
   clinics!: Clinic[];
   error!: string;
   success!: string;
-
 
   ngOnInit(): void {
     this.clinicService.getClinics().subscribe(
@@ -25,9 +27,9 @@ export class ClinicsListComponent implements OnInit{
       (error: any) => {
         this.error = error;
       }
-    )
+    );
   }
-  deleteClinic(id?: number): void {
+  deleteClinic(id?: string): void {
     this.error = '';
     if (id === undefined) {
       this.error = 'Invalid Clinic Id';
@@ -38,7 +40,7 @@ export class ClinicsListComponent implements OnInit{
     }
     this.adminService.deleteClinic(id).subscribe(
       (data: any) => {
-        this.clinics = this.clinics.filter(clinic => clinic.id !== id);
+        this.clinics = this.clinics.filter((clinic) => clinic.id !== id);
         this.error = '';
         this.success = 'Clinic deleted successfully';
         setTimeout(() => {

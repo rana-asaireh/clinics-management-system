@@ -4,240 +4,471 @@
       "type": "admin",
       "name": "Mohammed Aqqad",
       "email": "Mohammed.Aqqad@gmail.com",
-      "password": "Ma**1234"
+      "password": "Ma**1234",
+      "id": "1391"
     },
     {
       "type": "doctor",
       "name": "Omar Turkmani",
       "email": "omar.turkmani@gmail.com",
-      "password": "Ot**1234"
+      "password": "Ot**1234",
+      "id": "c00b"
     },
     {
       "type": "doctor",
       "name": "Tariq Najjar",
       "email": "tariqnajjar@gmail.com",
-      "password": "tn**1234"
+      "password": "tn**1234",
+      "id": "d65d"
     },
     {
       "type": "doctor",
       "name": "Amina Saeed",
       "email": "aminasaeed@gmail.com",
-      "password": "sa**1234"
+      "password": "sa**1234",
+      "id": "afbe"
     },
     {
       "type": "doctor",
       "name": "Mariam Al-Hariri",
       "email": "mariam@gmail.com",
-      "password": "mar**1244"
+      "password": "mar**1244",
+      "id": "6502"
     },
     {
       "type": "doctor",
       "name": "Rami Al-Najdi",
       "email": "ralnajdi20@gmail.com",
-      "password": "rr**na14"
+      "password": "rr**na14",
+      "id": "103f"
     },
     {
       "type": "doctor",
       "name": "Nour Abdeen",
       "email": "nour440@gmail.com",
-      "password": "rr**na14"
+      "password": "rr**na14",
+      "id": "a1fd"
     },
     {
       "type": "patient",
       "name": "Salma Alfaqeeh",
       "email": "salma1980@gmail.com",
-      "password": "Sa**1234"
+      "password": "Sa**1234",
+      "id": "8a2c"
     },
     {
       "type": "patient",
       "name": "Lara Amer",
       "email": "aya860@gmail.com",
-      "password": "ay**1234"
+      "password": "ay**1234",
+      "date": "2025-05-10",
+      "id": "e0af"
     },
     {
       "type": "patient",
       "name": " Laila Mohammad",
       "email": "laila879@gmail.com",
-      "password": "la**1234"
+      "password": "la**1234",
+      "id": "4a19"
     },
     {
       "type": "patient",
       "name": "Ahmad Yousef",
       "email": "ahmad456@gmail.com",
-      "password": "Sa**1234"
+      "password": "Sa**1234",
+      "id": "6689"
     },
     {
       "type": "patient",
       "name": "Hamza Al-Ahmad",
       "email": "hamza30@gmail.com",
-      "password": "ha**1234"
+      "password": "ha**1234",
+      "id": "715c"
     },
     {
       "type": "patient",
       "name": "Sara Amer",
       "email": "sara090@gmail.com",
-      "password": "sa**1234"
+      "password": "sa**1234",
+      "id": "58a5"
     },
     {
       "type": "patient",
       "name": "cireen Omar",
       "email": "cireen090@gmail.com",
-      "password": "ci**1234"
+      "password": "ci**1234",
+      "id": "8630"
     }
   ],
-    "patient": [
-        {
-            "id": 1,
-            "type":"patient",
-            "name": "Salma Alfaqeeh",
-            "email": "salma1980@gmail.com",
-            "password": "Sa**1234",
-            "phone": "962 776532545",
-            "gender": "female",
-            "DOB": "09-09-1980"
-        }, {
-          "id": 2,
-          "type":"patient",
-          "name": "Lara Amer",
-          "email": "aya860@gmail.com",
-          "password": "ay**1234",
-          "phone": "962 77980805",
-          "gender": "female",
-          "DOB": "24-04-1999"
-      }, {
-        "id": 3,
-        "type":"patient",
-        "name": " Laila Mohammad",
-        "email": "laila879@gmail.com",
-        "password": "la**1234",
-        "phone": "962 78975603",
-        "gender": "female",
-        "DOB": "04-02-2001"
-    }, {
-      "id": 4,
-      "type":"patient",
+  "patient": [
+    {
+      "id": "1",
+      "type": "patient",
+      "name": "Salma Alfaqeeh",
+      "email": "salma1980@gmail.com",
+      "password": "Sa**1234",
+      "phone": "962 776532545",
+      "gender": "female",
+      "dob": "09-09-1980"
+    },
+    {
+      "id": "2",
+      "type": "patient",
+      "name": "Lara Amer",
+      "email": "aya860@gmail.com",
+      "password": "ay**1234",
+      "phone": "962 77980805",
+      "gender": "female",
+      "dob": "24-04-1999"
+    },
+    {
+      "id": "3",
+      "type": "patient",
+      "name": " Laila Mohammad",
+      "email": "laila879@gmail.com",
+      "password": "la**1234",
+      "phone": "962 78975603",
+      "gender": "female",
+      "dob": "04-02-2001"
+    },
+    {
+      "id": "4",
+      "type": "patient",
       "name": "Ahmad Yousef",
       "email": "ahmad456@gmail.com",
       "password": "Sa**1234",
       "phone": "962 785943202",
       "gender": "male",
-      "DOB": "10-03-1985"
-  }, {
-    "id": 5,
-    "type":"patient",
-    "name": "Hamza Al-Ahmad",
-    "email": "hamza30@gmail.com",
-    "password": "ha**1234",
-    "phone": "962 776536804",
-    "gender": "male",
-    "DOB": "13-08-2005"
-},{"id": 6,
-    "type":"patient",
-    "name": "Sara Amer",
-    "email": "sara090@gmail.com",
-    "password": "sa**1234",
-    "phone": "962 778702146",
-    "gender": "female",
-    "DOB": "04-06-1990"
-
-}
+      "dob": "10-03-1985"
+    },
+    {
+      "id": "5",
+      "type": "patient",
+      "name": "Hamza Al-Ahmad",
+      "email": "hamza30@gmail.com",
+      "password": "ha**1234",
+      "phone": "+962 776536804",
+      "gender": "male",
+      "dob": "13-08-2005"
+    },
+    {
+      "id": "6",
+      "type": "patient",
+      "name": "Sara Amer",
+      "email": "sara090@gmail.com",
+      "password": "sa**1234",
+      "phone": "962 778702146",
+      "gender": "female",
+      "dob": "04-06-1990"
+    }
   ],
-    "doctor": [
-        {
-            "id": 1,
-            "type":"doctor",
-            "name": "Omar Turkmani",
-            "email": "omar.turkmani@gmail.com",
-            "password": "Ot**1234",
-            "phone": "962 795569821",
-            "specification": "",
-            "clinic_id": ""
-        },   {
-          "id": 2,
-          "type":"doctor",
-          "name": "Tariq Najjar",
-          "email": "tariqnajjar@gmail.com",
-          "password": "tn**1234",
-          "phone": "962 795039201",
-          "specification": "",
-          "clinic_id": ""
-      },
-      {
-        "id": 3,
-        "type":"doctor",
-        "name": "Amina Saeed",
-        "email": "aminasaeed@gmail.com",
-        "password": "sa**1234",
-        "phone": "962 795039201",
-        "specification": "",
-        "clinic_id": ""
-    },  {
-      "id": 4,
-      "type":"doctor",
+  "doctor": [
+    {
+      "id": "1",
+      "type": "doctor",
+      "name": "Omar Turkmani",
+      "email": "omar.turkmani@gmail.com",
+      "password": "Ot**1234",
+      "phone": "962 795569821",
+      "specification": "Dentist",
+      "clinic_id": "1"
+    },
+    {
+      "id": "2",
+      "type": "doctor",
+      "name": "Tariq Najjar",
+      "email": "tariqnajjar@gmail.com",
+      "password": "tn**1234",
+      "phone": "962 795039201",
+      "specification": "Pediatrician",
+      "clinic_id": "2"
+    },
+    {
+      "id": "3",
+      "type": "doctor",
+      "name": "Amina Saeed",
+      "email": "aminasaeed@gmail.com",
+      "password": "sa**1234",
+      "phone": "962 795039201",
+      "specification": "Physical Therapist",
+      "clinic_id": "3"
+    },
+    {
+      "id": "4",
+      "type": "doctor",
       "name": "Mariam Al-Hariri",
       "email": "mariam@gmail.com",
       "password": "mar**1244",
       "phone": "962 799979034",
-      "specification": "",
-      "clinic_id": ""
-  },
+      "specification": "Gynecologist",
+      "clinic_id": "4"
+    },
     {
-      "id": 5,
-      "type":"doctor",
+      "id": "5",
+      "type": "doctor",
       "name": "Rami Al-Najdi",
       "email": "ralnajdi20@gmail.com",
       "password": "rr**na14",
       "phone": "962 799998976",
-      "specification": "",
-      "clinic_id": ""
-  }, {
-    "id": 6,
-    "type":"doctor",
-    "name": "Nour Abdeen",
-    "email": "nour440@gmail.com",
-    "password": "rr**na14",
-    "phone": "962 7994560276",
-    "specification": "",
-    "clinic_id": ""
-}
+      "specification": "Dentist",
+      "clinic_id": "1"
+    },
+    {
+      "id": "6",
+      "type": "doctor",
+      "name": "Nour Abdeen",
+      "email": "nour440@gmail.com",
+      "password": "rr**na14",
+      "phone": "962 7994560276",
+      "specification": "Gynecologist",
+      "clinic_id": "4"
+    },
+    {
+      "id": "c588",
+      "type": "doctor",
+      "name": "Rami Momani",
+      "email": "ramimomani@gmail.com",
+      "password": "Rr*5412fghjj",
+      "phone": "962 785562485",
+      "specification": "Pediatrician",
+      "clinic_id": "2"
+    }
+  ],
+  "admin": [
+    {
+      "id": "1",
+      "type": "admin",
+      "name": "Mohammed Aqqad",
+      "email": "Mohammed.Aqqad@gmail.com",
+      "password": "Ma**1234",
+      "phone": "962 784256326"
+    }
+  ],
+  "appointment": [
+    {
+      "id": "1",
+      "date": "",
+      "patient_id": "",
+      "doctor_id": "",
+      "approval_status": "",
 
-    ],
-    "admin": [
-        {
-            "id": 1,
-            "type":"admin",
-            "name": "Mohammed Aqqad",
-            "email": "Mohammed.Aqqad@gmail.com",
-            "password": "Ma**1234",
-            "phone": "962 784256326"
-         }
-    ],
-    "appointment":[
-        {
-            "id": 1,
-            "date":"",
-            "patient_id": "",
-            "doctor_id": "",
-            "approval_status": "",
-            "appointment_details": {"drugs":"","diagnosis":"","payment":""}
-         }
-    ],
-    "drug":[
-        {
-            "id":1,
-            "name":""
-        }
-    ],
-    "diagnosis":[
-        {
-            "id":1,
-            "name":""
-        }
-    ],
-    "clinic":[
-        {
-            "id":1,
-            "name":""
-        }
-    ]
+      "appointment_details": {
+        "drugs": "",
+        "diagnosis": "",
+        "payment": "20JD"
+      }
+    },
+    {
+      "id": "2",
+      "date": "2025-05-10",
+      "patient_id": "2",
+      "doctor_id": "1",
+      "approval_status": "pending",
+
+      "appointment_details": {
+        "drugs": "Clindamycin",
+        "diagnosis": "Gingivitis",
+        "payment": "50 JOD"
+      }
+    },
+    {
+      "id": "3",
+      "date": "2025-05-15",
+      "patient_id": "3",
+      "doctor_id": "2",
+      "approval_status": "pending",
+
+      "appointment_details": {
+        "drugs": "Amoxicillin",
+        "diagnosis": "Asthma",
+        "payment": "40JOD"
+      }
+    },
+    {
+      "id": "4",
+      "date": "2025-05-20",
+      "patient_id": "4",
+      "doctor_id": "3",
+      "approval_status": "approved",
+
+      "appointment_details": {
+        "drugs": {
+          "id": "2",
+          "name": "Amoxicillin",
+          "clinic_id": "2"
+        },
+        "diagnosis": {
+          "id": "1",
+          "name": "Gingivitis",
+          "clinic_id": "1"
+        },
+        "payment": "30 JOD"
+      }
+    },
+    {
+      "id": "5",
+      "date": "2025-05-22",
+      "patient_id": "5",
+      "doctor_id": "1",
+      "approval_status": "pending",
+
+      "appointment_details": {
+        "drugs": "Clindamycin",
+        "diagnosis": "Gingivitis",
+        "payment": "50 JOD"
+      }
+    },
+    {
+      "id": "6",
+      "date": "2025-05-25",
+      "patient_id": "6",
+      "doctor_id": "4",
+      "approval_status": "pending",
+
+      "appointment_details": {
+        "drugs": "Insulin",
+        "diagnosis": "Gestational Diabetes",
+        "payment": "60 JOD"
+      }
+    },
+    {
+      "id": "7",
+      "date": "2025-05-11",
+      "patient_id": "2",
+      "doctor_id": "3",
+      "approval_status": "rejected",
+
+      "appointment_details": {
+        "drugs": {
+          "id": "3",
+          "name": "Ibuprofen",
+          "clinic_id": "3"
+        },
+        "diagnosis": {
+          "id": "3",
+          "name": "Low Back Pain",
+          "clinic_id": "3"
+        },
+        "payment": "30 JOD"
+      }
+    },
+    {
+      "id": "8",
+      "date": "2025-05-13",
+      "patient_id": "3",
+      "doctor_id": "3",
+      "approval_status": "approved",
+
+      "appointment_details": {
+        "drugs": {
+          "id": "2",
+          "name": "Amoxicillin",
+          "clinic_id": "2"
+        },
+        "diagnosis": {
+          "id": "2",
+          "name": "Asthma",
+          "clinic_id": "2"
+        },
+        "payment": "40 JOD"
+      }
+    },
+    {
+      "id": "9",
+      "date": "2025-05-16",
+      "patient_id": "5",
+      "doctor_id": "3",
+      "approval_status": "pending",
+
+      "appointment_details": {
+        "drugs": "Ibuprofen",
+        "diagnosis": "Low Back Pain",
+        "payment": "30 JOD"
+      }
+    },
+    {
+      "id": "10",
+      "date": "2025-05-18",
+      "doctor_name": "aya",
+      "patient_id": "6",
+      "doctor_id": "3",
+      "approval_status": "approved",
+
+      "appointment_details": {
+        "drugs": {
+          "id": "4",
+          "name": "Insulin",
+          "clinic_id": "4"
+        },
+        "diagnosis": {
+          "id": "3",
+          "name": "Low Back Pain",
+          "clinic_id": "3"
+        },
+        "payment": "30 JOD"
+      }
+    }
+  ],
+  "drug": [
+    {
+      "id": "1",
+      "name": "Clindamycin",
+      "clinic_id": "1"
+    },
+    {
+      "id": "2",
+      "name": "Amoxicillin",
+      "clinic_id": "2"
+    },
+    {
+      "id": "3",
+      "name": "Ibuprofen",
+      "clinic_id": "3"
+    },
+    {
+      "id": "4",
+      "name": "Insulin",
+      "clinic_id": "4"
+    }
+  ],
+  "diagnosis": [
+    {
+      "id": "1",
+      "name": "Gingivitis",
+      "clinic_id": "1"
+    },
+    {
+      "id": "2",
+      "name": "Asthma",
+      "clinic_id": "2"
+    },
+    {
+      "id": "3",
+      "name": "Low Back Pain",
+      "clinic_id": "3"
+    },
+    {
+      "id": "4",
+      "name": "Gestational Diabetes",
+      "clinic_id": "4"
+    }
+  ],
+  "clinic": [
+    {
+      "id": "1",
+      "name": "Dental Clinic"
+    },
+    {
+      "id": "2",
+      "name": "Pediatrics clinic"
+    },
+    {
+      "id": "3",
+      "name": "Physical Therapy"
+    },
+    {
+      "id": "4",
+      "name": "Maternity Center"
+    }
+  ]
 }
