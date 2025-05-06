@@ -21,24 +21,23 @@ const routes: Routes = [
     component: SignupComponent
   },
   {
-    path: 'admin',
-    loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule),
-    canMatch: [UserTypeGuard],
-    data: { expectedType: 'admin' }
+    path:'admin',
+    loadChildren:()=> import('./modules/admin/admin.module').then(m => m.AdminModule),
+    canMatch:[UserTypeGuard],
+    data:{expectedType:'admin'}
   },
   {
-    path: 'doctor',
-    loadChildren: () => import('./modules/doctor/doctor.module').then(m => m.DoctorModule),
-    canMatch: [UserTypeGuard],
-    data: { expectedType: 'doctor' }
+    path:'doctor',
+    loadChildren:()=> import('./modules/doctor/doctor.module').then(m => m.DoctorModule),
+    canMatch:[UserTypeGuard],
+    data:{expectedType:'doctor'}
   },
   {
-    path: 'patient',
-    loadChildren: () => import('./modules/patient/patient.module').then(m => m.PatientModule),
-    canMatch: [UserTypeGuard],
-    data: { expectedType: 'patient' }
-  },
-
+    path:'patient',
+    loadChildren:()=> import('./modules/patient/patient.module').then(m => m.PatientModule),
+    canMatch:[UserTypeGuard],
+    data:{expectedType:'patient'}
+  }
 ];
 
 @NgModule({
