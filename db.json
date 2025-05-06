@@ -104,6 +104,13 @@
       "name": "Lana Momani",
       "email": "lana-momani@amal-clinic.com",
       "password": "Jh542*j85"
+    },
+    {
+      "id": "2daa",
+      "type": "doctor",
+      "name": "Ahmad Mohtaseb",
+      "email": "Ahmad.Mohtaseb@amal-clinic.com",
+      "password": "Fs*251435"
     }
   ],
   "patient": [
@@ -256,6 +263,17 @@
       "specification": "Physical Therapist",
       "clinic_id": "3",
       "gender": "female"
+    },
+    {
+      "id": "9992",
+      "type": "doctor",
+      "name": "Ahmad Mohtaseb",
+      "email": "Ahmad.Mohtaseb@amal-clinic.com",
+      "password": "Fs*251435",
+      "phone": "962785562475",
+      "specification": "Dentist",
+      "clinic_id": "1",
+      "gender": "male"
     }
   ],
   "admin": [

@@ -92,7 +92,7 @@ h1 {
 
         &:focus {
             outline: none;
-            border-color: #007bff;
+            border-color: #4b9c8e;
         }
     }
 }
@@ -142,7 +142,7 @@ h1 {
         button {
             margin-top: 1rem;
             padding: 0.5rem 1.2rem;
-            background-color: #007bff;
+            background-color: #4b9c8e;
             color: white;
             border: none;
             border-radius: 5px;
@@ -150,7 +150,7 @@ h1 {
             transition: background-color 0.2s;
 
             &:hover {
-                background-color: #0056b3;
+                background-color: #3e8378;
             }
         }
     }
