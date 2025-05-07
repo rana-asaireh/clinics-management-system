@@ -59,7 +59,7 @@ ngOnInit(): void {
     console.log('Clinic Name from URL:', this.clinicNameFromUrl);
     console.log('Doctor ID from URL:', this.doctorIdFromUrl);
   });
-   // Get the ID from the route parameters
+
    this.route.paramMap.subscribe(params => {
     this.appointmentId = params.get('id');
     if (this.appointmentId) {
@@ -112,8 +112,8 @@ formatTime(time: any): string {
 
   submitAppointment() {
     console.log("submitAppointment function called");
-    this.appointmentForm.markAllAsTouched(); // Mark all controls as touched
-    this.appointmentForm.updateValueAndValidity(); // Re-evaluate the validity of the form
+    this.appointmentForm.markAllAsTouched();
+    this.appointmentForm.updateValueAndValidity();
     console.log("Value of this.appointmentForm.valid:", this.appointmentForm.valid);
     console.log("Form errors:", this.appointmentForm.errors);
     if (this.appointmentForm.valid) {
@@ -127,7 +127,7 @@ formatTime(time: any): string {
               date: appointmentData.date,
               patient_id: patient.id,
               doctor_id: appointmentData.doctor_id,
-              approval_status: "",
+              approval_status: "pending",
               appointment_details: {
                 reason: appointmentData.reason,
                 drugs: "",
