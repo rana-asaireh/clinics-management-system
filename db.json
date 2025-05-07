@@ -813,34 +813,6 @@
       },
       "payment": "",
       "time": "07:00"
-    },
-    {
-      "id": "d83e",
-      "date": "2025-07-30",
-      "patient_id": "7",
-      "doctor_id": "1",
-      "approval_status": "pending",
-      "appointment_details": {
-        "reason": "joint pain",
-        "drugs": "",
-        "diagnosis": ""
-      },
-      "payment": "",
-      "time": "23:35"
-    },
-    {
-      "id": "72bd",
-      "date": "2025-07-20",
-      "patient_id": "7",
-      "doctor_id": "2",
-      "approval_status": "pending",
-      "appointment_details": {
-        "reason": "toothache",
-        "drugs": "",
-        "diagnosis": ""
-      },
-      "payment": "",
-      "time": "08:22"
     }
   ],
   "drug": [
