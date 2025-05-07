@@ -8,8 +8,9 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
-import { HomePageComponent } from './page/home-page/home-page.component';
 import { SignupComponent } from './signup/signup.component';
+import { HomePageLayoutComponent } from './homePage/components/home-page-layout/home-page-layout.component';
+import { SharedModule } from './modules/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,8 @@ import { SignupComponent } from './signup/signup.component';
     LoginComponent,
     FooterComponent,
     HeaderComponent,
-    HomePageComponent,
-    SignupComponent
+    HomePageLayoutComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,10 +27,10 @@ import { SignupComponent } from './signup/signup.component';
     ReactiveFormsModule,
     FormsModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
-

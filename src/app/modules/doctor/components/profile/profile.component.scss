@@ -48,22 +48,16 @@ h1 {
   color: black;
 }
 
-.test {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end; 
-}
-
 .profile-row {
   display: flex;
   gap: 20px;
   margin-bottom: 20px;
-  flex-wrap: wrap; 
-  width: 100%; 
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .profile-row > div {
-  width: calc(50% - 30px); 
+  width: calc(50% - 30px);
 }
 
 .form-group {
@@ -72,8 +66,8 @@ h1 {
 }
 
 .profile-icon {
-  width: 36px; 
-  height: 36px; 
+  width: 60px;
+  height: 60px;
   background-color: #3b8c88;
   border-radius: 50%;
   display: flex;
@@ -84,8 +78,6 @@ h1 {
 }
 
 .profile-icon img {
-  width: 20px; 
-  height: 20px; 
   object-fit: contain;
 }
 
@@ -115,9 +107,8 @@ h1 {
   cursor: pointer;
   margin-bottom: 20px;
   transition: background-color 0.3s ease;
-  width: auto; 
+  width: auto;
 }
-
 
 @media (max-width: 750px) {
   .profile-row > div {

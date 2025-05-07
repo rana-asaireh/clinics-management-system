@@ -366,24 +366,16 @@
       "date": "2025-04-12",
       "patient_id": "2",
       "doctor_id": "3",
-      "approval_status": "pending",
+      "approval_status": "approved",
       "appointment_details": {
-        "drugs": [
-          {
-            "id": "181b",
-            "name": "Ferrous Sulfate"
-          },
-          {
-            "id": "2da0",
-            "name": "Folic Acid"
-          }
-        ],
-        "diagnosis": [
-          {
-            "id": "4",
-            "name": "Gestational Diabetes"
-          }
-        ]
+        "drugs": {
+          "id": "3",
+          "name": "Ibuprofen"
+        },
+        "diagnosis": {
+          "id": "1",
+          "name": "Gingivitis"
+        }
       },
       "payment": "unpaid"
     },
@@ -453,9 +445,9 @@
             "id": "2",
             "name": "Asthma"
           }
-        ]
-      },
-      "payment": "paid"
+        ],
+        "payment": "paid"
+      }
     },
     {
       "id": "10",
@@ -475,9 +467,9 @@
             "id": "3",
             "name": "Low Back Pain"
           }
-        ]
-      },
-      "payment": "unpaid"
+        ],
+        "payment": "unpaid"
+      }
     },
     {
       "id": "11",
@@ -497,9 +489,9 @@
             "id": "5",
             "name": "Dental Infection"
           }
-        ]
-      },
-      "payment": "paid"
+        ],
+        "payment": "paid"
+      }
     },
     {
       "id": "12",
@@ -519,9 +511,9 @@
             "id": "6",
             "name": "Tooth Extraction Recovery"
           }
-        ]
-      },
-      "payment": "unpaid"
+        ],
+        "payment": "unpaid"
+      }
     },
     {
       "id": "13",
@@ -541,9 +533,9 @@
             "id": "6",
             "name": "Tooth Extraction Recovery"
           }
-        ]
-      },
-      "payment": "unpaid"
+        ],
+        "payment": "unpaid"
+      }
     },
     {
       "id": "14",
@@ -563,9 +555,9 @@
             "id": "6",
             "name": "Tooth Extraction Recovery"
           }
-        ]
-      },
-      "payment": "unpaid"
+        ],
+        "payment": "unpaid"
+      }
     },
     {
       "id": "15",
@@ -585,9 +577,9 @@
             "id": "6",
             "name": "Tooth Extraction Recovery"
           }
-        ]
-      },
-      "payment": "unpaid"
+        ],
+        "payment": "unpaid"
+      }
     },
     {
       "id": "16",

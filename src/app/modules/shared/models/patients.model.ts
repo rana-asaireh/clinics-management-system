@@ -1,11 +1,8 @@
-export interface Patient {
-  id: string; 
-    name: string;
-    email: string;
-    phone: number ; 
-    gender: string;
-    dob: Date ; 
-    
-  
-  
+export interface Patients {
+  id: string;
+  name: string;
+  email: string;
+  phone: string;
+  gender: string;
+  dob: Date;
 }
