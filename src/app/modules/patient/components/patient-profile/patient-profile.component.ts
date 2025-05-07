@@ -89,30 +89,40 @@ export class PatientProfileComponent implements OnInit {
         );
       }
     }
-     updateProfile() {
+    updateProfile() {
       this.success = '';
       this.error = '';
-      if(this.patientProfileForm.valid && this.patientId && this.patientData){
-        const updatedData={...this.patientData,...this.patientProfileForm.value,id : this.patientId};
+    
+      if (this.patientProfileForm.valid && this.patientId && this.patientData) {
+        const updatedData = {
+          ...this.patientData,
+          ...this.patientProfileForm.value,
+          id: this.patientId
+        };
         const newPassword = this.patientProfileForm.get('password')?.value;
+    
         this.patientAuthService.updatePatient(updatedData).subscribe(
           (success) => {
-            console.log('Patient profile updated successfully:', success);
-            this.updateUserData(updatedData,newPassword);
+            this.updateUserData(updatedData, newPassword);
             this.success = 'Patient profile updated successfully';
-            
+    
+            // Clear success message after 3 seconds
+            setTimeout(() => {
+              this.success = '';
+            }, 3000);
+    
             this.getPatientData();
           },
           (error) => {
-            console.error('Error updating patient profile:', error);
             this.error = 'Error updating patient profile';
           }
         );
-      }else{
+      } else {
         this.patientProfileForm.markAllAsTouched();
         this.error = 'Please fill in all required fields.';
       }
-     }
+    }
+    
      updateUserData(patientData: Patient,newPassword: string ) {
       this.userService.getUserByEmail(patientData.email).subscribe(
         (users) => {
