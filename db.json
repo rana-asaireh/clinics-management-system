@@ -716,7 +716,7 @@
       "date": "2025-05-24",
       "patient_id": "6",
       "doctor_id": " ",
-      "approval_status": "",
+      "approval_status": "cancelled",
       "appointment_details": {
         "reason": "tired",
         "drugs": "",
@@ -744,7 +744,7 @@
       "date": "2025-05-30",
       "patient_id": "4",
       "doctor_id": " ",
-      "approval_status": "",
+      "approval_status": "cancelled",
       "appointment_details": {
         "reason": "sick and tired\n",
         "drugs": "",
@@ -758,7 +758,7 @@
       "date": "2025-10-30",
       "patient_id": "4",
       "doctor_id": " ",
-      "approval_status": "",
+      "approval_status": "cancelled",
       "appointment_details": {
         "reason": "tired",
         "drugs": "",
@@ -766,6 +766,34 @@
         "payment": ""
       },
       "time": "17:59"
+    },
+    {
+      "id": "5bb4",
+      "date": "2025-05-28",
+      "patient_id": "4",
+      "doctor_id": " ",
+      "approval_status": "cancelled",
+      "appointment_details": {
+        "reason": "headache",
+        "drugs": "",
+        "diagnosis": ""
+      },
+      "time": "19:35",
+      "payment": ""
+    },
+    {
+      "id": "ac64",
+      "date": "2025-05-31",
+      "patient_id": "6",
+      "doctor_id": "0341",
+      "approval_status": "",
+      "appointment_details": {
+        "reason": "toothache",
+        "drugs": "",
+        "diagnosis": ""
+      },
+      "payment": "",
+      "time": "07:00"
     }
   ],
   "drug": [

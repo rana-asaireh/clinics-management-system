@@ -18,8 +18,13 @@ export class PatientBookAppointmentsComponent implements OnInit {
 appointmentForm!:FormGroup;
 todayDate: string | undefined;
 userId: string | null = null;
-  appointmentData: any;
-  appointmentId: string | null = null;
+appointmentData: any;
+appointmentId: string | null = null;
+doctorNameFromUrl: string | null = null;
+clinicNameFromUrl: string | null = null;
+doctorIdFromUrl: string | null = null;
+
+  
   
 constructor(private appointmentService:AppointmentService,
   private userService:UserService,
@@ -33,7 +38,8 @@ ngOnInit(): void {
     date: new FormControl('', Validators.required),
     time: new FormControl('', Validators.required),
     reason:new FormControl('', Validators.required),
-    id: new FormControl(null)
+    id: new FormControl(null),
+    doctor_id: new FormControl(null)
   });
  // Prevent selecting past dates for appointments.
   const today = new Date();
@@ -41,7 +47,18 @@ ngOnInit(): void {
   const month = (today.getMonth() + 1).toString().padStart(2, '0');
   const day = today.getDate().toString().padStart(2, '0');
   this.todayDate = `${year}-${month}-${day}`;
-
+  
+  this.route.queryParams.subscribe(params => {
+    this.doctorNameFromUrl = params['doctorName'];
+    this.clinicNameFromUrl = params['clinicName'];
+    this.doctorIdFromUrl = params['doctorId']; 
+    this.appointmentForm.patchValue({
+      doctor_id: this.doctorIdFromUrl
+    });
+    console.log('Doctor Name from URL:', this.doctorNameFromUrl);
+    console.log('Clinic Name from URL:', this.clinicNameFromUrl);
+    console.log('Doctor ID from URL:', this.doctorIdFromUrl);
+  });
    // Get the ID from the route parameters
    this.route.paramMap.subscribe(params => {
     this.appointmentId = params.get('id');
@@ -75,6 +92,7 @@ populateFormForEdit(appointment: any) {
           time: this.formatTime(appointment.time),
           reason: appointment.appointment_details?.reason || '',
           id: appointment.id,
+          doctor_id: appointment.doctor_id 
         });
       } else {
         alert('Could not find patient information for this appointment.');
@@ -87,36 +105,10 @@ populateFormForEdit(appointment: any) {
   );
 }
 formatTime(time: any): string {
-  // ... تنفيذ تنسيق الوقت
+  
   return time;
 }
-  //  this.route.params.pipe(
-  //   switchMap(params => {
-  //     this.appointmentId = params['id'];
-  //     if (this.appointmentId) {
-  //       return this.appointmentService.getAppointmentById(this.appointmentId); // Assuming you have this service method
-  //     }
-  //     return of(null); // If no ID, return a null observable
-  //   })
-  // ).subscribe(appointment => {
-  //   if (appointment) {
-      // Populate the form with the retrieved appointment data
-      // this.appointmentForm.patchValue({
-      //   fullname: appointment.fullname,
-      //   email: appointment.email,
-      //   phone: appointment.phone,
-      //   date: appointment.date,
-      //   time: appointment.time,
-      //   reason: appointment.reason,
-      //   id: appointment.id // Set the ID in the form for updating
-      // });
-  //   } else if (this.appointmentId) {
-  //     // If an ID was provided but no appointment found
-  //     alert('No appointment found with the provided ID.');
-  //     // Optionally, you can redirect the user to the appointment list page
-  //     // this.router.navigate(['/patient/appointment-list']);
-  //   }
-  // });
+
 
   submitAppointment() {
     console.log("submitAppointment function called");
@@ -134,14 +126,15 @@ formatTime(time: any): string {
             const appointmentToSend = {
               date: appointmentData.date,
               patient_id: patient.id,
-              doctor_id: " ", 
+              doctor_id: appointmentData.doctor_id,
               approval_status: "",
               appointment_details: {
                 reason: appointmentData.reason,
                 drugs: "",
                 diagnosis: "",
-                payment: ""
+              
               },
+                payment: "",
               time : appointmentData.time,
             };
             console.log("Appointment Data To Send:", appointmentToSend);
