@@ -90,7 +90,7 @@ export class SignupComponent {
 
   //#region  Reactive Form  
   formNameMapping: { [key: string]: string } = {
-    username: 'Username',
+     name: 'Username',
     email: 'Email',
     phone: 'Phone number',
     gender: 'Gender',
@@ -103,7 +103,7 @@ export class SignupComponent {
   registrationForm: FormGroup = this.initializeForm();
   initializeForm(): FormGroup {
     return new FormGroup({
-      username: new FormControl('', Validators.required),
+      name: new FormControl('', Validators.required),
       email: new FormControl('', [Validators.required, Validators.email]),
       phone: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10}$')]),
       gender: new FormControl('', Validators.required),
@@ -181,10 +181,10 @@ export class SignupComponent {
             )
 
             //destructing a name,email,password
-            const { username, email, password } = this.registrationForm.value;
+            const {  name, email, password } = this.registrationForm.value;
             const newUser: User = {
               type: UserType.patient,
-              name: username,
+              name:  name,
               email: email,
               password: password,
 
