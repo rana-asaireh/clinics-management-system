@@ -56,6 +56,18 @@ h2 {
   margin: 0 5px;
 }
 
+.success {
+  display: block;
+  color: green;
+  margin-bottom: -5px;
+  margin-top: 20px;
+}
+
+.error {
+  color: red;
+  display: block;
+  margin-top: 10px;
+}
 .form-group {
   margin-bottom: 20px;
   text-align: left;

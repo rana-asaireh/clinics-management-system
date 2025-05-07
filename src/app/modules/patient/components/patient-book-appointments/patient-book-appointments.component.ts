@@ -23,6 +23,8 @@ appointmentId: string | null = null;
 doctorNameFromUrl: string | null = null;
 clinicNameFromUrl: string | null = null;
 doctorIdFromUrl: string | null = null;
+success: string = '';
+error!: string;
 
   
   
@@ -81,6 +83,8 @@ ngOnInit(): void {
 }
 
 populateFormForEdit(appointment: any) {
+  this.success = '';
+  this.error = '';
   this.patientAuthService.getPatientById(appointment.patient_id).subscribe(
     (patient: any) => { // تأكد من أن نوع patient صحيح
       if (patient) {
@@ -95,12 +99,12 @@ populateFormForEdit(appointment: any) {
           doctor_id: appointment.doctor_id 
         });
       } else {
-        alert('Could not find patient information for this appointment.');
+        this.error = 'Could not find patient information for this appointment.';
       }
     },
     (error) => {
       console.error('Error fetching patient information for edit:', error);
-      alert('Error fetching patient details.');
+      this.error = 'Error fetching patient information.';
     }
   );
 }
@@ -111,6 +115,8 @@ formatTime(time: any): string {
 
 
   submitAppointment() {
+    this.success = '';
+    this.error = '';
     console.log("submitAppointment function called");
     this.appointmentForm.markAllAsTouched(); // Mark all controls as touched
     this.appointmentForm.updateValueAndValidity(); // Re-evaluate the validity of the form
@@ -127,7 +133,7 @@ formatTime(time: any): string {
               date: appointmentData.date,
               patient_id: patient.id,
               doctor_id: appointmentData.doctor_id,
-              approval_status: "",
+              approval_status: "pending",
               appointment_details: {
                 reason: appointmentData.reason,
                 drugs: "",
@@ -142,217 +148,45 @@ formatTime(time: any): string {
               this.appointmentService.updateAppointment(this.appointmentId, appointmentToSend).subscribe(
                 (response: any) => {
                   console.log('Appointment updated successfully:', response);
-                  alert('Appointment updated successfully');
+                  this.success = 'Appointment updated successfully';
+                
                   this.appointmentForm.reset();
                 },
                 (error) => {
                   console.error('Error updating appointment:', error);
-                  alert('Failed to update appointment. Please try again.');
+                  this.error = 'Failed to update appointment. Please try again.';
                 }
               );
             } else {
               this.appointmentService.addAppointment(appointmentToSend).subscribe(
                 (response: any) => {
                   console.log('Appointment booked successfully:', response);
-                  alert('Appointment booked successfully');
+                  this.success = 'Appointment booked successfully';
                   this.appointmentForm.reset();
                 },
                 (error) => {
                   console.error('Error booking appointment:', error);
-                  alert('Failed to book appointment. Please try again.');
+                  this.error = 'Failed to book appointment. Please try again.';
                 }
               );
             }
           } else {
             console.error('Could not find patient with this email.');
-            alert('Could not find patient with this email. Please try again.');
+            this.error = 'Could not find patient with this email. Please try again.';
           }
         },
         (error) => {
           console.error('Error fetching patient information:', error);
-          alert('Error fetching patient information. Please try again.');
+          this.error = 'Error fetching patient information. Please try again.';
         }
       );
     } else {
       console.error('Form is invalid:', this.appointmentForm.errors);
-      alert('Please fill in all the required fields correctly.');
+      this.error = 'Please fill in all the required fields correctly.';
     }
   }
 
-  // populateFormForEdit(appointment: any) {
-  //   this.userService.getPatientById(appointment.patient_id).subscribe(
-  //     (patient: any) => { // استخدم any هنا مؤقتًا، يمكنك تحديد النوع لاحقًا
-  //       if (patient) {
-  //         this.appointmentForm.patchValue({
-  //           fullname: patient.name,
-  //           email: patient.email,
-  //           phone: patient.phone,
-  //           date: appointment.date,
-  //           time: this.formatTime(appointment.time),
-  //           reason: appointment.appointment_details?.reason || '',
-  //           id: appointment.id,
-  //         });
-  //       } else {
-  //         alert('Could not find patient information for this appointment.');
-  //       }
-  //     },
-  //     (error) => {
-  //       console.error('Error fetching patient information for edit:', error);
-  //       alert('Error fetching patient details.');
-  //     }
-  //   );
-  // }
-
-  // formatTime(time: any): string {
-  //   // ... تنفيذ تنسيق الوقت إذا لزم الأمر
-  //   return time;
-  // }
 }
-// submitAppointment() {
-//   console.log("submitAppointment function called");
-//   this.appointmentForm.markAllAsTouched(); // Mark all controls as touched
-//   this.appointmentForm.updateValueAndValidity(); // Re-evaluate the validity of the form
-//   console.log("Value of this.appointmentForm.valid:", this.appointmentForm.valid);
-//   console.log("Form errors:", this.appointmentForm.errors);
-//   if (this.appointmentForm.valid) {
-//     const appointmentData = this.appointmentForm.value;
-//     const email = appointmentData.email;
-//   this.userService.getPatientByEmail(email).subscribe(
-//     (patients)=>{
-//       if(patients && patients.length>0){
-//         const patient =patients[0];
-//         const appointmentPatientIdSend ={
-//           date:appointmentData.date,
-//           patient_id:patient.id,
-//           doctor_id:" ",
-//           approval_status:" ",
-//           appointment_details: {
-//             reason: appointmentData.reason, 
-//             drugs: "",
-//             diagnosis: "",
-//             payment: ""
-//           }
-//         };
-//         console.log("Appointment Data With Patient ID:",appointmentPatientIdSend);
-//         if (this.appointmentId) {
-//       this.appointmentService.updateAppointment(this.appointmentId, appointmentPatientIdSend).subscribe(
-//         (response: any) =>{
-//           console.log('Appointment booked successfully:',response);
-//           alert('Appointment booked successfully');
-//           this.appointmentForm.reset();
-//         },
-//         (error) =>{
-//           console.error('Error booking appointment:',error);
-//           alert('Failed to book appointment. Please try again.');
-//         }
-//       );
-//       }else {
-//         this.appointmentService.addAppointment(appointmentPatientIdSend).subscribe(
-//           (response: any) => {
-//             console.log('Appointment booked successfully:', response);
-//             alert('Appointment booked successfully');
-//             this.appointmentForm.reset();
-//           },
-//           (error) => { console.error('Error booking appointment:', error);
-//             alert('Failed to book appointment. Please try again.');
-//           }
-//         );
-//       }
-//     } else {
-//         console.error('Could not find patient with this email.');
-//         alert('Could not find patient with this email. Please try again.');
-//       }
-//     },
-//     (error) => {
-//       console.error('Error fetching patient information:', error);
-//       alert('Error fetching patient information. Please try again.');
-//     }
-//   );
-// } else {
-//     console.log("else block executed!");
-//     console.error('error #%d', this.appointmentForm.errors);
-//     alert('Please fill in all the required fields.');
-//   }
-//   function submitAppointment() {
-//     throw new Error('Function not implemented.');
-//   }
-// }
-
-// function submitAppointment() {
-//   throw new Error('Function not implemented.');
-// }
-// 2
-// this.appointmentForm.markAllAsTouched();
-// this.appointmentForm.updateValueAndValidity();
-
-// if (this.appointmentForm.valid) {
-//   const appointmentData = this.appointmentForm.value;
-
-//   if (this.appointmentId) {
-//     // Editing existing appointment
-//     this.appointmentService.updateAppointment(this.appointmentId, appointmentData).subscribe(
-//       (response) => {
-//         console.log('Appointment updated successfully:', response);
-//         alert('Appointment updated successfully');
-//         this.appointmentForm.reset();
-//         this.appointmentId = null; // Reset the ID after successful update
-//       },
-//       (error) => {
-//         console.error('Error updating appointment:', error);
-//         alert('error updating appointment');
-//       }
-//     );
-//   } else {
-//     // Adding new appointment (the original logic)
-//     const email = appointmentData.email;
-//     this.userService.getPatientByEmail(email).subscribe(
-//       (patients) => {
-//         if (patients && patients.length > 0) {
-//           const patient = patients[0];
-//           const appointmentPatientIdSend = {
-//             date: appointmentData.date,
-//             patient_id: patient.id,
-//             doctor_id: " ", // You might need to handle this based on your logic
-//             approval_status: " ", // Initial status
-//             appointment_details: {
-//               drugs: "",
-//               diagnosis: "",
-//               payment: ""
-//             },
-//             fullname: appointmentData.fullname, // Add other form fields if needed for new appointments
-//             email: appointmentData.email,
-//             phone: appointmentData.phone,
-//             time: appointmentData.time,
-//             reason: appointmentData.reason
-//           };
-//           console.log("Appointment Data With Patient ID:", appointmentPatientIdSend);
-//           this.appointmentService.addAppointment(appointmentPatientIdSend).subscribe(
-//             (response) => {
-//               console.log('Appointment booked successfully:', response);
-//               alert('successfully booked appointment');
-//               this.appointmentForm.reset();
-//             },
-//             (error) => {
-//               console.error('Error booking appointment:', error);
-//               alert('error booking appointment. Please try again.');
-//             }
-//           );
-//         } else {
-//           console.error('Could not find patient with this email.');
-//           alert('Could not find patient with this email. Please try again.');
-//         }
-//       },
-//       (error) => {
-//         console.error('Error fetching patient information:', error);
-//         alert('error fetching patient information. Please try again.');
-//       }
-//     );
-//   }
-// } else {
-//   console.error('Form is invalid:', this.appointmentForm.errors);
-//   alert('please fill in all the required fields.');
-// }
-// }
 
 
 

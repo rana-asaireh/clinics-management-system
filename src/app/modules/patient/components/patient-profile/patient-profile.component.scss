@@ -14,6 +14,18 @@ h1 {
   font-family: Arial, sans-serif;
 }
 
+.success {
+  display: block;
+  color: green;
+  margin-bottom: -5px;
+  margin-top: 20px;
+}
+
+.error {
+  color: red;
+  display: block;
+  margin-top: 10px;
+}
 .page-title {
   font-size: 28px;
   font-weight: bold;
@@ -69,6 +81,7 @@ h1 {
 .form-group {
   display: flex;
   align-items: center;
+  position: relative; /* لجعل الأيقونة المطلقة بالنسبة له */
 }
 
 .profile-icon {
@@ -95,7 +108,22 @@ h1 {
   border-radius: 6px;
   font-size: 14px;
   box-sizing: border-box;
-  width: calc(100% - 40px);
+  width: 100%;
+}
+
+.with-icon {
+  padding-right: 40px; /* لإفساح مكان للأيقونة */
+}
+
+.input-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 21px;
+  height: 21px;
+  z-index: 2;
+  cursor: pointer;
 }
 
 .error-message {
@@ -106,6 +134,8 @@ h1 {
   width: 100%;
 }
 
+
+
 .btn {
   background-color: #3b8c88;
   color: white;
@@ -113,14 +143,12 @@ h1 {
   padding: 10px 20px;
   border-radius: 4px;
   cursor: pointer;
-  margin-bottom: 20px;
   transition: background-color 0.3s ease;
-  width: auto; /* السماح للزر بأخذ عرضه الطبيعي */
+  width: auto;
+  margin-right: 40px;
 }
 
-/* للشاشات الصغيرة */
-@media (max-width: 750px) {
-  .profile-row > div {
-    width: 100%;
-  }
+.input-wrapper {
+  position: relative;
+  width: 100%; /* تأكد من أن الحاوية تأخذ كامل عرض حقل الإدخال */
 }
