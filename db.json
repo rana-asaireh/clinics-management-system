@@ -3,101 +3,114 @@
     {
       "type": "admin",
       "name": "Mohammed Aqqad",
-      "email": "Mohammed.Aqqad@gmail.com",
-      "password": "Ma**1234",
-      "id": "1391"
+      "email": "Mohammed.Aqqad@amal-clinic.com",
+      "password": "Ma&&1234",
+      "id": "7075"
     },
     {
       "type": "doctor",
       "name": "Omar Turkmani",
-      "email": "omar.turkmani@gmail.com",
+      "email": "omar1970@amal-clinic.com",
       "password": "Ot**1234",
-      "id": "c00b"
+      "id": "0756"
     },
     {
       "type": "doctor",
       "name": "Tariq Najjar",
-      "email": "tariqnajjar@gmail.com",
+      "email": "tariqnajjar@amal-clinic.com",
       "password": "tn**1234",
-      "id": "d65d"
+      "id": "5019"
     },
     {
       "type": "doctor",
       "name": "Amina Saeed",
-      "email": "aminasaeed@gmail.com",
+      "email": "aminasaeed@amal-clinic.com",
       "password": "sa**1234",
-      "id": "afbe"
+      "id": "fa55"
     },
     {
       "type": "doctor",
       "name": "Mariam Al-Hariri",
-      "email": "mariam@gmail.com",
+      "email": "mariam1970@amal-clinic.com",
       "password": "mar**1244",
-      "id": "6502"
+      "id": "3c17"
     },
     {
       "type": "doctor",
       "name": "Rami Al-Najdi",
-      "email": "ralnajdi20@gmail.com",
+      "email": "ralnajdi20@amal-clinic.com",
       "password": "rr**na14",
-      "id": "103f"
+      "id": "0a91"
     },
     {
       "type": "doctor",
       "name": "Nour Abdeen",
-      "email": "nour440@gmail.com",
+      "email": "nour440@amal-clinic.com",
       "password": "rr**na14",
-      "id": "a1fd"
+      "id": "eba9"
     },
     {
       "type": "patient",
       "name": "Salma Alfaqeeh",
       "email": "salma1980@gmail.com",
       "password": "Sa**1234",
-      "id": "8a2c"
+      "id": "5d38"
     },
     {
+      "id": "a341",
       "type": "patient",
       "name": "Lara Amer",
       "email": "aya860@gmail.com",
-      "password": "ay**1234",
-      "date": "2025-05-10",
-      "id": "e0af"
+      "password": "ay**1234"
     },
     {
+      "id": "8e92",
       "type": "patient",
       "name": " Laila Mohammad",
       "email": "laila879@gmail.com",
-      "password": "la**1234",
-      "id": "4a19"
+      "password": "la**1234"
     },
     {
+      "id": "eefa",
       "type": "patient",
       "name": "Ahmad Yousef",
       "email": "ahmad456@gmail.com",
-      "password": "Sa**1234",
-      "id": "6689"
+      "password": "Sa**1234"
     },
     {
+      "id": "aec4",
       "type": "patient",
       "name": "Hamza Al-Ahmad",
       "email": "hamza30@gmail.com",
-      "password": "ha**1234",
-      "id": "715c"
+      "password": "ha**1234"
     },
     {
+      "id": "f1e8",
       "type": "patient",
       "name": "Sara Amer",
       "email": "sara090@gmail.com",
-      "password": "sa**1234",
-      "id": "58a5"
+      "password": "sa**1234"
     },
     {
-      "type": "patient",
-      "name": "cireen Omar",
-      "email": "cireen090@gmail.com",
-      "password": "ci**1234",
-      "id": "8630"
+      "id": "f332",
+      "type": "doctor",
+      "name": "Sami Khader",
+      "email": "Sami-khader@amal-clinic.com",
+      "password": "Fdgh*125"
+    },
+    {
+      "id": "16fb",
+      "type": "doctor",
+      "name": "Lana Momani",
+      "email": "lana-momani@amal-clinic.com",
+      "password": "Jh542*j85"
+    },
+    {
+      "id": "2daa",
+      "type": "doctor",
+      "name": "Ahmad Mohtaseb",
+      "email": "Ahmad.Mohtaseb@amal-clinic.com",
+      "password": "Fs*251435"
     }
   ],
   "patient": [
@@ -107,9 +120,9 @@
       "name": "Salma Alfaqeeh",
       "email": "salma1980@gmail.com",
       "password": "Sa**1234",
-      "phone": "962 776532545",
+      "phone": "962776532545",
       "gender": "female",
-      "dob": "09-09-1980"
+      "dob": "1980-09-09"
     },
     {
       "id": "2",
@@ -117,9 +130,9 @@
       "name": "Lara Amer",
       "email": "aya860@gmail.com",
       "password": "ay**1234",
-      "phone": "962 77980805",
+      "phone": "96277980805",
       "gender": "female",
-      "dob": "24-04-1999"
+      "dob": "1999-04-24"
     },
     {
       "id": "3",
@@ -127,9 +140,9 @@
       "name": " Laila Mohammad",
       "email": "laila879@gmail.com",
       "password": "la**1234",
-      "phone": "962 78975603",
+      "phone": "96278975603",
       "gender": "female",
-      "dob": "04-02-2001"
+      "dob": "2001-04-02"
     },
     {
       "id": "4",
@@ -137,9 +150,9 @@
       "name": "Ahmad Yousef",
       "email": "ahmad456@gmail.com",
       "password": "Sa**1234",
-      "phone": "962 785943202",
+      "phone": "962785949202",
       "gender": "male",
-      "dob": "10-03-1985"
+      "dob": "1985-10-03"
     },
     {
       "id": "5",
@@ -147,9 +160,9 @@
       "name": "Hamza Al-Ahmad",
       "email": "hamza30@gmail.com",
       "password": "ha**1234",
-      "phone": "+962 776536804",
+      "phone": "962776536804",
       "gender": "male",
-      "dob": "13-08-2005"
+      "dob": "2000-05-10"
     },
     {
       "id": "6",
@@ -157,9 +170,9 @@
       "name": "Sara Amer",
       "email": "sara090@gmail.com",
       "password": "sa**1234",
-      "phone": "962 778702146",
+      "phone": "962778702146",
       "gender": "female",
-      "dob": "04-06-1990"
+      "dob": "1990-04-06"
     }
   ],
   "doctor": [
@@ -167,9 +180,10 @@
       "id": "1",
       "type": "doctor",
       "name": "Omar Turkmani",
-      "email": "omar.turkmani@gmail.com",
+      "gender": "male",
+      "email": "omar1970@amal-clinic.com",
       "password": "Ot**1234",
-      "phone": "962 795569821",
+      "phone": "962785239201",
       "specification": "Dentist",
       "clinic_id": "1"
     },
@@ -177,9 +191,10 @@
       "id": "2",
       "type": "doctor",
       "name": "Tariq Najjar",
-      "email": "tariqnajjar@gmail.com",
+      "gender": "male",
+      "email": "tariqnajjar@amal-clinic.com",
       "password": "tn**1234",
-      "phone": "962 795039201",
+      "phone": "962795039201",
       "specification": "Pediatrician",
       "clinic_id": "2"
     },
@@ -187,9 +202,10 @@
       "id": "3",
       "type": "doctor",
       "name": "Amina Saeed",
-      "email": "aminasaeed@gmail.com",
+      "gender": "female",
+      "email": "aminasaeed@amal-clinic.com",
       "password": "sa**1234",
-      "phone": "962 795039201",
+      "phone": "962795039201",
       "specification": "Physical Therapist",
       "clinic_id": "3"
     },
@@ -197,9 +213,10 @@
       "id": "4",
       "type": "doctor",
       "name": "Mariam Al-Hariri",
-      "email": "mariam@gmail.com",
+      "gender": "female",
+      "email": "mariam1970@amal-clinic.com",
       "password": "mar**1244",
-      "phone": "962 799979034",
+      "phone": "962799979034",
       "specification": "Gynecologist",
       "clinic_id": "4"
     },
@@ -207,9 +224,10 @@
       "id": "5",
       "type": "doctor",
       "name": "Rami Al-Najdi",
-      "email": "ralnajdi20@gmail.com",
+      "gender": "male",
+      "email": "ralnajdi20@amal-clinic.com",
       "password": "rr**na14",
-      "phone": "962 799998976",
+      "phone": "962799998976",
       "specification": "Dentist",
       "clinic_id": "1"
     },
@@ -217,21 +235,45 @@
       "id": "6",
       "type": "doctor",
       "name": "Nour Abdeen",
-      "email": "nour440@gmail.com",
+      "gender": "female",
+      "email": "nour440@amal-clinic.com",
       "password": "rr**na14",
-      "phone": "962 7994560276",
+      "phone": "9627994560276",
       "specification": "Gynecologist",
       "clinic_id": "4"
     },
     {
-      "id": "c588",
+      "id": "3d27",
       "type": "doctor",
-      "name": "Rami Momani",
-      "email": "ramimomani@gmail.com",
-      "password": "Rr*5412fghjj",
-      "phone": "962 785562485",
-      "specification": "Pediatrician",
-      "clinic_id": "2"
+      "name": "Sami Khader",
+      "email": "Sami-khader@amal-clinic.com",
+      "password": "Fdgh*125",
+      "phone": "962781123695",
+      "specification": "Physical Therapist",
+      "clinic_id": "3",
+      "gender": "male"
+    },
+    {
+      "id": "0341",
+      "type": "doctor",
+      "name": "Lana Momani",
+      "email": "lana-momani@amal-clinic.com",
+      "password": "Jh542*j85",
+      "phone": "962795568214",
+      "specification": "Physical Therapist",
+      "clinic_id": "3",
+      "gender": "female"
+    },
+    {
+      "id": "9992",
+      "type": "doctor",
+      "name": "Ahmad Mohtaseb",
+      "email": "Ahmad.Mohtaseb@amal-clinic.com",
+      "password": "Fs*251435",
+      "phone": "962785562475",
+      "specification": "Dentist",
+      "clinic_id": "1",
+      "gender": "male"
     }
   ],
   "admin": [
@@ -239,9 +281,9 @@
       "id": "1",
       "type": "admin",
       "name": "Mohammed Aqqad",
-      "email": "Mohammed.Aqqad@gmail.com",
-      "password": "Ma**1234",
-      "phone": "962 784256326"
+      "email": "Mohammed.Aqqad@amal-clinic.com",
+      "password": "Ma&&1234",
+      "phone": "962784256326"
     }
   ],
   "appointment": [
@@ -412,45 +454,81 @@
   "drug": [
     {
       "id": "1",
-      "name": "Clindamycin",
-      "clinic_id": "1"
+      "name": "Clindamycin"
     },
     {
       "id": "2",
-      "name": "Amoxicillin",
-      "clinic_id": "2"
+      "name": "Amoxicillin"
     },
     {
       "id": "3",
-      "name": "Ibuprofen",
-      "clinic_id": "3"
+      "name": "Ibuprofen"
     },
     {
       "id": "4",
-      "name": "Insulin",
-      "clinic_id": "4"
+      "name": "Insulin"
+    },
+    {
+      "id": "a508",
+      "name": "Paracetamol"
+    },
+    {
+      "id": "ac57",
+      "name": "Diclofenac"
+    },
+    {
+      "id": "a0f6",
+      "name": "Chlorhexidine Mouthwash"
+    },
+    {
+      "id": "74f2",
+      "name": "Salbutamol"
+    },
+    {
+      "id": "2da0",
+      "name": "Folic Acid"
+    },
+    {
+      "id": "181b",
+      "name": "Ferrous Sulfate"
     }
   ],
   "diagnosis": [
     {
       "id": "1",
-      "name": "Gingivitis",
-      "clinic_id": "1"
+      "name": "Gingivitis"
     },
     {
       "id": "2",
-      "name": "Asthma",
-      "clinic_id": "2"
+      "name": "Asthma"
     },
     {
       "id": "3",
-      "name": "Low Back Pain",
-      "clinic_id": "3"
+      "name": "Low Back Pain"
     },
     {
       "id": "4",
-      "name": "Gestational Diabetes",
-      "clinic_id": "4"
+      "name": "Gestational Diabetes"
+    },
+    {
+      "id": "8fa4",
+      "name": "Dental Abscess"
+    },
+    {
+      "id": "3498",
+      "name": "Allergic Rhinitis"
+    },
+    {
+      "id": "8e64",
+      "name": "Tendonitis"
+    },
+    {
+      "id": "33e0",
+      "name": "Osteoarthritis"
+    },
+    {
+      "id": "0a11",
+      "name": "Otitis Media"
     }
   ],
   "clinic": [
