@@ -8,6 +8,7 @@ import { PaginationComponent } from './components/pagination/pagination.componen
 
 
 
+
 @NgModule({
   declarations: [
     AuthHeaderComponent,
@@ -25,5 +26,6 @@ import { PaginationComponent } from './components/pagination/pagination.componen
     AuthSideBarComponent,
     PaginationComponent
   ]
+
 })
 export class SharedModule {}
