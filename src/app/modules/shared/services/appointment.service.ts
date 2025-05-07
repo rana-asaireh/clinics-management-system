@@ -4,6 +4,7 @@ import { map, mergeMap, Observable, retry } from 'rxjs';
 import { Appointment } from '../models/appointment.model';
 import { AppComponent } from '../../../app.component';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,16 +15,6 @@ export class AppointmentService {
   constructor(private http: HttpClient) { }
 
 
-  //get appointments
-  // getAppointmentsByPatient(patientId: string, sortColumn?: string, sortDirection?: string): Observable<any[]> {
-  //   return this.http.get<any[]>(this.baseUrl).pipe(
-  //     map((appointments) => {
-  //       return appointments.filter(appointment => appointment.patient_id === patientId); // Filter appointments by patient_id
-  //     }),
-
-  //   );
-  // }
-  //get appointment by Fields ex : patient-id , doctor-id ,id 
   getAppointmentsByAnyField(field: string, idValue: string, expandFields?: string[]): Observable<Appointment[]> {
     let url = `${this.baseUrl}?${field}=${idValue}`;
 
@@ -72,4 +63,21 @@ export class AppointmentService {
   updateAppintmentStatus(appointmentId: string, updateData: { approval_status: string }): Observable<Appointment> {
     return this.http.patch<Appointment>(this.baseUrl + '/' + appointmentId, updateData)
   }
+
+  addAppointment(appointment: any): Observable<Appointment> {
+    return this.http.post<Appointment>(`${this.baseUrl}`, appointment);
+    
+  }
+
+
+
+
+  updateAppointment(id: string, appointmentData: any): Observable<Appointment> {
+  
+    return this.http.patch<Appointment>(`${this.baseUrl}/${id}`, appointmentData);
+  }
+  getPatientAppointments(patientId: string): Observable<Appointment[]> {
+    return this.http.get<Appointment[]>(`${this.baseUrl}?patientId=${patientId}`);
+  }
+
 }
