@@ -19,7 +19,7 @@ export class DoctorsListComponent implements OnInit {
   clinics: Clinic[] = [];
   searchQuery: any;
   searchImage: string = 'search';
-  //pagination properities
+
   currentPage: number = 1;
   pageSize: number = 3;
   totalDoctors: number = 0;
@@ -33,7 +33,7 @@ export class DoctorsListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //get doctors
+
     this.doctorService.getDoctors().subscribe(
       (doctors) => {
         this.doctors = doctors
@@ -52,7 +52,6 @@ export class DoctorsListComponent implements OnInit {
     });
   }
 
-  //get clinic by doctor id 
   getClinicNameByDoctorId(doctorId: string): string {
     const doctor = this.doctors.find(d => d.id?.toString() == doctorId);
     if (doctor) {
@@ -64,7 +63,7 @@ export class DoctorsListComponent implements OnInit {
   }
 
 
-  //filter items 
+
   onFilterChange(): void {
     this.currentPage = 1;
     this.doctorService.getFilteredDoctors(this.selectedClinicId, this.searchQuery).subscribe(
@@ -102,7 +101,7 @@ export class DoctorsListComponent implements OnInit {
   }
 
 
-  //#region pagination
+
   goToPage(page: number) {
     this.currentPage = page
     this.filteredDoctors = this.paginationService.paginate(
@@ -111,5 +110,5 @@ export class DoctorsListComponent implements OnInit {
       this.pageSize
     );
   }
-  //#endregion
+
 }
