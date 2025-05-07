@@ -6,7 +6,7 @@
   padding: 20px;
   min-height: auto;
   background-color: white;
-  flex-direction: column; /* لجعل العناصر تتراكم عموديًا */
+  flex-direction: column; 
 }
 
 h2 {
@@ -14,7 +14,7 @@ h2 {
   margin-bottom: 20px;
   text-align: left;
   font-size: 28px;
-  width: 100%; /* لجعل العنوان يأخذ كامل عرض الشاشة */
+  width: 100%;
   margin-left: 0;
   margin-right: 0;
 }
@@ -24,7 +24,7 @@ h2 {
   border-top: 2px solid #2aa198;
   margin-top: 8px;
   margin-bottom: 8px;
-  width: 100%; /* لجعل الخط يأخذ كامل عرض الشاشة */
+  width: 100%; 
   margin-left: 0;
   margin-right: 0;
 }
@@ -34,7 +34,7 @@ h2 {
   padding: 0;
   border-radius: 0;
   box-shadow: none;
-  width: 100%; /* الحفاظ على هذا العرض لبقية العناصر */
+  width: 100%; 
   box-sizing: border-box;
   margin: 20px auto;
 }
