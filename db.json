@@ -147,7 +147,7 @@
       "name": " Laila Mohammad",
       "email": "laila879@gmail.com",
       "password": "la**1234",
-      "phone": "96278975603",
+      "phone": "96278975602",
       "gender": "female",
       "dob": "2001-04-02"
     },
@@ -717,102 +717,6 @@
         ]
       },
       "payment": "unpaid"
-    },
-    {
-      "id": "eb6a",
-      "date": "2025-06-04",
-      "patient_id": "5",
-      "doctor_id": " ",
-      "approval_status": " ",
-      "appointment_details": {
-        "drugs": "",
-        "diagnosis": "",
-        "payment": ""
-      }
-    },
-    {
-      "id": "4ad8",
-      "date": "2025-05-24",
-      "patient_id": "6",
-      "doctor_id": " ",
-      "approval_status": "cancelled",
-      "appointment_details": {
-        "reason": "tired",
-        "drugs": "",
-        "diagnosis": "",
-        "payment": ""
-      },
-      "time": "10:30"
-    },
-    {
-      "id": "9017",
-      "date": "2025-09-25",
-      "patient_id": "5",
-      "doctor_id": " ",
-      "approval_status": "",
-      "appointment_details": {
-        "reason": "sick",
-        "drugs": "",
-        "diagnosis": "",
-        "payment": ""
-      },
-      "time": "11:31"
-    },
-    {
-      "id": "18bc",
-      "date": "2025-05-30",
-      "patient_id": "4",
-      "doctor_id": " ",
-      "approval_status": "cancelled",
-      "appointment_details": {
-        "reason": "sick and tired\n",
-        "drugs": "",
-        "diagnosis": "",
-        "payment": ""
-      },
-      "time": "10:30"
-    },
-    {
-      "id": "4bea",
-      "date": "2025-10-30",
-      "patient_id": "4",
-      "doctor_id": " ",
-      "approval_status": "cancelled",
-      "appointment_details": {
-        "reason": "tired",
-        "drugs": "",
-        "diagnosis": "",
-        "payment": ""
-      },
-      "time": "17:59"
-    },
-    {
-      "id": "5bb4",
-      "date": "2025-05-28",
-      "patient_id": "4",
-      "doctor_id": " ",
-      "approval_status": "cancelled",
-      "appointment_details": {
-        "reason": "headache",
-        "drugs": "",
-        "diagnosis": ""
-      },
-      "time": "19:35",
-      "payment": ""
-    },
-    {
-      "id": "ac64",
-      "date": "2025-05-31",
-      "patient_id": "6",
-      "doctor_id": "0341",
-      "approval_status": "",
-      "appointment_details": {
-        "reason": "toothache",
-        "drugs": "",
-        "diagnosis": ""
-      },
-      "payment": "",
-      "time": "07:00"
     }
   ],
   "drug": [
@@ -902,7 +806,7 @@
     },
     {
       "id": "2",
-      "name": "Pediatrics clinic"
+      "name": "Pediatrics Clinic"
     },
     {
       "id": "3",
