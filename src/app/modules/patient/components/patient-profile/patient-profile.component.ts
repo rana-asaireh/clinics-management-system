@@ -21,8 +21,15 @@ export class PatientProfileComponent implements OnInit {
     patientProfileForm!: FormGroup;
     patientId:string | null= null;
     patientData: Patient | null = null;
+    success: string = '';
+    error!: string;
     
-    
+    isVisible: { [key: string]: boolean } = {
+      password: false
+  };
+  inputType: { [key: string]: string } = {
+      password: 'password'
+  };
 
     constructor(private patientAuthService: PatientAuthService,
       private userService :UserService
@@ -52,7 +59,8 @@ export class PatientProfileComponent implements OnInit {
         email: new FormControl({ value: '', disabled: true }, [Validators.required, Validators.email]),
         phone: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10,15}$')]),
         gender: new FormControl('', Validators.required),
-        dob: new FormControl('', Validators.required)
+        dob: new FormControl('', Validators.required),
+        password: new FormControl('', Validators.minLength(6))
        });
      }
     
@@ -70,7 +78,8 @@ export class PatientProfileComponent implements OnInit {
               email: this.patientData?.email,
               phone: this.patientData?.phone,
               gender: this.patientData?.gender,
-              dob: this.patientData?.dob 
+              dob: this.patientData?.dob,
+              password: this.patientData?.password 
             });
           },
           (error) => {
@@ -81,26 +90,30 @@ export class PatientProfileComponent implements OnInit {
       }
     }
      updateProfile() {
+      this.success = '';
+      this.error = '';
       if(this.patientProfileForm.valid && this.patientId && this.patientData){
         const updatedData={...this.patientData,...this.patientProfileForm.value,id : this.patientId};
+        const newPassword = this.patientProfileForm.get('password')?.value;
         this.patientAuthService.updatePatient(updatedData).subscribe(
           (success) => {
             console.log('Patient profile updated successfully:', success);
-            this.updateUserData(updatedData);
-            alert('Patient profile updated successfully');
+            this.updateUserData(updatedData,newPassword);
+            this.success = 'Patient profile updated successfully';
+            
             this.getPatientData();
           },
           (error) => {
             console.error('Error updating patient profile:', error);
-            alert('Error updating patient profile');
+            this.error = 'Error updating patient profile';
           }
         );
       }else{
         this.patientProfileForm.markAllAsTouched();
-        alert('Please fill in all required fields.');
+        this.error = 'Please fill in all required fields.';
       }
      }
-     updateUserData(patientData: Patient) {
+     updateUserData(patientData: Patient,newPassword: string ) {
       this.userService.getUserByEmail(patientData.email).subscribe(
         (users) => {
           if (users && users.length > 0) {
@@ -108,15 +121,18 @@ export class PatientProfileComponent implements OnInit {
             const updatedUserData: User = {
               ...user,
               name: patientData.name,
-              email: patientData.email // تأكد من تحديث البريد الإلكتروني إذا لزم الأمر
+              email: patientData.email 
             };
+            if (newPassword && newPassword !== user.password) { 
+              updatedUserData.password = newPassword;
+          }
             this.userService.updateUser(updatedUserData).subscribe(
               (userUpdateSuccess) => {
                 console.log('User data updated successfully:', userUpdateSuccess);
               },
               (userUpdateError) => {
                 console.error('Error updating user data:', userUpdateError);
-                alert('Error updating user data');
+                this.error = 'Error updating user data';
               }
             );
           } else {
@@ -128,5 +144,8 @@ export class PatientProfileComponent implements OnInit {
         }
       );
     }
-  
+    toggleVisibility(fieldName: string) {
+      this.isVisible[fieldName] = !this.isVisible[fieldName];
+      this.inputType[fieldName] = this.isVisible[fieldName] ? 'text' : 'password';
+  }
 }

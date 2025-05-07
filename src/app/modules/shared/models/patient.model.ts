@@ -5,7 +5,8 @@ export interface Patient {
     email: string,
     phone: number,
     gender: string,
-    dob: Date
+    dob: Date,
+    password: string
 
 
 

@@ -6,6 +6,8 @@
   </nav> -->
   <hr class="underline" />
 </div>
+<span *ngIf="success" class="success">{{success}}</span>
+<span *ngIf="success" class="error">{{error}}</span>
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="container">
   <div class="test">
     <div class="profile-row">
@@ -76,7 +78,25 @@
         </div>
       </div>
     </div>
-
+    <div class="profile-row">
+      <div class="form-group-container">
+          <div class="form-group">
+              <div class="profile-icon">
+                  <img src="/holding-hand-key.png">
+              </div>
+              <div class="input-wrapper">
+                <input [type]="inputType['password']" class="profile-input" placeholder="Password" formControlName="password">
+                <img [src]="isVisible['password'] ? '/images/Visible1.png' : '/images/Invisible1.png'"
+                     class="input-icon-2" alt="Toggle visibility" (click)="toggleVisibility('password')" />
+            </div>
+              <div *ngIf="profileForm.get('password')?.invalid && profileForm.get('password')?.touched"
+                   class="error-message">
+                  <small *ngIf="profileForm.get('password')?.hasError('minlength')">Password must be at least 6 characters long.</small>
+              </div>
+          </div>
+      </div>
+  </div>
+  
     <button type="submit" class="btn">Update</button>
 
   </div>

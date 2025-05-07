@@ -2,6 +2,8 @@
   <h2 class="page-title">Profile</h2>
   <hr class="underline" />
 </div>
+<span *ngIf="success" class="success">{{success}}</span>
+<span *ngIf="success" class="error">{{error}}</span>
 <form [formGroup]="patientProfileForm" (ngSubmit)=" updateProfile()" class="container">
   <div class="test">
     <div class="profile-row">
@@ -78,7 +80,25 @@
           <small *ngIf="patientProfileForm.get('dob')?.hasError('required')">Date of birth is required.</small>
         </div>
       </div>
+      <div class="form-group-container">
+        <div class="form-group">
+          <div class="profile-icon">
+            <img src="/holding-hand-key.png">
+          </div>
+          <div class="input-wrapper">
+            <input [type]="inputType['password']" class="profile-input with-icon" id="password" placeholder="Password" formControlName="password">
+            <img [src]="isVisible['password'] ? '/images/Visible1.png' : '/images/Invisible1.png'"
+              class="input-icon" alt="Toggle visibility" (click)="toggleVisibility('password')" />
+          </div>
+          <div *ngIf="patientProfileForm.get('password')?.invalid && patientProfileForm.get('password')?.touched"
+            class="error-message">
+            <small *ngIf="patientProfileForm.get('password')?.hasError('minlength')">Password must be at least 6 characters long.</small>
+          </div>
+        </div>
+      </div>
     </div>
-    <button type="submit" class="btn">Update</button>
+    
+      <button type="submit" class="btn">Update</button>
+    
   </div>
 </form>
