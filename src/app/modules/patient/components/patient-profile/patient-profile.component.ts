@@ -103,23 +103,23 @@ export class PatientProfileComponent implements OnInit {
     
         this.patientAuthService.updatePatient(updatedData).subscribe(
           (success) => {
-            this.updateUserData(updatedData, newPassword);
-            this.success = 'Patient profile updated successfully';
-    
-            // Clear success message after 3 seconds
-            setTimeout(() => {
-              this.success = '';
-            }, 3000);
-    
+            console.log('Patient profile updated successfully:', success);
+            this.updateUserData(updatedData,newPassword);
+            this.success = 'Profile updated successfully';
+            setTimeout(() => { this.success = ''; }, 3000);
+            
             this.getPatientData();
           },
           (error) => {
-            this.error = 'Error updating patient profile';
+            console.error('Error updating patient profile:', error);
+            this.error = 'Error updating  profile';
+            setTimeout(() => { this.error = ''; }, 3000);
           }
         );
       } else {
         this.patientProfileForm.markAllAsTouched();
         this.error = 'Please fill in all required fields.';
+        setTimeout(() => { this.error = ''; }, 3000);
       }
     }
     

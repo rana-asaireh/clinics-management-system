@@ -69,12 +69,14 @@ export class PatientBookAppointmentsComponent implements OnInit {
             if (appointment) {
               this.populateFormForEdit(appointment);
             } else {
-              alert('Could not find appointment with this ID.');
+              this.error = 'Could not find appointment with this ID.';
+            
             }
           },
           (error) => {
             console.error('Error fetching appointment for edit:', error);
-            alert('Error fetching appointment details.');
+            this.error = 'Error fetching appointment.';
+          
           }
         );
       }
@@ -149,11 +151,13 @@ export class PatientBookAppointmentsComponent implements OnInit {
                 (response: any) => {
                   console.log('Appointment updated successfully:', response);
                   this.success = 'Appointment updated successfully';
+                  setTimeout(() => { this.success = ''; }, 3000);
                   this.appointmentForm.reset();
                 },
                 (error) => {
                   console.error('Error updating appointment:', error);
                   this.error = 'Failed to update appointment. Please try again.';
+                  setTimeout(() => { this.error = ''; }, 3000);
                 }
               );
             } else {
@@ -161,11 +165,13 @@ export class PatientBookAppointmentsComponent implements OnInit {
                 (response: any) => {
                   console.log('Appointment booked successfully:', response);
                   this.success = 'Appointment booked successfully';
+                  setTimeout(() => { this.success = ''; }, 3000);
                   this.appointmentForm.reset();
                 },
                 (error) => {
                   console.error('Error booking appointment:', error);
                   this.error = 'Failed to book appointment. Please try again.';
+                  setTimeout(() => { this.error = ''; }, 3000);
                 }
               );
             }

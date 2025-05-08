@@ -11,7 +11,7 @@
       "type": "doctor",
       "name": "Omar Turkmani",
       "email": "omar1970@amal-clinic.com",
-      "password": "Ot**1234",
+      "password": "Ot**1284",
       "id": "0756"
     },
     {
@@ -199,8 +199,8 @@
       "name": "Omar Turkmani",
       "gender": "male",
       "email": "omar1970@amal-clinic.com",
-      "password": "Ot**1234",
-      "phone": "962785249201",
+      "password": "Ot**1284",
+      "phone": "962785249205",
       "specification": "Dentist",
       "clinic_id": "1",
       "specifications": "Dentist"
@@ -771,8 +771,35 @@
         "diagnosis": ""
       },
       "payment": "",
-      "time": "08:51",
-      "id": "cL0z-Jn"
+      "time": "23:35"
+    },
+    {
+      "id": "72bd",
+      "date": "2025-07-20",
+      "patient_id": "7",
+      "doctor_id": "2",
+      "approval_status": "pending",
+      "appointment_details": {
+        "reason": "toothache",
+        "drugs": "",
+        "diagnosis": ""
+      },
+      "payment": "",
+      "time": "08:22"
+    },
+    {
+      "id": "696c",
+      "date": "2025-08-29",
+      "patient_id": "7",
+      "doctor_id": "3",
+      "approval_status": "pending",
+      "appointment_details": {
+        "reason": "difficulty sleeping",
+        "drugs": "",
+        "diagnosis": ""
+      },
+      "payment": "",
+      "time": "22:16"
     }
   ],
   "drug": [
