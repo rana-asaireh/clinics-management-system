@@ -4,14 +4,27 @@ import { LoginComponent } from './login/login.component';
 import { UserTypeGuard } from './guards/user-type.guard';
 import { HomePageComponent } from './page/home-page/home-page.component';
 import { SignupComponent } from './signup/signup.component';
+import { HomePageLayoutComponent } from './homePage/components/home-page-layout/home-page-layout.component';
+import { MainHomePageComponent } from './homePage/components/main-home-page/main-home-page.component';
+import { DoctorComponent } from './homePage/components/doctor/doctor.component';
+import { ContactUsComponent } from './homePage/components/contact-us/contact-us.component';
+import { ClinicsComponent } from './homePage/components/clinics/clinics.component';
 
 const routes: Routes = [
-  { path: 'home',
-    component:HomePageComponent
-   },
-  { path: '',
-   component:HomePageComponent
+  {
+    path: '',
+    component: HomePageLayoutComponent,
+    children: [
+      { path: '', component: MainHomePageComponent },
+      { path: 'doctors', component: DoctorComponent },
+      {
+        path: 'contact-us',
+        component: ContactUsComponent,
+      },
+      { path: 'clinic', component: ClinicsComponent },
+    ],
   },
+  // { path: '', component: HomePageComponent },
   {
     path: 'login',
     component:LoginComponent
@@ -45,4 +58,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
+
 
