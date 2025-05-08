@@ -1,0 +1,142 @@
+.breadcrumb-container {
+  font-family: Arial, sans-serif;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 22px;
+}
+
+.breadcrumb {
+  font-size: 12px;
+  color: #444;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  margin-right: 4px;
+}
+.greenWord {
+  color: #2aa198;
+  margin-right: 4px;
+  font-size: 13px;
+}
+
+.underline {
+  border: none;
+  border-top: 2px solid #2aa198;
+  margin-top: 8px;
+}
+
+form {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+  gap: inherit;
+}
+
+input,
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  width: fit-content;
+}
+
+button.accept {
+  background-color: #389d93;
+  color: white;
+  margin-right: 10px;
+}
+
+button.reject {
+  background-color: #ff0000;
+  color: white;
+}
+
+button[type="submit"] {
+  background-color: #389d93;
+  color: white;
+  align-self: flex-start;
+  margin-top: 10px;
+}
+.status-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+h4 {
+  font-size: 16px;
+  margin-top: 20px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.error-message {
+  color: red;
+  margin-bottom: 1rem;
+  font-size: 15px;
+}
+.status-approved {
+  color: green;
+  font-weight: bold;
+}
+
+.status-rejected {
+  color: red;
+  font-weight: bold;
+}
+
+.status-pending {
+  color: orange;
+  font-weight: bold;
+}
+.home-page {
+  text-decoration: none;
+  font-size: 13px;
+  color: black;
+}
+.custom-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+  label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+
+  select {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s;
+
+    &:focus {
+      border-color: #389d93;
+      outline: none;
+    }
+  }
+}

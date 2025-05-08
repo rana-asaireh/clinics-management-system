@@ -87,8 +87,8 @@ h1 {
 }
 
 .profile-icon {
-  width: 36px;
-  height: 36px;
+  width: 60px;
+  height: 60px;
   background-color: #3b8c88;
   border-radius: 50%;
   display: flex;
@@ -99,8 +99,6 @@ h1 {
 }
 
 .profile-icon img {
-  width: 20px;
-  height: 20px;
   object-fit: contain;
 }
 
@@ -145,11 +143,10 @@ h1 {
   cursor: pointer;
   transition: background-color 0.3s ease;
   width: auto;
-  margin-left: 47px;     
-  margin-right: 0;   
-  align-self: flex-start; 
-}
 
+  margin-right: 0;
+  align-self: flex-start;
+}
 
 .input-wrapper {
   position: relative;
