@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators  } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
@@ -10,7 +10,7 @@ import { DoctorService } from '../modules/doctor/services/doctor.service';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
   showPassword: boolean = false;
   password:string='';
   email:string='';
@@ -57,7 +57,7 @@ ngOnInit() {
           this.router.navigate(['admin']);
         }  else if( user.type === 'doctor') {
           this.doctorService.getDoctorByEmail(this.email).subscribe((user: any) => {
-              const data = localStorage.setItem('typeUser',JSON.stringify(user));
+              localStorage.setItem('typeUser', JSON.stringify(user));
               this.router.navigate(['doctor']);
             });
       } else if( user.type === 'patient') {

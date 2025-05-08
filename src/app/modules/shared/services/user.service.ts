@@ -83,4 +83,4 @@ addUserDoctor(doctor: User): Observable<User> {
   updateUser(userData: User): Observable<User> {
     return this.http.put<User>(`${this.baseUrl}/${userData.id}`, userData);
   }
-}}
+}
