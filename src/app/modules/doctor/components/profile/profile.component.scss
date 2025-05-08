@@ -61,12 +61,6 @@ h1 {
   color: black;
 }
 
-.test {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
 .profile-row {
   display: flex;
   gap: 20px;
@@ -86,20 +80,17 @@ h1 {
 }
 
 .profile-icon {
-  width: 36px;
-  height: 36px;
+  width: 60px;
+  height: 60px;
   background-color: #3b8c88;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  margin-right: 10px;
 }
 
 .profile-icon img {
-  width: 20px;
-  height: 20px;
   object-fit: contain;
 }
 

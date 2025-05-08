@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators  } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { DoctorService } from '../modules/doctor/services/doctor.service';
 
 @Component({
   selector: 'app-login',
@@ -15,9 +16,13 @@ export class LoginComponent {
   email:string='';
   error:string='';
   formGroup: FormGroup = this.initFormGroup();
-
-  constructor(private authService: AuthService, private router: Router) {}
-  ngOnInit() {
+  
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private doctorService: DoctorService
+  ) {}
+ngOnInit() {
     this.formGroup.get('email')?.valueChanges.subscribe(() => {
       if (this.error) {this.error = '';}
     });
@@ -51,8 +56,11 @@ export class LoginComponent {
         if (user.type === 'admin') {
           this.router.navigate(['admin']);
         }  else if( user.type === 'doctor') {
-          this.router.navigate(['doctor']);
-        } else if( user.type === 'patient') {
+          this.doctorService.getDoctorByEmail(this.email).subscribe((user: any) => {
+              const data = localStorage.setItem('typeUser',JSON.stringify(user));
+              this.router.navigate(['doctor']);
+            });
+      } else if( user.type === 'patient') {
           this.router.navigate(['patient']);
         }
       },
@@ -61,6 +69,3 @@ export class LoginComponent {
       })
     };
 }
-
-
-

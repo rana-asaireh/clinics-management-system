@@ -10,6 +10,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { HomePageComponent } from './page/home-page/home-page.component';
 import { SignupComponent } from './signup/signup.component';
+import { SharedModule } from './modules/shared/shared.module';
+import { HomePageLayoutComponent } from './homePage/components/home-page-layout/home-page-layout.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { SignupComponent } from './signup/signup.component';
     FooterComponent,
     HeaderComponent,
     HomePageComponent,
-    SignupComponent
+    SignupComponent,
+    HomePageLayoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -26,10 +29,11 @@ import { SignupComponent } from './signup/signup.component';
     ReactiveFormsModule,
     FormsModule,
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [FooterComponent, HeaderComponent],
 })
 export class AppModule {}
-

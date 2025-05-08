@@ -11,7 +11,9 @@
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="container">
   <div class="test">
     <div class="profile-row">
-      <div class="form-group-container"> <div class="form-group"> <div class="profile-icon">
+      <div class="form-group-container">
+        <div class="form-group">
+          <div class="profile-icon">
             <img src="/user-profile.png">
           </div>
           <input type="text" class="profile-input" formControlName="name" placeholder="Name">
@@ -20,7 +22,9 @@
           <small *ngIf="profileForm.get('name')?.hasError('required')">Name is required.</small>
         </div>
       </div>
-      <div class="form-group-container"> <div class="form-group"> <div class="profile-icon">
+      <div class="form-group-container">
+        <div class="form-group">
+          <div class="profile-icon">
             <img src="/email-profile.png">
           </div>
           <input type="email" class="profile-input" placeholder="User@gmail.com" formControlName="email">
@@ -33,7 +37,9 @@
     </div>
 
     <div class="profile-row">
-      <div class="form-group-container"> <div class="form-group"> <div class="profile-icon">
+      <div class="form-group-container">
+        <div class="form-group">
+          <div class="profile-icon">
             <img src="/phone-profile.png">
           </div>
           <input type="tel" class="profile-input" formControlName="phone" placeholder="Phone">
@@ -43,7 +49,9 @@
           <small *ngIf="profileForm.get('phone')?.hasError('pattern')">Invalid phone number format.</small>
         </div>
       </div>
-      <div class="form-group-container"> <div class="form-group"> <div class="profile-icon">
+      <div class="form-group-container">
+        <div class="form-group">
+          <div class="profile-icon">
             <img src="/gender.png">
           </div>
           <select class="profile-input" formControlName="gender">
@@ -59,44 +67,52 @@
     </div>
 
     <div class="profile-row">
-      <div class="form-group-container"> <div class="form-group"> <div class="profile-icon">
+      <div class="form-group-container">
+        <div class="form-group">
+          <div class="profile-icon">
             <img src="/clinic.png">
           </div>
           <input type="text" class="profile-input" formControlName="clinicName" placeholder="Clinic Name">
         </div>
-        <div *ngIf="profileForm.get('clinicName')?.invalid && profileForm.get('clinicName')?.touched" class="error-message">
+        <div *ngIf="profileForm.get('clinicName')?.invalid && profileForm.get('clinicName')?.touched"
+          class="error-message">
           <small *ngIf="profileForm.get('clinicName')?.hasError('required')">Clinic Name is required.</small>
         </div>
       </div>
-      <div class="form-group-container"> <div class="form-group"> <div class="profile-icon">
+      <div class="form-group-container">
+        <div class="form-group">
+          <div class="profile-icon">
             <img src="/clipboard.png">
           </div>
           <input type="text" class="profile-input" formControlName="specifications" placeholder="Specialization">
         </div>
-        <div *ngIf="profileForm.get('specifications')?.invalid && profileForm.get('specifications')?.touched" class="error-message">
+        <div *ngIf="profileForm.get('specifications')?.invalid && profileForm.get('specifications')?.touched"
+          class="error-message">
           <small *ngIf="profileForm.get('specifications')?.hasError('required')">Specialization is required.</small>
         </div>
       </div>
     </div>
     <div class="profile-row">
       <div class="form-group-container">
-          <div class="form-group">
-              <div class="profile-icon">
-                  <img src="/holding-hand-key.png">
-              </div>
-              <div class="input-wrapper">
-                <input [type]="inputType['password']" class="profile-input" placeholder="Password" formControlName="password">
-                <img [src]="isVisible['password'] ? '/images/Visible1.png' : '/images/Invisible1.png'"
-                     class="input-icon-2" alt="Toggle visibility" (click)="toggleVisibility('password')" />
-            </div>
-              <div *ngIf="profileForm.get('password')?.invalid && profileForm.get('password')?.touched"
-                   class="error-message">
-                  <small *ngIf="profileForm.get('password')?.hasError('minlength')">Password must be at least 6 characters long.</small>
-              </div>
+        <div class="form-group">
+          <div class="profile-icon">
+            <img src="/holding-hand-key.png">
           </div>
+          <div class="input-wrapper">
+            <input [type]="inputType['password']" class="profile-input" placeholder="Password"
+              formControlName="password">
+            <img [src]="isVisible['password'] ? '/images/Visible1.png' : '/images/Invisible1.png'" class="input-icon-2"
+              alt="Toggle visibility" (click)="toggleVisibility('password')" />
+          </div>
+          <div *ngIf="profileForm.get('password')?.invalid && profileForm.get('password')?.touched"
+            class="error-message">
+            <small *ngIf="profileForm.get('password')?.hasError('minlength')">Password must be at least 6 characters
+              long.</small>
+          </div>
+        </div>
       </div>
-  </div>
-  
+    </div>
+
     <button type="submit" class="btn">Update</button>
 
   </div>
