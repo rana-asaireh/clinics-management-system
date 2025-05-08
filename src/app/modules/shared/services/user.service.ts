@@ -4,14 +4,10 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
 
-
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-
-
-
   private baseUrl = 'http://localhost:3000/users'; 
   private patientsBaseUrl = 'http://localhost:3000/patient';
   private doctorsBaseUrl = 'http://localhost:3000/doctor'; 
@@ -26,7 +22,11 @@ export class UserService {
     const user = this.getCurrentUser();
     return user?.type || '';
   }
-  addUserDoctor(doctor: User): Observable<User> {
+
+  getTypeUser() {
+    return JSON.parse(localStorage.getItem('typeUser') || '');
+  }
+addUserDoctor(doctor: User): Observable<User> {
     return this.http.post<User>(`${this.baseUrl}`, doctor);
   }
 
@@ -49,10 +49,10 @@ export class UserService {
     return this.http.post<User>(this.baseUrl, user).pipe(
       map((userWithId) => {
 
-        // Remove the 'id' field from the response before returning it
+       
         this.http.delete<void>(`${this.baseUrl}/${user.id}`);
-        const { id, ...userWithoutId } = userWithId; // destructure and exclude 'id'
-        return userWithId; // return the user without 'id'
+        const { id, ...userWithoutId } = userWithId; 
+        return userWithId; 
       })
     );
   }
@@ -84,4 +84,3 @@ export class UserService {
     return this.http.put<User>(`${this.baseUrl}/${userData.id}`, userData);
   }
 }
-
