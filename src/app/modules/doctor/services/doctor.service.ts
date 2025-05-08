@@ -66,11 +66,11 @@ export class DoctorService {
 
   getDoctorByEmail(email: string): Observable<string> {
     return this.http
-      .get<Doctor[]>(`${this.baseUrl}/doctor?email=${email}`)
+      .get<Doctor[]>(`${this.baseUrl}?email=${email}`)
       .pipe(
         map((doctors) => {
           if (doctors.length > 0 && doctors[0].id) {
-            return doctors[0].id.toString(); // ensure string output
+            return doctors[0].id.toString(); 
           } else {
             throw new Error('Doctor not found');
           }

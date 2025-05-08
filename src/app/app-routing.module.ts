@@ -24,10 +24,7 @@ const routes: Routes = [
       { path: 'clinic', component: ClinicsComponent },
     ],
   },
-  { path: '', component: HomePageComponent },,
-  { path: '',
-   component:HomePageComponent
-  },
+  // { path: '', component: HomePageComponent },
   {
     path: 'login',
     component:LoginComponent
