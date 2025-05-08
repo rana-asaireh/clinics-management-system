@@ -53,7 +53,7 @@ ngOnInit() {
 
     this.authService.login(this.email, encodedPassword ).subscribe(
       (user: any) => {
- if (user.type === 'admin') {
+        if (user.type === 'admin') {
           this.router.navigate(['admin']);
         }  else if( user.type === 'doctor') {
           this.doctorService.getDoctorByEmail(this.email).subscribe((user: any) => {
