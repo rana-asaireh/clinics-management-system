@@ -118,18 +118,12 @@
       "name": "Ahmad Mohtaseb",
       "email": "Ahmad.Mohtaseb@amal-clinic.com",
       "password": "Fs*251435"
-    },
-    {
-      "type": "patient",
-      "name": "Jama",
-      "email": "j@gmail.com",
-      "password": "KLl7&mmg",
-      "id": "pHhzfLg"
     }
   ],
   "patient": [
     {
       "id": "1",
+      "type": "patient",
       "name": "Salma Alfaqeeh",
       "email": "salma1980@gmail.com",
       "password": "Sa**1234",
@@ -139,6 +133,7 @@
     },
     {
       "id": "2",
+      "type": "patient",
       "name": "Lara Amer",
       "email": "aya860@gmail.com",
       "password": "ay**1234",
@@ -148,6 +143,7 @@
     },
     {
       "id": "3",
+      "type": "patient",
       "name": " Laila Mohammad",
       "email": "laila879@gmail.com",
       "password": "la**1234",
@@ -157,6 +153,7 @@
     },
     {
       "id": "4",
+      "type": "patient",
       "name": "Ahmad Yousef",
       "email": "ahmad456@gmail.com",
       "password": "Sa**1234",
@@ -182,6 +179,16 @@
       "password": "sa**1234",
       "phone": "962778702146",
       "gender": "female",
+      "dob": "1990-04-06"
+    },
+    {
+      "id": "7",
+      "type": "patient",
+      "name": "Omar Al-Ahmad",
+      "email": "omar1234@gmail.com",
+      "password": "om**1235",
+      "phone": "962778702146",
+      "gender": "male",
       "dob": "1990-04-06"
     }
   ],
