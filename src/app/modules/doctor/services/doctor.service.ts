@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
 import { map } from 'rxjs';
 import { Doctor } from '../../shared/models/doctor.model';
 import { UserService } from '../../shared/services/user.service';
@@ -30,11 +29,11 @@ export class DoctorService {
     return this.http.put<Doctor>(`${this.baseUrl}/${id}`, updatedDoctor);
   }
 
-  //get doctor
+
   getDoctor(id: number): Observable<Doctor> {
     return this.http.get<Doctor>(`${this.baseUrl}/doctor/${id}`);
   }
-  //get Filtered doctors by name or clinic_id (rahaf)
+
 
   getFilteredDoctors(
     clinicId?: string,
