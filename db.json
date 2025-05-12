@@ -93,13 +93,6 @@
     },
     {
       "id": "f332",
-      "type": "patient",
-      "name": "Omar Al-Ahmad",
-      "email": "omar1234@gmail.com",
-      "password": "om**1235"
-    },
-    {
-      "id": "f332",
       "type": "doctor",
       "name": "Sami Khader",
       "email": "Sami-khader@amal-clinic.com",

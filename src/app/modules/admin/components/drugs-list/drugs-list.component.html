@@ -20,7 +20,15 @@
   </div>
   <span class="error" *ngIf="error">{{error}}</span>
   <span class="success" *ngIf="success">{{success}}</span>
-  <table *ngIf="!error">
+  <div class="Loader-background" *ngIf="loader">
+    <div class="indicator">
+      <svg width="24px" height="20px">
+        <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+        <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+      </svg>
+    </div>
+  </div>
+  <table *ngIf="!error && !loader">
     <colgroup>
       <col style="width: 20%;">
       <col style="width: 50%;">
@@ -50,6 +58,6 @@
     </tbody>
   </table>
   <app-pagination [totalItems]="totalDrugs" [itemsPerPage]="pageSize" [currentPage]="currentPage"
-    (pageChanged)="goToPage($event)">
+    (pageChanged)="goToPage($event)" *ngIf="!error && !loader">
   </app-pagination>
 </div>
