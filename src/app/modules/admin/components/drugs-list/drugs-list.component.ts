@@ -22,6 +22,7 @@ export class DrugsListComponent {
   totalDrugs: number = 0;
   totalPages: number = 0;
   pages: number[] = [];
+  loader: boolean = false;
 
   constructor(
     private adminService: AdminService,
@@ -35,19 +36,24 @@ export class DrugsListComponent {
   }
 
   getDrugs(): void {
-    this.drugService.getDrugs().subscribe(
-      (data: Drug[]) => {
-        this.drugs = data;
-        this.filteredDrugs = [...data];
-        this.totalDrugs = this.drugs.length;
-        this.totalPages = this.paginationService.getTotalPages(this.totalDrugs, this.pageSize);
-        this.generatePageNumbers();
-        this.filterDrugs();
-      },
-      (error: any) => {
-        this.error = 'Failed to load drugs.';
-      }
-    );
+    this.loader = true;
+    setTimeout(() => {
+      this.drugService.getDrugs().subscribe(
+        (data: Drug[]) => {
+          this.loader = false;
+          this.drugs = data;
+          this.filteredDrugs = [...data];
+          this.totalDrugs = this.drugs.length;
+          this.totalPages = this.paginationService.getTotalPages(this.totalDrugs, this.pageSize);
+          this.generatePageNumbers();
+          this.filterDrugs();
+        },
+        (error: any) => {
+          this.loader = false;
+          this.error = 'Failed to load drugs.';
+        }
+      );
+    }, 1000);
   }
 
   filterDrugs(): void {
@@ -105,31 +111,34 @@ export class DrugsListComponent {
       setTimeout(() => (this.error = ''), 3000);
       return;
     }
-
+    this.loader = true;
     this.adminService.deleteDrug(id).subscribe(
       () => {
         this.success = 'Drug deleted successfully.';
         setTimeout(() => (this.success = ''), 3000);
-        this.drugService.getDrugs().subscribe(
-          (data: Drug[]) => {
-            this.drugs = data;
-            this.totalDrugs = data.length;
+        setTimeout(() => {
+          this.drugService.getDrugs().subscribe(
+            (data: Drug[]) => {
+              this.drugs = data;
+              this.totalDrugs = data.length;
 
-            if (this.totalDrugs === 0) {
-              this.currentPage = 1;
-            } else if ((this.currentPage - 1) * this.pageSize >= this.totalDrugs) {
-              this.currentPage = Math.max(this.currentPage - 1, 1);
+              if (this.totalDrugs === 0) {
+                this.currentPage = 1;
+              } else if ((this.currentPage - 1) * this.pageSize >= this.totalDrugs) {
+                this.currentPage = Math.max(this.currentPage - 1, 1);
+              }
+
+              this.filterDrugs();
+              this.loader = false;
+            },
+            () => {
+              this.error = 'Failed to reload doctors after delete.';
             }
-
-            this.filterDrugs();
-          },
-          () => {
-            this.error = 'Failed to reload doctors after delete.';
-          }
-        );
-
+          );
+        }, 1000);
       },
       (error: any) => {
+        this.loader = false;
         this.error = 'Failed to delete drug.';
       }
     );

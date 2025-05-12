@@ -22,6 +22,7 @@ export class DiagnosesListComponent implements OnInit {
   totalDiagnoses: number = 0;
   totalPages: number = 0;
   pages: number[] = [];
+  loader: boolean = false;
 
   constructor(
     private adminService: AdminService,
@@ -35,19 +36,24 @@ export class DiagnosesListComponent implements OnInit {
   }
 
   getDiagnoses(): void {
-    this.diagnosisService.getDiagnosis().subscribe(
-      (data: Diagnosis[]) => {
-        this.diagnoses = data;
-        this.filteredDiagnoses = [...data];
-        this.totalDiagnoses = this.diagnoses.length;
-        this.totalPages = this.paginationService.getTotalPages(this.totalDiagnoses, this.pageSize);
-        this.generatePageNumbers();
-        this.filterDiagnoses();
-      },
-      (error: any) => {
-        this.error = 'Failed to load diagnoses.';
-      }
-    );
+    this.loader = true;
+    setTimeout(() => {
+      this.diagnosisService.getDiagnosis().subscribe(
+        (data: Diagnosis[]) => {
+          this.loader = false;
+          this.diagnoses = data;
+          this.filteredDiagnoses = [...data];
+          this.totalDiagnoses = this.diagnoses.length;
+          this.totalPages = this.paginationService.getTotalPages(this.totalDiagnoses, this.pageSize);
+          this.generatePageNumbers();
+          this.filterDiagnoses();
+        },
+        (error: any) => {
+          this.loader = false;
+          this.error = 'Failed to load diagnoses.';
+        }
+      );
+    }, 1000);
   }
 
   filterDiagnoses(): void {
@@ -101,31 +107,34 @@ export class DiagnosesListComponent implements OnInit {
       setTimeout(() => (this.error = ''), 3000);
       return;
     }
-
+    this.loader = true;
     this.adminService.deleteDiagnosis(id).subscribe(
       () => {
         this.success = 'Diagnosis deleted successfully.';
         setTimeout(() => (this.success = ''), 3000);
+        setTimeout(() => {
+          this.diagnosisService.getDiagnosis().subscribe(
+            (data: Diagnosis[]) => {
+              this.diagnoses = data;
+              this.totalDiagnoses = data.length;
 
-        this.diagnosisService.getDiagnosis().subscribe(
-          (data: Diagnosis[]) => {
-            this.diagnoses = data;
-            this.totalDiagnoses = data.length;
+              if (this.totalDiagnoses === 0) {
+                this.currentPage = 1;
+              } else if ((this.currentPage - 1) * this.pageSize >= this.totalDiagnoses) {
+                this.currentPage = Math.max(this.currentPage - 1, 1);
+              }
 
-            if (this.totalDiagnoses === 0) {
-              this.currentPage = 1;
-            } else if ((this.currentPage - 1) * this.pageSize >= this.totalDiagnoses) {
-              this.currentPage = Math.max(this.currentPage - 1, 1);
+              this.filterDiagnoses();
+              this.loader = false;
+            },
+            () => {
+              this.error = 'Failed to reload diagnoses after delete.';
             }
-
-            this.filterDiagnoses();
-          },
-          () => {
-            this.error = 'Failed to reload diagnoses after delete.';
-          }
-        );
+          );
+        }, 1000);
       },
       (error: any) => {
+        this.loader = false;
         this.error = 'Failed to delete diagnosis.';
       }
     );
