@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators  } from '@angular/forms';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 import { DoctorService } from '../modules/doctor/services/doctor.service';
@@ -10,28 +10,29 @@ import { DoctorService } from '../modules/doctor/services/doctor.service';
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
-export class LoginComponent implements OnInit{
+export class LoginComponent implements OnInit {
   showPassword: boolean = false;
-  password:string='';
-  email:string='';
-  error:string='';
+  password: string = '';
+  email: string = '';
+  error: string = '';
+  loader: boolean = false;
   formGroup: FormGroup = this.initFormGroup();
-  
+
   constructor(
     private authService: AuthService,
     private router: Router,
     private doctorService: DoctorService
-  ) {}
-ngOnInit() {
+  ) { }
+  ngOnInit() {
     this.formGroup.get('email')?.valueChanges.subscribe(() => {
-      if (this.error) {this.error = '';}
+      if (this.error) { this.error = ''; }
     });
-  
+
     this.formGroup.get('password')?.valueChanges.subscribe(() => {
-      if (this.error) {this.error = '';}
+      if (this.error) { this.error = ''; }
     });
   }
-  
+
   initFormGroup(): FormGroup {
     return new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -44,28 +45,34 @@ ngOnInit() {
   }
 
   onSubmit(): void {
-    
     this.formGroup.markAllAsTouched();
-    this.password=this.formGroup.controls['password']?.value;
-    this.email=this.formGroup.controls['email']?.value;
-
+    if (this.formGroup.invalid) return;
+    this.error = '';
+    this.loader = true;
+    this.password = this.formGroup.controls['password']?.value;
+    this.email = this.formGroup.controls['email']?.value;
     const encodedPassword = encodeURIComponent(this.password);
 
-    this.authService.login(this.email, encodedPassword ).subscribe(
-      (user: any) => {
-        if (user.type === 'admin') {
-          this.router.navigate(['admin']);
-        }  else if( user.type === 'doctor') {
-          this.doctorService.getDoctorByEmail(this.email).subscribe((user: any) => {
+    setTimeout(() => {
+      this.authService.login(this.email, encodedPassword).subscribe(
+        (user: any) => {
+          this.loader = false;
+          if (user.type === 'admin') {
+
+            this.router.navigate(['admin']);
+          } else if (user.type === 'doctor') {
+            this.doctorService.getDoctorByEmail(this.email).subscribe((user: any) => {
               localStorage.setItem('typeUser', JSON.stringify(user));
               this.router.navigate(['doctor']);
             });
-      } else if( user.type === 'patient') {
-          this.router.navigate(['patient']);
-        }
-      },
-      (error: any) => {
-       this.error= error.message;
-      })
-    };
+          } else if (user.type === 'patient') {
+            this.router.navigate(['patient']);
+          }
+        },
+        (error: any) => {
+          this.loader = false;
+          this.error = error.message;
+        })
+    }, 3000)
+  };
 }

@@ -29,6 +29,7 @@ export class AddDoctorComponent implements OnInit {
   success: string = '';
   clinics!: Clinic[];
   error!: string;
+  message!: string;
   selectedClinicId!: string;
   userDoctor!: User;
   id: string | null = '';
@@ -101,42 +102,51 @@ export class AddDoctorComponent implements OnInit {
       selectClinic: new FormControl('', Validators.required)
     })
   }
+
   addDoctor(): void {
     this.success = '';
     this.error = '';
     this.formGroup.markAllAsTouched();
     if (this.formGroup.valid) {
-      this.name = this.formGroup.controls['name']?.value;
-      this.email = this.formGroup.controls['email']?.value;
-      this.phone = this.formGroup.controls['phone']?.value;
-      this.specification = this.formGroup.controls['specification']?.value;
-      this.password = this.formGroup.controls['password']?.value;
-      this.selectedClinicId = this.formGroup.controls['selectClinic']?.value;
-      this.gender = this.formGroup.controls['gender']?.value;
-      this.doctor = {
-        type: this.type,
-        name: this.name,
-        email: this.email,
-        password: this.password,
-        phone: this.phone,
-        specification: this.specification,
-        clinic_id: this.selectedClinicId,
-        gender: this.gender
-      }
-      
-      this.userDoctor = {
-        type: this.type,
-        name: this.name,
-        email: this.email,
-        password: this.password
-      }
+      this.adminService.checkEmailExist(this.formGroup.controls['email']?.value).subscribe(
+        (exist) => {
+          if (exist) {
+            this.message = 'Email already exists'
+          }
+          else {
+            this.name = this.formGroup.controls['name']?.value;
+            this.email = this.formGroup.controls['email']?.value;
+            this.phone = this.formGroup.controls['phone']?.value;
+            this.specification = this.formGroup.controls['specification']?.value;
+            this.password = this.formGroup.controls['password']?.value;
+            this.selectedClinicId = this.formGroup.controls['selectClinic']?.value;
+            this.gender = this.formGroup.controls['gender']?.value;
+            this.doctor = {
+              type: this.type,
+              name: this.name,
+              email: this.email,
+              password: this.password,
+              phone: this.phone,
+              specification: this.specification,
+              clinic_id: this.selectedClinicId,
+              gender: this.gender
+            }
 
-      this.adminService.addDoctor(this.doctor).subscribe((data: any) => {
-        this.success = 'Added Sucessfully'; setTimeout(() => {
-          this.success = '';
-        }, 3000); this.formGroup.reset();
-      }, (error: any) => { this.error = 'Failed to add doctor. Try again later!' });
-      this.userService.addUserDoctor(this.userDoctor).subscribe((data: User) => { }, (error: any) => { this.error = 'Failed to add doctor as a user. Try again later!' })
+            this.userDoctor = {
+              type: this.type,
+              name: this.name,
+              email: this.email,
+              password: this.password
+            }
+
+            this.adminService.addDoctor(this.doctor).subscribe((data: any) => {
+              this.success = 'Added Sucessfully'; setTimeout(() => {
+                this.success = '';
+              }, 3000); this.formGroup.reset();
+            }, (error: any) => { this.error = 'Failed to add doctor. Try again later!' });
+            this.userService.addUserDoctor(this.userDoctor).subscribe((data: User) => { }, (error: any) => { this.error = 'Failed to add doctor as a user. Try again later!' })
+          }
+        })
     }
   }
 

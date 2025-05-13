@@ -112,17 +112,20 @@ onSubmit() {
         console.log('Doctor profile updated successfully:', success);
         this.updateUserDataForDoctor(updatedData,newPassword);
         this.success = 'Doctor profile updated successfully';
+        setTimeout(() => { this.success = ''; }, 3000);
         
         this.getDoctorData();
       },
       (error) => {
         console.error('Error updating doctor profile:', error);
         this.error = 'Error updating doctor profile';
+        setTimeout(() => { this.error = ''; }, 3000);
       }
     );
   }else{
     this.profileForm.markAllAsTouched();
     this.error = 'Please fill in all required fields.';
+    setTimeout(() => { this.error = ''; }, 3000);
   }
  }
  updateUserDataForDoctor(doctorData: Doctor,newPassword: string) {
@@ -142,6 +145,7 @@ onSubmit() {
           (userUpdateSuccess) => {
             console.log('User data updated successfully for doctor:', userUpdateSuccess);
             this.success = 'Account data updated successfully for details';
+          
           },
           (userUpdateError) => {
             console.error('Error updating user data for doctor:', userUpdateError);

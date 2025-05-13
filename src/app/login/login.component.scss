@@ -247,6 +247,245 @@
             cursor: pointer;
           }
         }
+        .loader-wrapper {
+  position: relative;
+  margin-top: 10px;
+  margin-bottom: 10px; // Gives top and bottom spacing
+  width: 100%;
+}
+.loader-wrapper {
+  position: relative;
+  margin-top:-5px;
+  margin-bottom: 25px; // Gives top and bottom spacing
+  width: 100%;
+  z-index: 10;  
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  width: 100%;
+  direction: ltr;
+  position: absolute;
+  left: 8%;
+  top: 27%;
+
+  .indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1.8);
+
+    svg {
+      width: 22px;
+      height: 20px;
+    }
+
+    svg polyline {
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    svg polyline#back {
+      stroke: rgba(59, 211, 171, 0.3);
+    }
+
+    svg polyline#front {
+      stroke: #389d93;
+      stroke-dasharray: 12, 36;
+      stroke-dashoffset: 48;
+      animation: dash 1.5s linear infinite;
+    }
+  }
+
+  span {
+    color: #389d93;
+    font-weight: 700;
+    font-size: 15px;
+    white-space: nowrap;
+    position: absolute;
+    left: 24px;
+    top: -4.5px;
+  }
+
+  @keyframes dash {
+    62.5% {
+      opacity: 0;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+}
+
+//         .loader {
+//   display: flex;
+//   align-items: center;
+//   justify-content: flex-start;
+//   gap: 5px;
+//   // margin: 20px 0 0 0;
+//   width: 100%;
+//   direction: ltr;
+//   position: absolute;
+//   left: 8%;
+//   top: 27%;
+//   // padding-bottom: 20px;
+//   // margin-top: 20px;
+//   // padding-bottom: 20px;
+//     margin-top: 15px;    // Adds space above the loader
+//   // margin-bottom: 40px;
+
+//   .indicator {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     transform: scale(1.8);
+
+//     svg {
+//       width: 22px;
+//       height: 20px;
+//     }
+
+//     svg polyline {
+//       fill: none;
+//       stroke-width: 2;
+//       stroke-linecap: round;
+//       stroke-linejoin: round;
+//     }
+
+//     svg polyline#back {
+//       stroke: rgba(59, 211, 171, 0.3);
+//     }
+
+//     svg polyline#front {
+//       stroke: #389d93;
+//       stroke-dasharray: 12, 36;
+//       stroke-dashoffset: 48;
+//       animation: dash 1.5s linear infinite;
+//     }
+//   }
+
+//   span {
+//     color: #389d93;
+//     font-weight: 700;
+//     font-size: 15px;
+//     white-space: nowrap;
+//     position: absolute;
+//     left: 24px;
+//     top: -4.5px;
+//   }
+
+//   @keyframes dash {
+//     62.5% {
+//       opacity: 0;
+//     }
+//     to {
+//       stroke-dashoffset: 0;
+//     }
+//   }
+// }
+
+//         .loader{
+//             display: block;
+           
+//               position: absolute;
+              
+//   top: 35%;
+//   left: 5%;
+//   transform: translate(-50%, -50%);
+//   z-index: 9999;
+//   top: 35%;
+//   left: 15%;
+//   transform: translate(-50%, -50%);
+//   z-index: 9999;
+
+//   span{
+//     color: #389d93;
+//     font-weight: 700;
+//     // position: absolute;
+//     // left: 20%;
+//     // top: -10%;
+//     // position: ;
+//   }
+// .indicator {
+//   display: flex;
+//   gap: 10px;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%) scale(2);
+// }
+// .indicator svg polyline {
+//   fill: none;
+//   stroke-width: 2;
+//   stroke-linecap: round;
+//   stroke-linejoin: round;
+// }
+// .indicator svg polyline#back {
+//   stroke: rgba(59,211,171,0.3);
+// }
+// .indicator svg polyline#front {
+//   stroke: #3bd3ab;
+//   stroke-dasharray: 12, 36;
+//   stroke-dashoffset: 48;
+//   animation: dash 1s linear infinite;
+// }
+// .cta {
+//   position: fixed;
+//   bottom: 20px;
+//   right: 30px;
+//   color: #222;
+//   font-weight: bold;
+// }
+// @-moz-keyframes dash {
+//   62.5% {
+//     opacity: 0;
+//   }
+//   to {
+//     stroke-dashoffset: 0;
+//   }
+// }
+// @-webkit-keyframes dash {
+//   62.5% {
+//     opacity: 0;
+//   }
+//   to {
+//     stroke-dashoffset: 0;
+//   }
+// }
+// @-o-keyframes dash {
+//   62.5% {
+//     opacity: 0;
+//   }
+//   to {
+//     stroke-dashoffset: 0;
+//   }
+// }
+// @keyframes dash {
+//   62.5% {
+//     opacity: 0;
+//   }
+//   to {
+//     stroke-dashoffset: 0;
+//   }
+// }
+// /* Spin animation */
+// @keyframes spin {
+//   from {
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }
+// }
       }
     }
   }
