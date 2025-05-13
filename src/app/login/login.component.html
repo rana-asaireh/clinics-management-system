@@ -7,6 +7,17 @@
           <img src="Clinic-Logo.png" width="130" height="80" alt="Logo">
         </div>
         <div class="text-wrapper-2">Login Page</div>
+        <div class="loader-wrapper" *ngIf="loader">
+          <div class="loader">
+            <div class="indicator">
+              <svg width="24px" height="20px">
+                <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+              </svg>
+            </div>
+            <span>Veryfing User</span>
+          </div>
+        </div>
         <form [formGroup]="formGroup">
           <div class="group">
             <div class="input-wrapper">

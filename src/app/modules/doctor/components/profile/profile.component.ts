@@ -17,6 +17,14 @@ export class ProfileComponent implements OnInit {
   profileForm !: FormGroup;
   doctorId:string | null= null;
   doctorFormData: Doctor | null = null;
+  success: string = '';
+  error!: string;
+  isVisible: { [key: string]: boolean } = {
+    password: false
+};
+inputType: { [key: string]: string } = {
+    password: 'password'
+};
   constructor(private doctorService: DoctorService,
     private userService:UserService,
     private clinicsService:ClinicService
@@ -48,9 +56,12 @@ ngOnInit(): void {
     phone:new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10,15}$')]),
     gender:new FormControl('', Validators.required),
     clinicName:new FormControl({ value: '', disabled: true }, Validators.required),
+    password: new FormControl('', Validators.minLength(6))
   });
 }
 getDoctorData(){
+  this.success = '';
+  this.error = '';
   console.log('Attempting to get doctor with ID:', this.doctorId);
   if(this.doctorId){
           this.doctorService.getDoctorsById(this.doctorId).subscribe(
@@ -66,6 +77,7 @@ getDoctorData(){
                 gender: this.doctorFormData?.gender,
                 specifications: this.doctorFormData?.specification,
                 clinicName: this.doctorFormData?.clinic_id,
+                password: this.doctorFormData?.password
               });
               if (this.doctorFormData?.clinic_id) {
                 this.clinicsService.getClinicNameById(this.doctorFormData.clinic_id).subscribe(
@@ -74,6 +86,7 @@ getDoctorData(){
                   },
                   (error) => {
                     console.error('Error getting clinic name:', error);
+                    this.error = 'Error getting clinic name';
                     this.profileForm.patchValue({ clinicName: 'not found' }); 
                   }
                 );
@@ -81,6 +94,7 @@ getDoctorData(){
             },
             (error) => {
               console.error('Error getting doctor data:', error);
+              this.error = 'Error getting doctor data';
             }
             
           );
@@ -88,26 +102,33 @@ getDoctorData(){
 }
 
 onSubmit() {
+  this.success = '';
+  this.error = '';
   if(this.profileForm.valid && this.doctorId && this.doctorFormData){
     const updatedData={...this.doctorFormData,...this.profileForm.value,id : this.doctorId};
+    const newPassword = this.profileForm.get('password')?.value;
     this.doctorService.updateDoctor(updatedData).subscribe(
       (success) => {
         console.log('Doctor profile updated successfully:', success);
-        this.updateUserDataForDoctor(updatedData);
-        alert('Doctor profile updated successfully');
+        this.updateUserDataForDoctor(updatedData,newPassword);
+        this.success = 'Doctor profile updated successfully';
+        setTimeout(() => { this.success = ''; }, 3000);
+        
         this.getDoctorData();
       },
       (error) => {
         console.error('Error updating doctor profile:', error);
-        alert('Error updating doctor profile');
+        this.error = 'Error updating doctor profile';
+        setTimeout(() => { this.error = ''; }, 3000);
       }
     );
   }else{
     this.profileForm.markAllAsTouched();
-    alert('Please fill in all required fields.');
+    this.error = 'Please fill in all required fields.';
+    setTimeout(() => { this.error = ''; }, 3000);
   }
  }
- updateUserDataForDoctor(doctorData: Doctor) {
+ updateUserDataForDoctor(doctorData: Doctor,newPassword: string) {
   this.userService.getUserByEmail(doctorData.email).subscribe(
     (users) => {
       if (users && users.length > 0) {
@@ -115,15 +136,20 @@ onSubmit() {
         const updatedUserData: User = {
           ...user,
           name: doctorData.name,
-          email: doctorData.email // تأكد من تحديث البريد الإلكتروني إذا لزم الأمر
+          email: doctorData.email 
         };
+        if (newPassword && newPassword !== '') { 
+          updatedUserData.password = newPassword;
+      }
         this.userService.updateUser(updatedUserData).subscribe(
           (userUpdateSuccess) => {
             console.log('User data updated successfully for doctor:', userUpdateSuccess);
+            this.success = 'Account data updated successfully for details';
+          
           },
           (userUpdateError) => {
             console.error('Error updating user data for doctor:', userUpdateError);
-            alert('Error updating user data for doctor');
+            this.error = 'Error updating Account data for details';
           }
         );
       } else {
@@ -136,6 +162,10 @@ onSubmit() {
   );
 }
 
+toggleVisibility(fieldName: string) {
+  this.isVisible[fieldName] = !this.isVisible[fieldName];
+  this.inputType[fieldName] = this.isVisible[fieldName] ? 'text' : 'password';
+}
   
 }
 

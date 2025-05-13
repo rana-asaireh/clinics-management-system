@@ -3,10 +3,8 @@ export interface Patient {
     id?: string,
     name: string,
     email: string,
-    phone: number,
+    phone: string,
     gender: string,
-    dob: Date
-
-
-
+    dob: Date,
+    password: string
 }

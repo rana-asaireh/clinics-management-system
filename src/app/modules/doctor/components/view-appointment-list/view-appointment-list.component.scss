@@ -1,0 +1,84 @@
+.breadcrumb-container {
+  padding: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 22px;
+}
+
+.breadcrumb {
+  font-size: 12px;
+  color: #444;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  margin-right: 4px;
+}
+.greenWord {
+  color: #2aa198;
+  margin-right: 4px;
+  font-size: 13px;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.underline {
+  border: none;
+  border-top: 2px solid #2aa198;
+  margin-top: 8px;
+}
+
+form {
+  max-width: 800px;
+  margin-left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333;
+}
+
+input,
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.status-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+h4 {
+  font-size: 16px;
+  margin-top: 20px;
+  color: #333;
+}
+.home-page {
+  text-decoration: none;
+  font-size: 13px;
+  color: black;
+}

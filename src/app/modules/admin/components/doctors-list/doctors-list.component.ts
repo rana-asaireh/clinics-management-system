@@ -30,6 +30,7 @@ export class DoctorsListComponent implements OnInit {
   pages: number[] = [];
   error: string = '';
   success: string = '';
+  loader: boolean = false;
 
   constructor(
     private doctorService: DoctorService,
@@ -46,16 +47,21 @@ export class DoctorsListComponent implements OnInit {
   }
 
   loadDoctors(): void {
-    this.doctorService.getDoctors().subscribe(
-      (data: Doctor[]) => {
-        this.doctors = data;
-        this.filterDoctors();
-        this.error = '';
-      },
-      (error: any) => {
-        this.error = 'Failed to load doctors';
-      }
-    );
+    this.loader = true;
+    setTimeout(() => {
+      this.doctorService.getDoctors().subscribe(
+        (data: Doctor[]) => {
+          this.doctors = data;
+          this.filterDoctors();
+          this.error = '';
+          this.loader = false;
+        },
+        (error: any) => {
+          this.loader = false;
+          this.error = 'Failed to load doctors';
+        }
+      );
+    }, 1000);
   }
 
   loadClinics(): void {
@@ -127,7 +133,7 @@ export class DoctorsListComponent implements OnInit {
       setTimeout(() => this.error = '', 4000);
       return;
     }
-
+    this.loader = true;
     this.doctorService.getDoctorById(id).subscribe({
       next: (doctor: Doctor) => {
         this.userDoctor = doctor;
@@ -146,24 +152,27 @@ export class DoctorsListComponent implements OnInit {
                     next: () => {
                       this.success = 'Doctor deleted successfully';
                       setTimeout(() => this.success = '', 4000);
+                      setTimeout(() => {
+                        this.doctorService.getDoctors().subscribe({
+                          next: (data: Doctor[]) => {
+                            this.doctors = data;
+                            this.totalDoctors = data.length;
 
-                      this.doctorService.getDoctors().subscribe({
-                        next: (data: Doctor[]) => {
-                          this.doctors = data;
-                          this.totalDoctors = data.length;
+                            if (this.totalDoctors === 0) {
+                              this.currentPage = 1;
+                            } else if ((this.currentPage - 1) * this.pageSize >= this.totalDoctors) {
+                              this.currentPage = Math.max(this.currentPage - 1, 1);
+                            }
 
-                          if (this.totalDoctors === 0) {
-                            this.currentPage = 1;
-                          } else if ((this.currentPage - 1) * this.pageSize >= this.totalDoctors) {
-                            this.currentPage = Math.max(this.currentPage - 1, 1);
+                            this.filterDoctors();
+                            this.loader = false;
+                          },
+                          error: () => {
+                            this.loader = false;
+                            this.error = 'Failed to reload doctors after delete.';
                           }
-
-                          this.filterDoctors();
-                        },
-                        error: () => {
-                          this.error = 'Failed to reload doctors after delete.';
-                        }
-                      });
+                        });
+                      }, 1000);
                     },
                     error: () => {
                       this.error = 'Failed to delete doctor.';

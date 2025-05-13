@@ -25,7 +25,7 @@
       "type": "doctor",
       "name": "Amina Saeed",
       "email": "aminasaeed@amal-clinic.com",
-      "password": "sa**1234",
+      "password": "sa**1256",
       "id": "fa55"
     },
     {
@@ -90,6 +90,13 @@
       "name": "Sara Amer",
       "email": "sara090@gmail.com",
       "password": "sa**1234"
+    },
+    {
+      "id": "f332",
+      "type": "patient",
+      "name": "Omar Al-Ahmad",
+      "email": "omar1234@gmail.com",
+      "password": "om**1235"
     },
     {
       "id": "f332",
@@ -173,6 +180,16 @@
       "phone": "962778702146",
       "gender": "female",
       "dob": "1990-04-06"
+    },
+    {
+      "id": "7",
+      "type": "patient",
+      "name": "Omar Al-Ahmad",
+      "email": "omar1234@gmail.com",
+      "password": "om**1235",
+      "phone": "962778702146",
+      "gender": "male",
+      "dob": "1990-04-06"
     }
   ],
   "doctor": [
@@ -183,9 +200,10 @@
       "gender": "male",
       "email": "omar1970@amal-clinic.com",
       "password": "Ot**1234",
-      "phone": "962785239201",
+      "phone": "962785249201",
       "specification": "Dentist",
-      "clinic_id": "1"
+      "clinic_id": "1",
+      "specifications": "Dentist"
     },
     {
       "id": "2",
@@ -204,10 +222,11 @@
       "name": "Amina Saeed",
       "gender": "female",
       "email": "aminasaeed@amal-clinic.com",
-      "password": "sa**1234",
-      "phone": "962795039201",
+      "password": "sa**1256",
+      "phone": "962795039203",
       "specification": "Physical Therapist",
-      "clinic_id": "3"
+      "clinic_id": "3",
+      "specifications": "Physical Therapist"
     },
     {
       "id": "4",
@@ -698,6 +717,62 @@
         ]
       },
       "payment": "unpaid"
+    },
+    {
+      "date": "2025-05-10",
+      "patient_id": "b87LHpi",
+      "doctor_id": "1",
+      "approval_status": "cancelled",
+      "appointment_details": {
+        "reason": "my teeth hurt",
+        "drugs": "",
+        "diagnosis": ""
+      },
+      "payment": "",
+      "time": "12:43",
+      "id": "Inu0mt-"
+    },
+    {
+      "date": "2025-05-12",
+      "patient_id": "b87LHpi",
+      "doctor_id": "3",
+      "approval_status": "pending",
+      "appointment_details": {
+        "reason": "health setback",
+        "drugs": "",
+        "diagnosis": ""
+      },
+      "payment": "",
+      "time": "09:46",
+      "id": "0Rk3i1W"
+    },
+    {
+      "date": "2025-05-12",
+      "patient_id": "b87LHpi",
+      "doctor_id": "4",
+      "approval_status": "pending",
+      "appointment_details": {
+        "reason": "Make sure the baby's safety",
+        "drugs": "",
+        "diagnosis": ""
+      },
+      "payment": "",
+      "time": "15:49",
+      "id": "vakzNol"
+    },
+    {
+      "date": "2025-05-14",
+      "patient_id": "b87LHpi",
+      "doctor_id": "1",
+      "approval_status": "pending",
+      "appointment_details": {
+        "reason": "I want to get orthodontic treatment.",
+        "drugs": "",
+        "diagnosis": ""
+      },
+      "payment": "",
+      "time": "08:51",
+      "id": "cL0z-Jn"
     }
   ],
   "drug": [

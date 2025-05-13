@@ -4,6 +4,8 @@
       <a href="#">Homepage</a> <span>&gt;</span> Book appointment
   </div> -->
   <hr class="underline" />
+  <span *ngIf="success" class="success">{{success}}</span>
+  <span *ngIf="success" class="error">{{error}}</span>
   <form [formGroup]="appointmentForm" (ngSubmit)="submitAppointment()">
     <input type="hidden" formControlName="id">
       <div class="form-row">

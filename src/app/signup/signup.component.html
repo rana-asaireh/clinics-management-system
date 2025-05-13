@@ -14,13 +14,13 @@
           <div class="group">
             <!-- Username -->
             <div class="input-wrapper">
-              <label for="username">{{ formNameMapping['username'] }}</label>
+              <label for="username">{{ formNameMapping['name'] }}</label>
               <img src="/images/User1.png" class="input-icon" alt="username" />
-              <input type="text" id="username" placeholder="Enter your username" formControlName="username"
-                [class.invalid]="registrationForm.controls['username'].touched && registrationForm.controls['username'].errors?.['required']" />
+              <input type="text" id="username" placeholder="Enter your username" formControlName="name"
+                [class.invalid]="registrationForm.controls['name'].touched && registrationForm.controls['name'].errors?.['required']" />
               <span
-                *ngIf="registrationForm.controls['username'].touched && registrationForm.controls['username'].errors?.['required']">
-                {{ formNameMapping['username'] }} is required
+                *ngIf="registrationForm.controls['name'].touched && registrationForm.controls['name'].errors?.['required']">
+                {{ formNameMapping['name'] }} is required
               </span>
             </div>
 
