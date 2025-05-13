@@ -49,6 +49,7 @@
       <span class="error"
         *ngIf="formGroup.controls['email']?.touched && formGroup.controls['email']?.errors?.['email']">Doctor
         Email is invalid</span>
+      <span *ngIf="message" class="error">{{message}}</span>
     </div>
     <div class="form-group">
       <label for="doctor_password">Password</label>

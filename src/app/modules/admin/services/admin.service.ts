@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Clinic } from '../../shared/models/clinic.model';
 import { Doctor } from '../../shared/models/doctor.model';
 import { Drug } from '../../shared/models/drug.model';
@@ -30,6 +30,11 @@ export class AdminService {
     return this.http.post<Diagnosis>(`${this.baseUrl}/diagnosis`, diagnosis);
   }
 
+  checkEmailExist(email: string): Observable<boolean> {
+    return this.http.get<Doctor[]>(`${this.baseUrl}/doctor?email=${email}`).pipe(
+      map((doctors) => doctors.length > 0)
+    )
+  }
 
   deleteClinic(id: string): Observable<Clinic> {
     return this.http.delete<Clinic>(`${this.baseUrl}/clinic/${id}`);
