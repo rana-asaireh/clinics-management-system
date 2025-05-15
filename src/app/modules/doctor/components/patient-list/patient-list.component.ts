@@ -31,27 +31,31 @@ export class PatientListComponent {
   searchDate: string = '';
   currentPage: number = 1;
   itemsPerPage: number = 3;
-
+  loader: boolean = false;
   ngOnInit(): void {
     const DoctorUser: string = this.userService.getTypeUser();
-    this.doctorService
-      .getPatientsByDoctor(DoctorUser)
-      .subscribe((appointments) => {
-        this.appointments = appointments;
+    this.loader = true;
+    setTimeout(() => {
+      this.doctorService
+        .getPatientsByDoctor(DoctorUser)
+        .subscribe((appointments) => {
+          this.loader = false;
+          this.appointments = appointments;
 
-        this.doctorService.getPatients().subscribe((patients) => {
-          const mergedData = appointments.map((appointment) => {
-            const patient = patients.find(
-              (p) => p.id === appointment.patient_id
-            );
-            return {
-              appointment,
-              patient,
-            };
+          this.doctorService.getPatients().subscribe((patients) => {
+            const mergedData = appointments.map((appointment) => {
+              const patient = patients.find(
+                (p) => p.id === appointment.patient_id
+              );
+              return {
+                appointment,
+                patient,
+              };
+            });
+            this.mergedAppointments = mergedData;
           });
-          this.mergedAppointments = mergedData;
         });
-      });
+    }, 1000);
   }
 
   goToDetails(appointmentId: string) {

@@ -1,5 +1,5 @@
 <div class="breadcrumb-container">
-  <h2 class="page-title">Patients Listss</h2>
+  <h2 class="page-title">Patients Lists</h2>
   <hr class="underline" />
 </div>
 
@@ -15,7 +15,15 @@
   </div>
 </div>
 
-<div class="doctors-list">
+<div class="Loader-background" *ngIf="loader">
+  <div class="indicator">
+    <svg width="24px" height="20px">
+      <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+      <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+    </svg>
+  </div>
+</div>
+<div class="doctors-list" *ngIf="!loader">
   <div *ngFor="let item of paginatedAppointments">
     <img src="images/doctorImage.png" alt="">
     <h3>{{ item.patient?.name || 'Unknown' }}</h3>

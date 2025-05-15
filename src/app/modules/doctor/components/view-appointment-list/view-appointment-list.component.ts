@@ -19,6 +19,7 @@ export class ViewAppointmentListComponent implements OnInit {
   appointment!: Appointment;
   patient!: Patient;
   doctor!: Doctor;
+  loader: boolean = false;
 
   appointmentForm = new FormGroup({
     doctorName: new FormControl(''),
@@ -46,39 +47,44 @@ export class ViewAppointmentListComponent implements OnInit {
   }
 
   loadAppointmentDetails(): void {
-    this.doctorService
-      .getAppointmentById(this.appointmentId)
-      .subscribe((appointment) => {
-        this.appointment = appointment;
+    this.loader = true;
+    setTimeout(() => {
+      this.doctorService
+        .getAppointmentById(this.appointmentId)
+        .subscribe((appointment) => {
+          this.loader = false;
+          this.appointment = appointment;
 
-        const patientId = this.appointment.patient_id;
-        const doctorId = this.appointment.doctor_id;
+          const patientId = this.appointment.patient_id;
+          const doctorId = this.appointment.doctor_id;
 
-        this.doctorService.getPatientById(patientId).subscribe((patient) => {
-          this.patient = patient;
+          this.doctorService.getPatientById(patientId).subscribe((patient) => {
+            this.patient = patient;
+            this.appointmentForm.patchValue({
+              patientName: patient.name,
+              phoneNumber: patient.phone.toString(),
+              email: patient.email,
+            });
+          });
+
+          this.doctorService.getDoctorById(doctorId).subscribe((doctor) => {
+            this.loader = false;
+            this.doctor = doctor;
+            this.appointmentForm.patchValue({
+              doctorName: doctor?.name,
+              clinicName: doctor?.specification,
+            });
+          });
+
+          const reservationDate = this.formatDate(appointment.date);
+
           this.appointmentForm.patchValue({
-            patientName: patient.name,
-            phoneNumber: patient.phone.toString(),
-            email: patient.email,
+            appointmentStatus: appointment.approval_status,
+            reservationDate: reservationDate,
+            payment: appointment.appointment_details?.payment,
           });
         });
-
-        this.doctorService.getDoctorById(doctorId).subscribe((doctor) => {
-          this.doctor = doctor;
-          this.appointmentForm.patchValue({
-            doctorName: doctor?.name,
-            clinicName: doctor?.specification,
-          });
-        });
-
-        const reservationDate = this.formatDate(appointment.date);
-
-        this.appointmentForm.patchValue({
-          appointmentStatus: appointment.approval_status,
-          reservationDate: reservationDate,
-          payment: appointment.appointment_details?.payment,
-        });
-      });
+    }, 1000);
   }
 
   formatDate(date: Date | string): string {

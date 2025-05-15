@@ -547,20 +547,16 @@
       "date": "2025-04-16",
       "patient_id": "4",
       "doctor_id": "3",
-      "approval_status": "approved",
+      "approval_status": "rejected",
       "appointment_details": {
-        "drugs": [
-          {
-            "id": "21",
-            "name": "Hydrocodone"
-          }
-        ],
-        "diagnosis": [
-          {
-            "id": "6",
-            "name": "Tooth Extraction Recovery"
-          }
-        ]
+        "drugs": {
+          "id": "ac57",
+          "name": "Diclofenac"
+        },
+        "diagnosis": {
+          "id": "4",
+          "name": "Gestational Diabetes"
+        }
       },
       "payment": "unpaid"
     },
@@ -857,16 +853,12 @@
   ],
   "clinic": [
     {
-      "id": "1",
-      "name": "Dental Clinic"
-    },
-    {
       "id": "2",
       "name": "Pediatrics Clinic"
     },
     {
-      "id": "3",
-      "name": "Physical Therapy"
+      "name": "Physical Therapy",
+      "id": "3"
     },
     {
       "id": "4",
