@@ -9,10 +9,13 @@ import { MainHomePageComponent } from './homePage/components/main-home-page/main
 import { DoctorComponent } from './homePage/components/doctor/doctor.component';
 import { ContactUsComponent } from './homePage/components/contact-us/contact-us.component';
 import { ClinicsComponent } from './homePage/components/clinics/clinics.component';
+import { SplashScreenComponent } from './homePage/components/splash-screen/splash-screen.component';
 
 const routes: Routes = [
+  { path: '', component: SplashScreenComponent },
+
   {
-    path: '',
+    path: 'home',
     component: HomePageLayoutComponent,
     children: [
       { path: '', component: MainHomePageComponent },
@@ -24,7 +27,6 @@ const routes: Routes = [
       { path: 'clinic', component: ClinicsComponent },
     ],
   },
-  // { path: '', component: HomePageComponent },
   {
     path: 'login',
     component:LoginComponent
@@ -58,5 +60,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule {}
-
-

@@ -8,7 +8,15 @@
 </div>
 <span *ngIf="success" class="success">{{success}}</span>
 <span *ngIf="success" class="error">{{error}}</span>
-<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="container">
+<div class="Loader-background" *ngIf="loader">
+  <div class="indicator">
+    <svg width="24px" height="20px">
+      <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+      <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+    </svg>
+  </div>
+</div>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="container" *ngIf="!loader">
   <div class="test">
     <div class="profile-row">
       <div class="form-group-container">

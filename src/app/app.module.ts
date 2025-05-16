@@ -12,6 +12,7 @@ import { HomePageComponent } from './page/home-page/home-page.component';
 import { SignupComponent } from './signup/signup.component';
 import { SharedModule } from './modules/shared/shared.module';
 import { HomePageLayoutComponent } from './homePage/components/home-page-layout/home-page-layout.component';
+import { SplashScreenComponent } from './homePage/components/splash-screen/splash-screen.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { HomePageLayoutComponent } from './homePage/components/home-page-layout/
     HomePageComponent,
     SignupComponent,
     HomePageLayoutComponent,
+    SplashScreenComponent,
   ],
   imports: [
     BrowserModule,

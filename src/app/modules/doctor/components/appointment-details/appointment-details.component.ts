@@ -26,6 +26,7 @@ export class AppointmentDetailsComponent implements OnInit {
   diagnoses: Diagnosis[] = [];
   formErrorMessage: string = '';
   rejectionMessage: string = '';
+  loader: boolean = false;
 
   updatesAppointment!: Appointment;
   appointmentForm = new FormGroup({
@@ -58,41 +59,39 @@ export class AppointmentDetailsComponent implements OnInit {
   }
 
   loadAppointmentDetails(): void {
-    this.doctorService
-      .getAppointmentById(this.appointmentId)
-      .subscribe((appointment) => {
-        this.appointment = appointment;
-        console.log(' this.appointment', this.appointment);
-        const patientId = this.appointment.patient_id;
-        const doctorId = this.appointment.doctor_id;
-        console.log(' doctorId', doctorId);
+    this.loader = true;
+    setTimeout(() => {
+      this.doctorService
+        .getAppointmentById(this.appointmentId)
+        .subscribe((appointment) => {
+          this.loader = false;
+          this.appointment = appointment;
+          const patientId = this.appointment.patient_id;
+          const doctorId = this.appointment.doctor_id;
 
-        console.log('patientId', patientId);
-        this.doctorService.getPatientById(patientId).subscribe((patient) => {
-          this.patient = patient;
-          console.log('patient:', patient);
+          this.doctorService.getPatientById(patientId).subscribe((patient) => {
+            this.patient = patient;
+            this.appointmentForm.patchValue({
+              patientName: patient.name,
+              phoneNumber: patient.phone.toString(),
+              email: patient.email,
+            });
+          });
+
+          this.doctorService.getDoctorById(doctorId).subscribe((doctor) => {
+            this.doctor = doctor;
+            this.appointmentForm.patchValue({
+              doctorName: doctor?.name,
+              clinicName: doctor.specification,
+            });
+          });
           this.appointmentForm.patchValue({
-            patientName: patient.name,
-            phoneNumber: patient.phone.toString(),
-            email: patient.email,
+            appointmentStatus: appointment.approval_status,
+
+            payment: appointment.appointment_details?.payment,
           });
         });
-
-        this.doctorService.getDoctorById(doctorId).subscribe((doctor) => {
-          this.doctor = doctor;
-          console.log('doctor:', doctor);
-          this.appointmentForm.patchValue({
-            doctorName: doctor?.name,
-            clinicName: doctor.specification,
-          });
-        });
-        this.appointmentForm.patchValue({
-          appointmentStatus: appointment.approval_status,
-
-          payment: appointment.appointment_details?.payment,
-        });
-        console.log('Payment:', appointment.appointment_details?.payment);
-      });
+    }, 1000);
   }
 
   onSubmit(): void {
@@ -128,7 +127,6 @@ export class AppointmentDetailsComponent implements OnInit {
       .updateAppointmentStatus(this.appointmentId, updatedAppointment)
       .subscribe(
         (response) => {
-          console.log('Appointment updated with details:', response);
           this.router.navigate(['doctor/patients']);
         },
         (error) => {
@@ -141,11 +139,11 @@ export class AppointmentDetailsComponent implements OnInit {
     this.isAccepted = true;
     this.formErrorMessage = '';
     this.rejectionMessage = '';
+
     this.appointment.approval_status = ApprovalStatus.approved;
     this.appointmentForm.patchValue({
       appointmentStatus: ApprovalStatus.approved,
     });
-    console.log('Appointment accepted');
   }
 
   onReject() {
@@ -158,7 +156,6 @@ export class AppointmentDetailsComponent implements OnInit {
       .updateAppointmentStatus(this.appointmentId, updatedAppointment)
       .subscribe(
         (response) => {
-          console.log('Appointment rejected:', response);
           this.router.navigate(['doctor/patients']);
         },
         (error) => {
