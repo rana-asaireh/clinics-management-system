@@ -148,7 +148,6 @@ h1 {
   margin-right: 0;
   align-self: flex-start;
 }
-//loader
 .Loader-background {
   display: flex;
   flex-direction: column;
@@ -181,9 +180,11 @@ h1 {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
 .indicator svg polyline#back {
   stroke: rgba(59, 211, 171, 0.3);
 }
+
 .indicator svg polyline#front {
   stroke: #3bd3ab;
   stroke-dasharray: 12, 36;

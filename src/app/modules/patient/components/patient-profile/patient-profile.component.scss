@@ -98,6 +98,7 @@ h1 {
   margin-right: 5px;
 }
 
+
 .profile-icon img {
   width: 20px;
   height: 20px;
@@ -145,7 +146,6 @@ h1 {
   cursor: pointer;
   transition: background-color 0.3s ease;
   width: auto;
-
   margin-right: 0;
   align-self: flex-start;
 }
@@ -158,5 +158,81 @@ h1 {
 @media (max-width: 750px) {
   .profile-row > div {
     width: 100%;
+  }
+}
+
+.Loader-background {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 255, 255);
+  padding: 0px;
+  margin: 0px;
+}
+
+.indicator {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(2);
+}
+
+.indicator svg polyline {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.indicator svg polyline#back {
+  stroke: rgba(59, 211, 171, 0.3);
+}
+
+.indicator svg polyline#front {
+  stroke: #3bd3ab;
+  stroke-dasharray: 12, 36;
+  stroke-dashoffset: 48;
+  animation: dash 1s linear infinite;
+}
+
+@-moz-keyframes dash {
+  62.5% {
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-webkit-keyframes dash {
+  62.5% {
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@-o-keyframes dash {
+  62.5% {
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes dash {
+  62.5% {
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
   }
 }
