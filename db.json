@@ -200,7 +200,7 @@
       "gender": "male",
       "email": "omar1970@amal-clinic.com",
       "password": "Ot**1234",
-      "phone": "962785249901",
+      "phone": "962785249201",
       "specification": "Dentist",
       "clinic_id": "1",
       "specifications": "Dentist"
@@ -459,14 +459,22 @@
       "date": "2025-04-10",
       "patient_id": "5",
       "doctor_id": "7",
-      "approval_status": "pending",
+      "approval_status": "approved",
       "appointment_details": {
-        "reason": "no reason",
-        "drugs": "",
-        "diagnosis": ""
+        "drugs": [
+          {
+            "id": "74f2",
+            "name": "Salbutamol"
+          }
+        ],
+        "diagnosis": [
+          {
+            "id": "2",
+            "name": "Asthma"
+          }
+        ]
       },
-      "payment": "",
-      "time": "11:22"
+      "payment": "paid"
     },
     {
       "id": "10",
@@ -765,62 +773,6 @@
       "payment": "",
       "time": "08:51",
       "id": "cL0z-Jn"
-    },
-    {
-      "id": "8f96",
-      "date": "2025-06-05",
-      "patient_id": "5",
-      "doctor_id": "2",
-      "approval_status": "pending",
-      "appointment_details": {
-        "reason": "sick",
-        "drugs": "",
-        "diagnosis": ""
-      },
-      "payment": "",
-      "time": "11:10"
-    },
-    {
-      "id": "899d",
-      "date": "2025-06-01",
-      "patient_id": "5",
-      "doctor_id": "3",
-      "approval_status": "pending",
-      "appointment_details": {
-        "reason": "headch",
-        "drugs": "",
-        "diagnosis": ""
-      },
-      "payment": "",
-      "time": "22:15"
-    },
-    {
-      "id": "6417",
-      "date": "2025-06-05",
-      "patient_id": "5",
-      "doctor_id": "1",
-      "approval_status": "pending",
-      "appointment_details": {
-        "reason": "no reason",
-        "drugs": "",
-        "diagnosis": ""
-      },
-      "payment": "",
-      "time": "11:19"
-    },
-    {
-      "id": "3196",
-      "date": "2025-10-02",
-      "patient_id": "5",
-      "doctor_id": "2",
-      "approval_status": "pending",
-      "appointment_details": {
-        "reason": "glasses",
-        "drugs": "",
-        "diagnosis": ""
-      },
-      "payment": "",
-      "time": "11:23"
     }
   ],
   "drug": [
