@@ -23,6 +23,7 @@ export class PatientBookAppointmentsComponent implements OnInit {
   doctorIdFromUrl: string | null = null;
   success: string = '';
   error!: string;
+  loader: boolean = false;
 
   constructor(
     private appointmentService: AppointmentService,
@@ -74,7 +75,7 @@ export class PatientBookAppointmentsComponent implements OnInit {
             }
           },
           (error) => {
-            console.error('Error fetching appointment for edit:', error);
+          
             this.error = 'Error fetching appointment.';
           
           }
@@ -86,9 +87,13 @@ export class PatientBookAppointmentsComponent implements OnInit {
   populateFormForEdit(appointment: any) {
     this.success = '';
     this.error = '';
+    this.loader = true;
+    setTimeout(() => {
     this.patientAuthService.getPatientById(appointment.patient_id).subscribe(
       (patient: any) => {
+        this.loader = false;
         if (patient) {
+          
           this.appointmentForm.patchValue({
             fullname: patient.name,
             email: patient.email,
@@ -104,10 +109,11 @@ export class PatientBookAppointmentsComponent implements OnInit {
         }
       },
       (error) => {
-        console.error('Error fetching patient information for edit:', error);
+        this.loader = false;
         this.error = 'Error fetching patient information.';
       }
     );
+    }, 1000);
   }
 
   formatTime(time: any): string {
@@ -117,17 +123,19 @@ export class PatientBookAppointmentsComponent implements OnInit {
   submitAppointment() {
     this.success = '';
     this.error = '';
-    console.log("submitAppointment function called");
+    
     this.appointmentForm.markAllAsTouched();
     this.appointmentForm.updateValueAndValidity();
-    console.log("Value of this.appointmentForm.valid:", this.appointmentForm.valid);
-    console.log("Form errors:", this.appointmentForm.errors);
+  
 
     if (this.appointmentForm.valid) {
+      this.loader = true;
       const appointmentData = this.appointmentForm.value;
       const email = appointmentData.email;
+    setTimeout(() => {
       this.userService.getPatientByEmail(email).subscribe(
         (patients) => {
+          this.loader = false;
           if (patients && patients.length > 0) {
             const patient = patients[0];
             const appointmentToSend = {
@@ -144,18 +152,18 @@ export class PatientBookAppointmentsComponent implements OnInit {
               time: appointmentData.time,
             };
 
-            console.log("Appointment Data To Send:", appointmentToSend);
+          
 
             if (this.appointmentId) {
               this.appointmentService.updateAppointment(this.appointmentId, appointmentToSend).subscribe(
                 (response: any) => {
-                  console.log('Appointment updated successfully:', response);
+                  this.loader = false; 
                   this.success = 'Appointment updated successfully';
                   setTimeout(() => { this.success = ''; }, 3000);
                   this.appointmentForm.reset();
                 },
                 (error) => {
-                  console.error('Error updating appointment:', error);
+                  this.loader = false; 
                   this.error = 'Failed to update appointment. Please try again.';
                   setTimeout(() => { this.error = ''; }, 3000);
                 }
@@ -163,30 +171,30 @@ export class PatientBookAppointmentsComponent implements OnInit {
             } else {
               this.appointmentService.addAppointment(appointmentToSend).subscribe(
                 (response: any) => {
-                  console.log('Appointment booked successfully:', response);
+                  this.loader = false; 
                   this.success = 'Appointment booked successfully';
                   setTimeout(() => { this.success = ''; }, 3000);
                   this.appointmentForm.reset();
                 },
                 (error) => {
-                  console.error('Error booking appointment:', error);
+                  this.loader = false; 
                   this.error = 'Failed to book appointment. Please try again.';
                   setTimeout(() => { this.error = ''; }, 3000);
                 }
               );
             }
           } else {
-            console.error('Could not find patient with this email.');
+            this.loader = false; 
             this.error = 'Could not find patient with this email. Please try again.';
           }
         },
         (error) => {
-          console.error('Error fetching patient information:', error);
+          this.loader = false; 
           this.error = 'Error fetching patient information. Please try again.';
         }
-      );
+      );}, 1000);
     } else {
-      console.error('Form is invalid:', this.appointmentForm.errors);
+    
       this.error = 'Please fill in all the required fields correctly.';
     }
   }
