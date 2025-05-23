@@ -1,6 +1,6 @@
-<div class="breadcrumb-container">
-  <h2 class="page-title">Profile</h2>
-  <hr class="underline" />
+<div>
+  <h1 class="page-title">Profile</h1>
+  <div class="line"></div>
 </div>
 <span *ngIf="success" class="success">{{success}}</span>
 <span *ngIf="success" class="error">{{error}}</span>
@@ -11,7 +11,7 @@
                 <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
             </svg>
         </div>
-    </div>
+</div>
 <form [formGroup]="patientProfileForm" (ngSubmit)=" updateProfile()" class="container" *ngIf="!loader">
   <div class="test">
     <div class="profile-row">
