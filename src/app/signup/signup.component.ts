@@ -19,7 +19,7 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent {
 
-
+  loader : boolean = false ;
   //#region Variable Decl.
   //Flags
   isVisible = {
@@ -150,12 +150,14 @@ export class SignupComponent {
 
 
     if (this.registrationForm.valid) {
+      this.loader = true ;
 
       //the fields all  are true 
 
       /*check email if exist*/
       this.patientService.checkEmailExist(this.registrationForm.controls['email'].value).subscribe(
         (exist) => {
+          setTimeout(()=>{
           //using library sweetalert2 to alert the message
           if (exist) { //email exist => back you to signup page
             Swal.fire({
@@ -163,6 +165,7 @@ export class SignupComponent {
               title: 'Oops...',
               text: 'Email already exists!',
             });
+            this.loader = false ;
           }
           else { //email not exist =>add patient to patientslist && usersList
             const { password: formPassword, confirmPassword, terms, ...newPatient }: any = this.registrationForm.value;
@@ -177,6 +180,7 @@ export class SignupComponent {
                 this.registrationForm.reset();
                 console.log('patients List', patients)
                 this.route.navigate(['login'])
+                this.loader = false ;
               }
             )
 
@@ -197,7 +201,7 @@ export class SignupComponent {
               }
             )
           }
-
+          }, 100000000);
 
         }
       )

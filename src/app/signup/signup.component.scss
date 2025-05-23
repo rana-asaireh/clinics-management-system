@@ -54,7 +54,7 @@
                 align-items: center;
                 overflow-y: scroll;
                 scrollbar-width: none; //hide  vertical scroll bar
-
+              
                 .text-wrapper {
                     text-align: center;
                     margin-bottom: 5px;
@@ -75,7 +75,7 @@
                     padding-left: 8px;
 
                 }
-
+                 
                 .group {
                     width: 427px;
                     display: flex;
@@ -336,6 +336,84 @@
                         cursor: pointer;
                     }
                 }
+                .loader-wrapper {
+                   position: static;
+                   margin-top: 20px;
+                   
+                   margin-bottom: 20px; // Gives top and bottom spacing
+                   padding-top:10px;
+                   width: 100%;
+
+                   z-index: 10;
+                    justify-content:center;
+                    align-items: center;
+                  
+                }
+
+
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    gap: 5px;
+  width: 100%;
+  direction: ltr;
+  position: static;
+  left: 8%;
+  top: 27%;
+
+  .indicator {
+    display: flex;
+     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1.8);
+    padding-top: 5px;
+
+    svg {
+      width: 22px;
+      height: 20px;
+    }
+
+    svg polyline {
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    svg polyline#back {
+      stroke: rgba(59, 211, 171, 0.3);
+    }
+
+    svg polyline#front {
+      stroke: #389d93;
+      stroke-dasharray: 12, 36;
+      stroke-dashoffset: 48;
+      animation: dash 1.5s linear infinite;
+    }
+  }
+
+  span {
+    color: #389d93;
+    font-weight: 600;
+    font-size: 0.9em;
+    white-space: nowrap;
+    position: static;
+    left: 24px;
+    top: -4.5px;
+  }
+
+  @keyframes dash {
+    62.5% {
+      opacity: 0;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+}
             }
         }
     }
@@ -424,4 +502,5 @@
     .container .overlap-wrapper .overlap .rectangle .group {
         width: 100%;
     }
+    
 }

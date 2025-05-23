@@ -1,5 +1,14 @@
+<div class="Loader-background" *ngIf="loader">
+        <div class="indicator">
+            <svg width="24px" height="20px">
+                <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+            </svg>
+        </div>
+</div>
 <h1>Dotors List</h1>
 <div class="line"></div>
+<div *ngIf="!loader">
 <div class="filter">
 
     <div>
@@ -41,3 +50,4 @@
         <h2>No Doctor Found</h2>
     </div>
 </ng-template>
+</div>

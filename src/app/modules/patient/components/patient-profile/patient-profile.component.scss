@@ -9,10 +9,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-.breadcrumb-container {
-  padding: 16px;
-  font-family: Arial, sans-serif;
-}
+
 
 .success {
   display: block;
@@ -30,12 +27,11 @@ h1 {
 
 .page-title {
   font-size: 28px;
-  font-weight: bold;
   margin-bottom: 22px;
 }
 
 .breadcrumb {
-  font-size: 12px;
+  font-size: 14px;
   color: #444;
 }
 
@@ -47,20 +43,17 @@ h1 {
 .greenWord {
   color: #2aa198;
   margin-right: 4px;
-  font-size: 13px;
+  font-size: 14px;
 }
 
-.underline {
-  border: none;
-  border-top: 2px solid #2aa198;
-  margin-top: 8px;
+.line {
+    width: 100%;
+    background-color: #4b9c8e;
+    height: 1px;
+    margin-bottom: 10px;
 }
 
-.home-page {
-  text-decoration: none;
-  font-size: 13px;
-  color: black;
-}
+
 
 .test {
   display: flex;
@@ -89,7 +82,7 @@ h1 {
 .profile-icon {
   width: 60px;
   height: 60px;
-  background-color: #3b8c88;
+  background-color:#4b9c8e;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -138,7 +131,7 @@ h1 {
 }
 
 .btn {
-  background-color: #3b8c88;
+  background-color:#4b9c8e;
   color: white;
   border: none;
   padding: 10px 20px;

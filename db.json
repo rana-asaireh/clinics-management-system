@@ -118,7 +118,8 @@
       "name": "Ahmad Mohtaseb",
       "email": "Ahmad.Mohtaseb@amal-clinic.com",
       "password": "Fs*251435"
-    }
+    },
+    
   ],
   "patient": [
     {
@@ -190,7 +191,8 @@
       "phone": "962778702146",
       "gender": "male",
       "dob": "1990-04-06"
-    }
+    },
+    
   ],
   "doctor": [
     {
@@ -821,6 +823,76 @@
       },
       "payment": "",
       "time": "11:23"
+    },
+    {
+      "id": "963e",
+      "date": "2025-10-30",
+      "patient_id": "1",
+      "doctor_id": "0341",
+      "approval_status": "cancelled",
+      "appointment_details": {
+        "reason": "leukemia",
+        "drugs": "",
+        "diagnosis": ""
+      },
+      "payment": "",
+      "time": "12:00"
+    },
+    {
+      "id": "b8d4",
+      "date": "2025-11-27",
+      "patient_id": "1",
+      "doctor_id": "3",
+      "approval_status": "cancelled",
+      "appointment_details": {
+        "reason": "leukemia",
+        "drugs": "",
+        "diagnosis": ""
+      },
+      "payment": "",
+      "time": "12:21"
+    },
+    {
+      "id": "30a0",
+      "date": "2025-08-17",
+      "patient_id": "1",
+      "doctor_id": "0341",
+      "approval_status": "pending",
+      "appointment_details": {
+        "reason": "cancer",
+        "drugs": "",
+        "diagnosis": ""
+      },
+      "payment": "",
+      "time": "13:23"
+    },
+    {
+      "id": "24a8",
+      "date": "2026-03-24",
+      "patient_id": "1",
+      "doctor_id": "9992",
+      "approval_status": "pending",
+      "appointment_details": {
+        "reason": "anemia",
+        "drugs": "",
+        "diagnosis": ""
+      },
+      "payment": "",
+      "time": "16:27"
+    },
+    {
+      "id": "91f3",
+      "date": "2025-06-30",
+      "patient_id": "1",
+      "doctor_id": "3d27",
+      "approval_status": "pending",
+      "appointment_details": {
+        "reason": "tired",
+        "drugs": "",
+        "diagnosis": ""
+      },
+      "payment": "",
+      "time": "14:26"
     }
   ],
   "drug": [

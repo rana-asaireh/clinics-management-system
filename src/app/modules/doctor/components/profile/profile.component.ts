@@ -44,7 +44,7 @@ ngOnInit(): void {
           this.doctorId=doctors[0].id;
           this.getDoctorData();
         }else{
-          this.error = 'Doctor data not found.'
+          this.error = 'Doctor data not found.';
         }
       },
       (errors)=>{
