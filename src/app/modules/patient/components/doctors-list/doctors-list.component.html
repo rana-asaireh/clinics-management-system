@@ -8,7 +8,7 @@
 </div>
 <h1>Dotors List</h1>
 <div class="line"></div>
-<div *ngIf="!loader">
+
 <div class="filter">
 
     <div>
@@ -29,7 +29,7 @@
     </div>
 </div>
 
-<div class="doctors-list" *ngIf="doctors.length; else  noDoctor">
+<div class="doctors-list" *ngIf=" !loader &&doctors.length; else  noDoctor"  >
     <div *ngFor="let doctor of filteredDoctors">
         <img src="images/doctorImage.png" alt="">
         <h2>Dr. {{doctor.name}} </h2>
@@ -50,4 +50,3 @@
         <h2>No Doctor Found</h2>
     </div>
 </ng-template>
-</div>
