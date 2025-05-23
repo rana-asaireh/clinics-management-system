@@ -201,7 +201,7 @@ export class SignupComponent {
               }
             )
           }
-          }, 100000000);
+          }, 1000);
 
         }
       )

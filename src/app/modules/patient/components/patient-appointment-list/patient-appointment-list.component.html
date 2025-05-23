@@ -9,7 +9,7 @@
 <div >
     <h1>Appointments List</h1>
     <div class="line"></div>
-    <div *ngIf="!loader">
+    
     <!-- Filter Dropdown -->
     <div class="filter">
         <div>
@@ -24,7 +24,7 @@
     </div>
 
     <!-- Table -->
-    <table>
+    <table *ngIf="!loader">
         <colgroup>
             <col style="width: 7.5%;">
             <col style="width: 20%;">
@@ -100,4 +100,4 @@
         (pageChanged)="goToPage($event)">
     </app-pagination>
   </div>
-</div>
+
