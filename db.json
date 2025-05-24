@@ -204,8 +204,7 @@
       "password": "Ot**1234",
       "phone": "962785249201",
       "specification": "Dentist",
-      "clinic_id": "1",
-      "specifications": "Dentist"
+      "clinic_id": "1"
     },
     {
       "id": "2",
@@ -227,8 +226,7 @@
       "password": "sa**1256",
       "phone": "962795039203",
       "specification": "Physical Therapist",
-      "clinic_id": "3",
-      "specifications": "Physical Therapist"
+      "clinic_id": "3"
     },
     {
       "id": "4",
