@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { map, Observable} from "rxjs";
+import { map, Observable } from "rxjs";
 
 import { Patient } from "../../shared/models/patient.model";
 
@@ -17,7 +17,7 @@ export class PatientAuthService {
 
 
   baseUrl = 'http://localhost:3000/patient'
-  constructor(private http: HttpClient,private  userService:UserService) { }
+  constructor(private http: HttpClient, private userService: UserService) { }
 
   getPatientsList(): Observable<Patient[]> {
     return this.http.get<Patient[]>(this.baseUrl)
@@ -33,32 +33,33 @@ export class PatientAuthService {
 
 
   addPatient(patient: Patient): Observable<Patient> {
+    patient.type = "patient"
     return this.http.post<Patient>(this.baseUrl, patient);
   }
 
 
 
-  getPatientById(id:string):Observable<Patient>{
+  getPatientById(id: string): Observable<Patient> {
     return this.http.get<Patient>(`${this.baseUrl}/${id}`);
   }
-  updatePatient(patientData :any):Observable<Patient>{
-    return this.http.put<Patient>(`${this.baseUrl}/${patientData.id}`,patientData);
+  updatePatient(patientData: any): Observable<Patient> {
+    return this.http.put<Patient>(`${this.baseUrl}/${patientData.id}`, patientData);
   }
 
 
 
 
-getCurrentPatientId(email: string): Observable<string | undefined> {
-  return this.http.get<Patient[]>(`${this.baseUrl}?email=${email}`).pipe(
-    map(patients => {
-      if (patients.length > 0) {
-        return patients[0].id
-      } else {
-        throw new Error('Patient not found');
-      }
-    })
-  )
-}
+  getCurrentPatientId(email: string): Observable<string | undefined> {
+    return this.http.get<Patient[]>(`${this.baseUrl}?email=${email}`).pipe(
+      map(patients => {
+        if (patients.length > 0) {
+          return patients[0].id
+        } else {
+          throw new Error('Patient not found');
+        }
+      })
+    )
+  }
 
 
 
