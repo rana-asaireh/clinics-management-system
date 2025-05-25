@@ -1,6 +1,11 @@
+.patient-container {
+  padding: 20px;
+}
+
 .container {
   max-width: 800px;
   font-family: "Segoe UI", sans-serif;
+
 }
 
 h1 {
@@ -47,10 +52,10 @@ h1 {
 }
 
 .line {
-    width: 100%;
-    background-color: #4b9c8e;
-    height: 1px;
-    margin-bottom: 10px;
+  width: 100%;
+  background-color: #4b9c8e;
+  height: 1px;
+  margin-bottom: 10px;
 }
 
 
@@ -69,7 +74,7 @@ h1 {
   width: 100%;
 }
 
-.profile-row > div {
+.profile-row>div {
   width: calc(50% - 30px);
 }
 
@@ -82,7 +87,7 @@ h1 {
 .profile-icon {
   width: 60px;
   height: 60px;
-  background-color:#4b9c8e;
+  background-color: #4b9c8e;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -131,7 +136,7 @@ h1 {
 }
 
 .btn {
-  background-color:#4b9c8e;
+  background-color: #4b9c8e;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -149,7 +154,7 @@ h1 {
 }
 
 @media (max-width: 750px) {
-  .profile-row > div {
+  .profile-row>div {
     width: 100%;
   }
 }
@@ -198,6 +203,7 @@ h1 {
   62.5% {
     opacity: 0;
   }
+
   to {
     stroke-dashoffset: 0;
   }
@@ -207,6 +213,7 @@ h1 {
   62.5% {
     opacity: 0;
   }
+
   to {
     stroke-dashoffset: 0;
   }
@@ -216,6 +223,7 @@ h1 {
   62.5% {
     opacity: 0;
   }
+
   to {
     stroke-dashoffset: 0;
   }
@@ -225,6 +233,7 @@ h1 {
   62.5% {
     opacity: 0;
   }
+
   to {
     stroke-dashoffset: 0;
   }

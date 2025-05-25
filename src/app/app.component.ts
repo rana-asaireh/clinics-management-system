@@ -1,30 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { TranslationService } from './services/translation.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
   standalone: false,
+  styleUrl: './app.component.scss'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'clinics-management-system';
-  dir = 'ltr';
-  lang = 'en';
-
-  constructor(private translationService: TranslationService) {}
-
-  ngOnInit(): void {
-    const savedLang = localStorage.getItem('lang') || 'en';
-    this.setDirection(savedLang);
-
-    this.translationService.langChange$.subscribe((newLang) => {
-      this.setDirection(newLang);
-    });
-  }
-
-  private setDirection(lang: string): void {
-    this.lang = lang;
-    this.dir = lang === 'ar' ? 'rtl' : 'ltr';
-  }
 }

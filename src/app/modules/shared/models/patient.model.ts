@@ -6,5 +6,6 @@ export interface Patient {
     phone: string,
     gender: string,
     dob: Date,
-    password: string
+    password: string,
+    type:string,
 }

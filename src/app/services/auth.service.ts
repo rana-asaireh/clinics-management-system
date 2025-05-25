@@ -27,7 +27,7 @@ export class AuthService {
           console.log(currentUser)
           return user;
         } else {
-          throw new Error('app.login.invalid_credentials');
+          throw new Error('Invalid email or password');
         }
       })
     );
