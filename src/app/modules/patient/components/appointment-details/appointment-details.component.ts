@@ -24,6 +24,7 @@ export class AppointmentDetailsComponent implements OnInit {
   clinics: Clinic[] = [];
   doctors: Doctor[] = [];
   patients: Patient[] = [];
+  loader : boolean = false ;
   constructor(private route: ActivatedRoute,
     private router: ActivatedRoute,
     private appointmentService: AppointmentService,
@@ -35,20 +36,26 @@ export class AppointmentDetailsComponent implements OnInit {
 
   }
   ngOnInit(): void {
+    this.loader = true ;
     this.appointmentId = this.route.snapshot.paramMap.get('id')
     console.log("id", this.appointmentId)
     if (this.appointmentId) {
 
       this.appointmentService.getAppointmentById(this.appointmentId).subscribe(
         (appointments) => {
+          setTimeout(()=>{
           console.log('Appointments for patient:', appointments);
           this.appointmentsList = appointments;
-
+          this.loader = false ;
+         },1000);
         },
         (error) => {
           console.error('Error fetching appointments:', error);
+          this.loader = false ;
         }
-      )
+      );
+    }else{
+      this.loader = false ;
     }
 
     this.clinicService.getClinics().subscribe((clinics) => {

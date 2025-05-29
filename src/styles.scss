@@ -19,3 +19,32 @@ body {
   overflow-x: hidden;
   font-family: "Cairo", sans-serif;
 }
+
+html[dir='rtl'] {
+  body {
+    direction: rtl;
+    text-align: right;
+  }
+
+  .form-control,
+  .form-label,
+  input,
+  textarea,
+  select {
+    direction: rtl;
+    text-align: right;
+  }
+
+
+  .ml-auto {
+    margin-right: auto;
+    margin-left: 0;
+  }
+}
+
+html[dir='ltr'] {
+  body {
+    direction: ltr;
+    text-align: left;
+  }
+}

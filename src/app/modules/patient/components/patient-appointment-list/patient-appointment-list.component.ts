@@ -37,6 +37,7 @@ export class PatientAppointmentListComponent implements OnInit {
   patients: Patient[] = [];
   sortColumn: string = '';
   sortDirection: string = 'asc';
+    loader: boolean = false;
 
   constructor(
     private route: Router,
@@ -54,12 +55,15 @@ export class PatientAppointmentListComponent implements OnInit {
     this.loadAdditionalData();
   }
   private loadPatientData(): void {
+     this.loader = true;
     const userObj: User = this.userService.getCurrentUser();
     if (userObj) {
       this.patientService.getCurrentPatientId(userObj.email).subscribe((currentPatientId) => {
         this.patientId = currentPatientId?.toString();
         this.loadAppointments();
       });
+    } else {
+      this.loader = false;
     }
   }
 
@@ -74,9 +78,14 @@ export class PatientAppointmentListComponent implements OnInit {
   private loadAppointments(): void {
     if (this.patientId) {
       this.appointmentService.getAppointmentsByPatient(this.patientId).subscribe((appointments) => {
+        setTimeout(() => {
         this.filterAndPaginateAppointments(appointments);
         this.approvalStatuses = this.getApprovalStatuses(appointments);
+        this.loader = false;
+        }, 1000); 
       });
+    }else{
+      this.loader=false;
     }
   }
 
@@ -96,6 +105,7 @@ export class PatientAppointmentListComponent implements OnInit {
 
   //sort table columns
   sortTable(column: string): void {
+    this.loader=true;
     this.sortDirection = this.sortColumn === column && this.sortDirection === 'asc' ? 'desc' : 'asc';
     this.sortColumn = column;
 
@@ -105,19 +115,30 @@ export class PatientAppointmentListComponent implements OnInit {
         : this.appointmentService.getAppointmentsByPatient(this.patientId, this.sortColumn, this.sortDirection);
 
       data.subscribe((appointments) => {
+         setTimeout(() => {
         this.filterAndPaginateAppointments(appointments);
+        this.loader=false;
+         },1000);
       });
+    }else{
+      this.loader=false;
     }
   }
 
   // Filter appointments by approval status
   onFilterChange(): void {
+    this.loader = true ;
     this.currentPage = 1;
     if (this.patientId) {
       this.appointmentService.getFilteredAppointment(this.patientId, this.selectedApprovalStatus, this.sortColumn, this.sortDirection)
         .subscribe((filteredAppointments) => {
+          setTimeout(()=>{
           this.filterAndPaginateAppointments(filteredAppointments);
+          this.loader = false ;
+        },1000);
         });
+    }else{
+      this.loader = false ;
     }
   }
 
@@ -135,10 +156,13 @@ export class PatientAppointmentListComponent implements OnInit {
       cancelButtonText: 'No',
     }).then((result) => {
       if (result.isConfirmed && id) {
+        this.loader = true ;
         this.appointmentService.updateAppintmentStatus(id, { approval_status: ApprovalStatus.cancelled }).subscribe(() => {
+          setTimeout(()=>{
           this.loadAppointments();
+        },1000);
         });
-      }
+      }  
     });
   }
 
@@ -161,9 +185,13 @@ export class PatientAppointmentListComponent implements OnInit {
 
   // Pagination logic
   goToPage(page: number): void {
+    this.loader = true ;
     this.currentPage = page;
+    setTimeout(()=>{
     this.filteredAppointments = this.paginationService.paginate(this.appointmentsList, this.currentPage, this.pageSize);
-  }
+    this.loader = false ;
+    },1000);
+}
 
 
   //approval status classes
