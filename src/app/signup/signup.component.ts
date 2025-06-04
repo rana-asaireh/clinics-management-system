@@ -19,7 +19,7 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent {
 
-  loader : boolean = false ;
+  loader: boolean = false;
   //#region Variable Decl.
   //Flags
   isVisible = {
@@ -90,7 +90,7 @@ export class SignupComponent {
 
   //#region  Reactive Form  
   formNameMapping: { [key: string]: string } = {
-     name: 'Username',
+    name: 'Username',
     email: 'Email',
     phone: 'Phone number',
     gender: 'Gender',
@@ -150,57 +150,57 @@ export class SignupComponent {
 
 
     if (this.registrationForm.valid) {
-      this.loader = true ;
+      this.loader = true;
 
       //the fields all  are true 
 
       /*check email if exist*/
       this.patientService.checkEmailExist(this.registrationForm.controls['email'].value).subscribe(
         (exist) => {
-          setTimeout(()=>{
-          //using library sweetalert2 to alert the message
-          if (exist) { //email exist => back you to signup page
-            Swal.fire({
-              icon: 'error',
-              title: 'Oops...',
-              text: 'Email already exists!',
-            });
-            this.loader = false ;
-          }
-          else { //email not exist =>add patient to patientslist && usersList
-            const { password: formPassword, confirmPassword, terms, ...newPatient }: any = this.registrationForm.value;
-
-            this.patientService.addPatient(newPatient).subscribe(
-              (patients) => {
-                Swal.fire({
-                  icon: 'success',
-                  title: 'Successful submitted...',
-                  text: 'You Registered successfully',
-                });
-                this.registrationForm.reset();
-                console.log('patients List', patients)
-                this.route.navigate(['login'])
-                this.loader = false ;
-              }
-            )
-
-            //destructing a name,email,password
-            const {  name, email, password } = this.registrationForm.value;
-            const newUser: User = {
-              type: UserType.patient,
-              name:  name,
-              email: email,
-              password: password,
-
-
+          setTimeout(() => {
+            //using library sweetalert2 to alert the message
+            if (exist) { //email exist => back you to signup page
+              Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Email already exists!',
+              });
+              this.loader = false;
             }
-            this.userService.addUser(newUser).subscribe(
-              (users) => {
+            else { //email not exist =>add patient to patientslist && usersList
+              const { password: formPassword, confirmPassword, terms, ...newPatient }: any = this.registrationForm.value;
 
-                console.log('users List', users)
+              this.patientService.addPatient(newPatient).subscribe(
+                (patients) => {
+                  Swal.fire({
+                    icon: 'success',
+                    title: 'Successful submitted...',
+                    text: 'You Registered successfully',
+                  });
+                  this.registrationForm.reset();
+                  console.log('patients List', patients)
+                  this.route.navigate(['login'])
+                  this.loader = false;
+                }
+              )
+
+              //destructing a name,email,password
+              const { name, email, password } = this.registrationForm.value;
+              const newUser: User = {
+                type: UserType.patient,
+                name: name,
+                email: email,
+                password: password,
+
+
               }
-            )
-          }
+              this.userService.addUser(newUser).subscribe(
+                (users) => {
+
+                  console.log('users List', users)
+                }
+              )
+            }
           }, 1000);
 
         }

@@ -118,8 +118,21 @@
       "name": "Ahmad Mohtaseb",
       "email": "Ahmad.Mohtaseb@amal-clinic.com",
       "password": "Fs*251435"
+    },
+    {
+      "type": "patient",
+      "name": "Kameel",
+      "email": "k@gmail.com",
+      "password": "098795lO&&",
+      "id": "OU_E9ST"
+    },
+    {
+      "type": "patient",
+      "name": "Hana",
+      "email": "h@gmail.com",
+      "password": "P734lG%mfmf",
+      "id": "Qro9N5j"
     }
-    
   ],
   "patient": [
     {
@@ -191,8 +204,24 @@
       "phone": "962778702146",
       "gender": "male",
       "dob": "1990-04-06"
+    },
+    {
+      "name": "Kameel",
+      "email": "k@gmail.com",
+      "phone": "0886549596",
+      "gender": "male",
+      "dob": "2007-02-06",
+      "id": "Qf4b5ns"
+    },
+    {
+      "name": "Hana",
+      "email": "h@gmail.com",
+      "phone": "0867875866",
+      "gender": "female",
+      "dob": "2012-05-29",
+      "type": "patient",
+      "id": "IFic5-s"
     }
-    
   ],
   "doctor": [
     {
@@ -773,7 +802,6 @@
       "payment": "",
       "time": "08:51",
       "id": "cL0z-Jn"
-
     }
   ],
   "drug": [

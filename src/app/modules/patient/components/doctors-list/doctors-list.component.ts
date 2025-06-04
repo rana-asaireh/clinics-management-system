@@ -25,7 +25,7 @@ export class DoctorsListComponent implements OnInit {
   totalDoctors: number = 0;
   totalPages: number = 0;
   pages: number[] = [];
-  loader : boolean = false ;
+  loader: boolean = false;
 
   constructor(private doctorService: DoctorService,
     private clinicService: ClinicService,
@@ -34,19 +34,19 @@ export class DoctorsListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loader = true ;
+    this.loader = true;
     this.doctorService.getDoctors().subscribe(
       (doctors) => {
-        setTimeout(()=>{
-        this.doctors = doctors
-        console.log("doctors", this.doctors)
+        setTimeout(() => {
+          this.doctors = doctors
+          console.log("doctors", this.doctors)
 
-        this.totalDoctors = doctors.length;
-        this.totalPages = this.paginationService.getTotalPages(this.totalDoctors, this.pageSize);
-        this.pages = this.paginationService.generatePageNumbers(this.totalPages)
-        this.filteredDoctors = this.paginationService.paginate(doctors, this.currentPage, this.pageSize)
-        this.loader = false ;
-      },1000);
+          this.totalDoctors = doctors.length;
+          this.totalPages = this.paginationService.getTotalPages(this.totalDoctors, this.pageSize);
+          this.pages = this.paginationService.generatePageNumbers(this.totalPages)
+          this.filteredDoctors = this.paginationService.paginate(doctors, this.currentPage, this.pageSize)
+          this.loader = false;
+        }, 500);
       }
     )
 
@@ -68,27 +68,27 @@ export class DoctorsListComponent implements OnInit {
 
 
   onFilterChange(): void {
-    this.loader = true ;
+    this.loader = true;
     this.currentPage = 1;
-    
+
     this.doctorService.getFilteredDoctors(this.selectedClinicId, this.searchQuery).subscribe(
       (filteredDoctors) => {
-        setTimeout(()=>{
-        console.log("filtered Doctors ", filteredDoctors)
-        this.doctors = filteredDoctors;
-        if (this.searchQuery) {
-          this.searchImage = 'trash'
-        }
-        else {
-          this.searchImage = 'search'
+        setTimeout(() => {
+          console.log("filtered Doctors ", filteredDoctors)
+          this.doctors = filteredDoctors;
+          if (this.searchQuery) {
+            this.searchImage = 'trash'
+          }
+          else {
+            this.searchImage = 'search'
 
-        }
-        this.totalDoctors = filteredDoctors.length;
-        this.totalPages = this.paginationService.getTotalPages(this.totalDoctors, this.pageSize);
-        this.pages = this.paginationService.generatePageNumbers(this.totalPages)
-        this.filteredDoctors = this.paginationService.paginate(filteredDoctors, this.currentPage, this.pageSize)
-        this.loader = false;
-        },1000);
+          }
+          this.totalDoctors = filteredDoctors.length;
+          this.totalPages = this.paginationService.getTotalPages(this.totalDoctors, this.pageSize);
+          this.pages = this.paginationService.generatePageNumbers(this.totalPages)
+          this.filteredDoctors = this.paginationService.paginate(filteredDoctors, this.currentPage, this.pageSize)
+          this.loader = false;
+        }, 1000);
       }
 
     )
@@ -96,18 +96,18 @@ export class DoctorsListComponent implements OnInit {
 
   }
   imageClicked(): void {
-    this.loader = true ;
+    this.loader = true;
     this.searchQuery = ''
     this.doctorService.getDoctors().subscribe(
       (doctors) => {
-        setTimeout(()=>{
-        this.doctors = doctors
-        console.log("doctors", this.doctors)
-        this.searchImage = 'search'
+        setTimeout(() => {
+          this.doctors = doctors
+          console.log("doctors", this.doctors)
+          this.searchImage = 'search'
 
-        this.onFilterChange();
-        this.loader = false ;
-      },1000);
+          this.onFilterChange();
+          this.loader = false;
+        }, 1000);
       }
     )
   }
@@ -117,14 +117,14 @@ export class DoctorsListComponent implements OnInit {
   goToPage(page: number) {
     this.loader = true;
     this.currentPage = page;
-    setTimeout(()=>{
-    this.filteredDoctors = this.paginationService.paginate(
-      this.doctors,
-      this.currentPage,
-      this.pageSize
-    );
-    this.loader = false ;
-    },1000);
+    setTimeout(() => {
+      this.filteredDoctors = this.paginationService.paginate(
+        this.doctors,
+        this.currentPage,
+        this.pageSize
+      );
+      this.loader = false;
+    }, 1000);
   }
 
 }

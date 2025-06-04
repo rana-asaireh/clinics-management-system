@@ -1,16 +1,14 @@
-import { Component, ElementRef, Inject, OnInit, Renderer2 } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth.service';
-import { NavigationEnd, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { DoctorService } from '../modules/doctor/services/doctor.service';
-import { DOCUMENT } from '@angular/common';
-import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
   standalone: false,
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss',
+  styleUrl: './login.component.scss'
 })
 export class LoginComponent implements OnInit {
   showPassword: boolean = false;
@@ -18,51 +16,14 @@ export class LoginComponent implements OnInit {
   email: string = '';
   error: string = '';
   loader: boolean = false;
-  isRtl: boolean = false;
-  backgroundImageUrl = "url('/bg-login.PNG')";
-  backgroundPosition = 'left center';
-
   formGroup: FormGroup = this.initFormGroup();
 
   constructor(
     private authService: AuthService,
     private router: Router,
-    private doctorService: DoctorService,
-    private renderer: Renderer2,
-    @Inject(DOCUMENT) private document: Document,
-    private translate: TranslateService,
-    private el: ElementRef
-  ) {
-    this.setBackgroundImage(translate.currentLang);
-    translate.onLangChange.subscribe(event => {
-      this.setBackgroundImage(event.lang);
-    });
-  }
-  setBackgroundImage(lang: string) {
-    if (lang === 'ar') {
-      this.isRtl = true;
-      this.backgroundImageUrl = "url('login.jpeg')";
-      this.backgroundPosition = 'left center';
-    } else {
-      this.isRtl = false;
-      this.backgroundImageUrl = "url('/bg-login.PNG')";
-      this.backgroundPosition = 'right center';
-    }
-    const dir = this.isRtl ? 'rtl' : 'ltr';
-    this.renderer.setAttribute(document.documentElement, 'dir', dir);
-  }
-  ngOnInit(): void {
-    this.router.events.subscribe(event => {
-      if (event instanceof NavigationEnd) {
-        const currentLang = localStorage.getItem('language') || this.translate.currentLang || 'en';
-        this.updateDirectionAndBackground(currentLang);
-      }
-    });
-
-    this.translate.onLangChange.subscribe(event => {
-      this.updateDirectionAndBackground(event.lang);
-      localStorage.setItem('language', event.lang);
-    });
+    private doctorService: DoctorService
+  ) { }
+  ngOnInit() {
     this.formGroup.get('email')?.valueChanges.subscribe(() => {
       if (this.error) { this.error = ''; }
     });
@@ -71,27 +32,7 @@ export class LoginComponent implements OnInit {
       if (this.error) { this.error = ''; }
     });
   }
-  updateDirectionAndBackground(lang: string) {
-    if (lang === 'ar') {
-      this.isRtl = true;
-      this.backgroundImageUrl = "url('login.jpeg')";
-      this.backgroundPosition = 'left center';
 
-      this.renderer.setAttribute(this.document.documentElement, 'dir', 'rtl');
-
-      this.renderer.addClass(this.document.body, 'rtl');
-      this.renderer.removeClass(this.document.body, 'ltr');
-    } else {
-      this.isRtl = false;
-      this.backgroundImageUrl = "url('/bg-login.PNG')";
-      this.backgroundPosition = 'right center';
-
-      this.renderer.setAttribute(this.document.documentElement, 'dir', 'ltr');
-
-      this.renderer.addClass(this.document.body, 'ltr');
-      this.renderer.removeClass(this.document.body, 'rtl');
-    }
-  }
   initFormGroup(): FormGroup {
     return new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -130,9 +71,7 @@ export class LoginComponent implements OnInit {
         },
         (error: any) => {
           this.loader = false;
-          this.translate.get(error.message).subscribe(translated => {
-            this.error = translated;
-          });
+          this.error = error.message;
         })
     }, 3000)
   };

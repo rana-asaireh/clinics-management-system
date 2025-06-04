@@ -6,10 +6,10 @@
         </svg>
     </div>
 </div>
-<div >
+<div class="container">
     <h1>Appointments List</h1>
     <div class="line"></div>
-    
+
     <!-- Filter Dropdown -->
     <div class="filter">
         <div>
@@ -99,5 +99,4 @@
     <app-pagination [totalItems]="totalAppointments" [currentPage]="currentPage" [itemsPerPage]="pageSize"
         (pageChanged)="goToPage($event)">
     </app-pagination>
-  </div>
-
+</div>
