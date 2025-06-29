@@ -119,7 +119,6 @@
       "email": "Ahmad.Mohtaseb@amal-clinic.com",
       "password": "Fs*251435"
     }
-    
   ],
   "patient": [
     {
@@ -192,7 +191,6 @@
       "gender": "male",
       "dob": "1990-04-06"
     }
-    
   ],
   "doctor": [
     {
@@ -311,7 +309,7 @@
       "date": "2025-04-02",
       "patient_id": "1",
       "doctor_id": "1",
-      "approval_status": "approved",
+      "approval_status": "rejected",
       "appointment_details": {
         "drugs": [
           {
@@ -773,7 +771,6 @@
       "payment": "",
       "time": "08:51",
       "id": "cL0z-Jn"
-
     }
   ],
   "drug": [
